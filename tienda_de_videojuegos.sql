@@ -1,0 +1,468 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: localhost:3306
+-- Tiempo de generación: 05-11-2024 a las 23:31:28
+-- Versión del servidor: 8.0.30
+-- Versión de PHP: 8.1.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `tienda_de_videojuegos`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `cliente_id` int NOT NULL,
+  `nombre` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contacto` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `historial_compras` text COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`cliente_id`, `nombre`, `contacto`, `historial_compras`) VALUES
+(3, 'Carlos López', 'carlos.lopez@example.com', NULL),
+(4, 'Ana Martínez', 'ana.martinez@example.com', NULL),
+(5, 'Luis González', 'luis.gonzalez@example.com', NULL),
+(6, 'María Pérez', 'maria.perez@example.com', NULL),
+(7, 'Juan Sánchez', 'juan.sanchez@example.com', NULL),
+(8, 'Laura Díaz', 'laura.diaz@example.com', NULL),
+(9, 'Pedro Romero', 'pedro.romero@example.com', NULL),
+(10, 'Sofía Torres', 'sofia.torres@example.com', NULL),
+(11, 'Ricardo Vargas', 'ricardo.vargas@example.com', NULL),
+(12, 'Elena Flores', 'elena.flores@example.com', NULL),
+(13, 'Andrés Morales', 'andres.morales@example.com', NULL),
+(14, 'Patricia Rivera', 'patricia.rivera@example.com', NULL),
+(15, 'Jorge Castillo', 'jorge.castillo@example.com', NULL),
+(16, 'Gabriela Herrera', 'gabriela.herrera@example.com', NULL),
+(17, 'Daniel Ríos', 'daniel.rios@example.com', NULL),
+(18, 'Carmen Cruz', 'carmen.cruz@example.com', NULL),
+(19, 'Miguel Mendoza', 'miguel.mendoza@example.com', NULL),
+(20, 'Isabel Soto', 'isabel.soto@example.com', NULL),
+(21, 'Raúl Ortega', 'raul.ortega@example.com', NULL),
+(22, 'Lucía Silva', 'lucia.silva@example.com', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_ventas`
+--
+
+CREATE TABLE `detalle_ventas` (
+  `detalle_id` int NOT NULL,
+  `venta_id` int DEFAULT NULL,
+  `videojuego_id` int DEFAULT NULL,
+  `cantidad` int DEFAULT NULL,
+  `precio_unitario` decimal(10,2) DEFAULT NULL,
+  `total` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `detalle_ventas`
+--
+
+INSERT INTO `detalle_ventas` (`detalle_id`, `venta_id`, `videojuego_id`, `cantidad`, `precio_unitario`, `total`) VALUES
+(1, 103, 4, 1, 650.00, 650.00),
+(2, 147, 4, 1, 650.00, 650.00),
+(3, 104, 5, 1, 450.00, 450.00),
+(4, 148, 5, 1, 450.00, 450.00),
+(5, 105, 6, 1, 500.00, 500.00),
+(6, 149, 6, 1, 500.00, 500.00),
+(7, 106, 7, 1, 480.00, 480.00),
+(8, 150, 7, 1, 480.00, 480.00),
+(9, 107, 8, 1, 540.00, 540.00),
+(10, 151, 8, 1, 540.00, 540.00),
+(11, 108, 9, 1, 470.00, 470.00),
+(12, 152, 9, 1, 470.00, 470.00),
+(13, 109, 10, 1, 520.00, 520.00),
+(14, 110, 11, 1, 580.00, 580.00),
+(15, 111, 12, 1, 0.00, 0.00),
+(16, 112, 13, 1, 450.00, 450.00),
+(17, 113, 14, 1, 400.00, 400.00),
+(18, 114, 15, 1, 590.00, 590.00),
+(19, 115, 16, 1, 600.00, 600.00),
+(20, 116, 17, 1, 550.00, 550.00),
+(21, 117, 18, 1, 620.00, 620.00),
+(22, 118, 19, 1, 300.00, 300.00),
+(23, 119, 20, 1, 320.00, 320.00),
+(24, 120, 21, 1, 310.00, 310.00),
+(25, 121, 22, 1, 650.00, 650.00),
+(26, 122, 23, 1, 600.00, 600.00),
+(27, 123, 24, 1, 480.00, 480.00),
+(28, 124, 25, 1, 580.00, 580.00),
+(29, 125, 26, 1, 250.00, 250.00),
+(30, 126, 27, 1, 300.00, 300.00),
+(31, 127, 28, 1, 650.00, 650.00),
+(32, 128, 29, 1, 500.00, 500.00),
+(33, 129, 30, 1, 450.00, 450.00),
+(34, 130, 31, 1, 0.00, 0.00),
+(35, 131, 32, 1, 300.00, 300.00),
+(36, 132, 33, 1, 0.00, 0.00),
+(37, 133, 34, 1, 300.00, 300.00),
+(38, 134, 35, 1, 50.00, 50.00),
+(39, 135, 36, 1, 450.00, 450.00),
+(40, 136, 37, 1, 500.00, 500.00),
+(41, 137, 38, 1, 250.00, 250.00),
+(42, 138, 39, 1, 400.00, 400.00),
+(43, 139, 40, 1, 350.00, 350.00),
+(44, 140, 41, 1, 550.00, 550.00),
+(45, 141, 42, 1, 100.00, 100.00),
+(46, 142, 43, 1, 200.00, 200.00),
+(47, 143, 44, 1, 480.00, 480.00),
+(48, 144, 45, 1, 500.00, 500.00),
+(49, 145, 46, 1, 430.00, 430.00),
+(50, 146, 47, 1, 250.00, 250.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedores`
+--
+
+CREATE TABLE `proveedores` (
+  `proveedor_id` int NOT NULL,
+  `nombre` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contacto` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `productos_suministrados` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`proveedor_id`, `nombre`, `contacto`, `productos_suministrados`) VALUES
+(1, 'Proveedora GameSoft', 'game@proveedor.com', 'Accesorios, Consolas, Juegos'),
+(2, 'Distribuidora GamerMax', 'info@gamermax.com', 'Consolas, Juegos'),
+(3, 'GameWorld S.A.', 'contacto@gameworld.com', 'Videojuegos, Consolas, Accesorios'),
+(4, 'DigitalGaming Ltd.', 'ventas@digitalgaming.com', 'Videojuegos para PC y Consolas'),
+(5, 'GamingPro', 'info@gamingpro.com', 'Accesorios para consolas, Tarjetas de regalo'),
+(6, 'TechZone Distribuciones', 'soporte@techzone.com', 'Consolas y Videojuegos para Xbox y PlayStation'),
+(7, 'PlayLand Corp.', 'ventas@playland.com', 'Videojuegos y Accesorios para Nintendo Switch'),
+(8, 'ConsolaMax', 'contacto@consolamax.com', 'Consolas, Juegos de Realidad Virtual'),
+(9, 'VirtualPlay', 'ventas@virtualplay.com', 'Juegos de Realidad Virtual, Accesorios VR'),
+(10, 'GamerHouse', 'info@gamerhouse.com', 'Videojuegos, Controladores, Mandos y Volantes');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `usuario_id` int NOT NULL,
+  `nombre_usuario` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contraseña` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cliente_id` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`usuario_id`, `nombre_usuario`, `contraseña`, `cliente_id`) VALUES
+(3, 'clopez', 'password123', 3),
+(4, 'amartinez', 'password123', 4),
+(5, 'lgonzalez', 'password123', 5),
+(6, 'mperez', 'password123', 6),
+(7, 'jsanchez', 'password123', 7),
+(8, 'ldiaz', 'password123', 8),
+(9, 'promero', 'password123', 9),
+(10, 'storres', 'password123', 10),
+(11, 'rvargas', 'password123', 11),
+(12, 'eflores', 'password123', 12),
+(13, 'amorales', 'password123', 13),
+(14, 'privera', 'password123', 14),
+(15, 'jcastillo', 'password123', 15),
+(16, 'gherrera', 'password123', 16),
+(17, 'drios', 'password123', 17),
+(18, 'ccruz', 'password123', 18),
+(19, 'mmendoza', 'password123', 19),
+(20, 'isoto', 'password123', 20),
+(21, 'rortega', 'password123', 21),
+(22, 'lsilva', 'password123', 22);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ventas`
+--
+
+CREATE TABLE `ventas` (
+  `venta_id` int NOT NULL,
+  `cliente_id` int DEFAULT NULL,
+  `videojuego_id` int DEFAULT NULL,
+  `fecha_venta` date DEFAULT NULL,
+  `cantidad` int DEFAULT NULL,
+  `total` decimal(10,2) DEFAULT NULL,
+  `usuario_id` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`venta_id`, `cliente_id`, `videojuego_id`, `fecha_venta`, `cantidad`, `total`, `usuario_id`) VALUES
+(103, 3, 4, '2024-10-01', 1, NULL, 3),
+(104, 5, 5, '2024-10-02', 1, NULL, 5),
+(105, 7, 6, '2024-10-03', 1, NULL, 7),
+(106, 9, 7, '2024-10-04', 1, NULL, 9),
+(107, 11, 8, '2024-10-05', 1, NULL, 11),
+(108, 13, 9, '2024-10-06', 1, NULL, 13),
+(109, 15, 10, '2024-10-07', 1, NULL, 15),
+(110, 17, 11, '2024-10-08', 1, NULL, 17),
+(111, 19, 12, '2024-10-09', 1, NULL, 19),
+(112, 21, 13, '2024-10-10', 1, NULL, 21),
+(113, 4, 14, '2024-10-11', 1, NULL, 4),
+(114, 6, 15, '2024-10-12', 1, NULL, 6),
+(115, 8, 16, '2024-10-13', 1, NULL, 8),
+(116, 10, 17, '2024-10-14', 1, NULL, 10),
+(117, 12, 18, '2024-10-15', 1, NULL, 12),
+(118, 14, 19, '2024-10-16', 1, NULL, 14),
+(119, 16, 20, '2024-10-17', 1, NULL, 16),
+(120, 18, 21, '2024-10-18', 1, NULL, 18),
+(121, 20, 22, '2024-10-19', 1, NULL, 20),
+(122, 22, 23, '2024-10-20', 1, NULL, 22),
+(123, 3, 24, '2024-10-21', 1, NULL, 3),
+(124, 5, 25, '2024-10-22', 1, NULL, 5),
+(125, 7, 26, '2024-10-23', 1, NULL, 7),
+(126, 9, 27, '2024-10-24', 1, NULL, 9),
+(127, 11, 28, '2024-10-25', 1, NULL, 11),
+(128, 13, 29, '2024-10-26', 1, NULL, 13),
+(129, 15, 30, '2024-10-27', 1, NULL, 15),
+(130, 17, 31, '2024-10-28', 1, NULL, 17),
+(131, 19, 32, '2024-10-29', 1, NULL, 19),
+(132, 21, 33, '2024-10-30', 1, NULL, 21),
+(133, 4, 34, '2024-10-31', 1, NULL, 4),
+(134, 6, 35, '2024-11-01', 1, NULL, 6),
+(135, 8, 36, '2024-11-02', 1, NULL, 8),
+(136, 10, 37, '2024-11-03', 1, NULL, 10),
+(137, 12, 38, '2024-11-04', 1, NULL, 12),
+(138, 14, 39, '2024-10-01', 1, NULL, 14),
+(139, 16, 40, '2024-10-02', 1, NULL, 16),
+(140, 18, 41, '2024-10-03', 1, NULL, 18),
+(141, 20, 42, '2024-10-04', 1, NULL, 20),
+(142, 22, 43, '2024-10-05', 1, NULL, 22),
+(143, 3, 44, '2024-10-06', 1, NULL, 3),
+(144, 5, 45, '2024-10-07', 1, NULL, 5),
+(145, 7, 46, '2024-10-08', 1, NULL, 7),
+(146, 9, 47, '2024-10-09', 1, NULL, 9),
+(147, 11, 4, '2024-10-10', 1, NULL, 11),
+(148, 13, 5, '2024-10-11', 1, NULL, 13),
+(149, 15, 6, '2024-10-12', 1, NULL, 15),
+(150, 17, 7, '2024-10-13', 1, NULL, 17),
+(151, 19, 8, '2024-10-14', 1, NULL, 19),
+(152, 21, 9, '2024-10-15', 1, NULL, 21);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `videojuegos`
+--
+
+CREATE TABLE `videojuegos` (
+  `videojuego_id` int NOT NULL,
+  `titulo` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `plataforma` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `genero` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `precio` decimal(10,2) DEFAULT NULL,
+  `cantidad` int NOT NULL,
+  `proveedor_id` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `videojuegos`
+--
+
+INSERT INTO `videojuegos` (`videojuego_id`, `titulo`, `plataforma`, `genero`, `precio`, `cantidad`, `proveedor_id`) VALUES
+(1, 'The Last of Us', 'PlayStation', 'Acción', 59.99, 10, 1),
+(2, 'Halo Infinite', 'Xbox', 'Shooter', 49.99, 15, 1),
+(3, 'Super Mario Odyssey', 'Nintendo Switch', 'Aventura', 39.99, 20, 2),
+(4, 'The Legend of Zelda: Breath of the Wild', 'Nintendo Switch', 'Aventura', 650.00, 15, 1),
+(5, 'Super Mario Odyssey', 'Nintendo Switch', 'Plataformas', 450.00, 20, 1),
+(6, 'Mario Kart 8 Deluxe', 'Nintendo Switch', 'Carreras', 500.00, 18, 2),
+(7, 'Animal Crossing: New Horizons', 'Nintendo Switch', 'Simulación', 480.00, 10, 2),
+(8, 'Pokémon Sword', 'Nintendo Switch', 'RPG', 540.00, 12, 3),
+(9, 'Splatoon 2', 'Nintendo Switch', 'Acción', 470.00, 14, 3),
+(10, 'Fire Emblem: Three Houses', 'Nintendo Switch', 'Estrategia', 520.00, 8, 4),
+(11, 'Xenoblade Chronicles 2', 'Nintendo Switch', 'RPG', 580.00, 9, 4),
+(12, 'Fortnite', 'Multiplataforma', 'Battle Royale', 0.00, 50, 5),
+(13, 'Call of Duty: Modern Warfare', 'PlayStation 4', 'Shooter', 450.00, 25, 5),
+(14, 'Spider-Man', 'PlayStation 4', 'Aventura', 400.00, 18, 6),
+(15, 'The Last of Us Part II', 'PlayStation 4', 'Aventura', 590.00, 15, 6),
+(16, 'God of War', 'PlayStation 4', 'Aventura', 600.00, 10, 7),
+(17, 'Horizon Zero Dawn', 'PlayStation 4', 'Aventura', 550.00, 12, 7),
+(18, 'Ghost of Tsushima', 'PlayStation 4', 'Aventura', 620.00, 14, 8),
+(19, 'FIFA 21', 'Multiplataforma', 'Deportes', 300.00, 30, 1),
+(20, 'NBA 2K21', 'Multiplataforma', 'Deportes', 320.00, 25, 1),
+(21, 'Madden NFL 21', 'Multiplataforma', 'Deportes', 310.00, 20, 2),
+(22, 'Cyberpunk 2077', 'Multiplataforma', 'RPG', 650.00, 8, 2),
+(23, 'Assassin’s Creed Valhalla', 'Multiplataforma', 'Aventura', 600.00, 12, 3),
+(24, 'Resident Evil 3', 'Multiplataforma', 'Horror', 480.00, 15, 3),
+(25, 'Final Fantasy VII Remake', 'PlayStation 4', 'RPG', 580.00, 10, 4),
+(26, 'Minecraft', 'Multiplataforma', 'Sandbox', 250.00, 50, 4),
+(27, 'The Sims 4', 'Multiplataforma', 'Simulación', 300.00, 40, 5),
+(28, 'Red Dead Redemption 2', 'Multiplataforma', 'Aventura', 650.00, 7, 5),
+(29, 'GTA V', 'Multiplataforma', 'Aventura', 500.00, 22, 6),
+(30, 'Overwatch', 'Multiplataforma', 'Shooter', 450.00, 30, 6),
+(31, 'League of Legends', 'PC', 'MOBA', 0.00, 60, 7),
+(32, 'World of Warcraft', 'PC', 'MMORPG', 300.00, 40, 7),
+(33, 'Counter-Strike: Global Offensive', 'PC', 'Shooter', 0.00, 100, 8),
+(34, 'PUBG', 'Multiplataforma', 'Battle Royale', 300.00, 28, 8),
+(35, 'Among Us', 'Multiplataforma', 'Party', 50.00, 45, 1),
+(36, 'Dark Souls III', 'Multiplataforma', 'RPG', 450.00, 14, 1),
+(37, 'Sekiro: Shadows Die Twice', 'Multiplataforma', 'Acción', 500.00, 10, 2),
+(38, 'Fortnite Deluxe Edition', 'Multiplataforma', 'Battle Royale', 250.00, 22, 2),
+(39, 'Persona 5', 'PlayStation 4', 'RPG', 400.00, 9, 3),
+(40, 'Bloodborne', 'PlayStation 4', 'Aventura', 350.00, 15, 3),
+(41, 'Nioh 2', 'PlayStation 4', 'Acción', 550.00, 7, 4),
+(42, 'Fall Guys', 'Multiplataforma', 'Party', 100.00, 35, 4),
+(43, 'Cuphead', 'Multiplataforma', 'Plataformas', 200.00, 20, 5),
+(44, 'DOOM Eternal', 'Multiplataforma', 'Shooter', 480.00, 18, 5),
+(45, 'Monster Hunter: World', 'Multiplataforma', 'RPG', 500.00, 13, 6),
+(46, 'Dragon Ball Z: Kakarot', 'Multiplataforma', 'Aventura', 430.00, 16, 6),
+(47, 'Street Fighter V', 'Multiplataforma', 'Lucha', 250.00, 24, 7),
+(48, 'Tekken 7', 'Multiplataforma', 'Lucha', 260.00, 25, 7),
+(49, 'Mortal Kombat 11', 'Multiplataforma', 'Lucha', 270.00, 22, 8),
+(50, 'FIFA 22', 'Multiplataforma', 'Deportes', 350.00, 30, 8);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`cliente_id`);
+
+--
+-- Indices de la tabla `detalle_ventas`
+--
+ALTER TABLE `detalle_ventas`
+  ADD PRIMARY KEY (`detalle_id`),
+  ADD KEY `venta_id` (`venta_id`),
+  ADD KEY `videojuego_id` (`videojuego_id`);
+
+--
+-- Indices de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  ADD PRIMARY KEY (`proveedor_id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`usuario_id`),
+  ADD UNIQUE KEY `nombre_usuario` (`nombre_usuario`),
+  ADD KEY `fk_cliente_usuario` (`cliente_id`);
+
+--
+-- Indices de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  ADD PRIMARY KEY (`venta_id`),
+  ADD KEY `cliente_id` (`cliente_id`),
+  ADD KEY `videojuego_id` (`videojuego_id`),
+  ADD KEY `fk_usuario_ventas` (`usuario_id`);
+
+--
+-- Indices de la tabla `videojuegos`
+--
+ALTER TABLE `videojuegos`
+  ADD PRIMARY KEY (`videojuego_id`),
+  ADD KEY `fk_proveedor` (`proveedor_id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `cliente_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT de la tabla `detalle_ventas`
+--
+ALTER TABLE `detalle_ventas`
+  MODIFY `detalle_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
+--
+-- AUTO_INCREMENT de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  MODIFY `proveedor_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `usuario_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  MODIFY `venta_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
+
+--
+-- AUTO_INCREMENT de la tabla `videojuegos`
+--
+ALTER TABLE `videojuegos`
+  MODIFY `videojuego_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `detalle_ventas`
+--
+ALTER TABLE `detalle_ventas`
+  ADD CONSTRAINT `detalle_ventas_ibfk_1` FOREIGN KEY (`venta_id`) REFERENCES `ventas` (`venta_id`),
+  ADD CONSTRAINT `detalle_ventas_ibfk_2` FOREIGN KEY (`videojuego_id`) REFERENCES `videojuegos` (`videojuego_id`);
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `fk_cliente_usuario` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`cliente_id`);
+
+--
+-- Filtros para la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  ADD CONSTRAINT `fk_usuario_ventas` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`usuario_id`),
+  ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`cliente_id`),
+  ADD CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`videojuego_id`) REFERENCES `videojuegos` (`videojuego_id`);
+
+--
+-- Filtros para la tabla `videojuegos`
+--
+ALTER TABLE `videojuegos`
+  ADD CONSTRAINT `fk_proveedor` FOREIGN KEY (`proveedor_id`) REFERENCES `proveedores` (`proveedor_id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Fuente retro */
+
+body {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #f1f1f1; /* Color de texto claro */
+}
+
+nav,
+.offcanvas {
+    background-color: #0b0c10; /* Fondo oscuro con tono gris */
+}
+
+.navbar-brand {
+    color: #00ff00; /* Color verde neón */
+    text-shadow: 0 0 10px #00ff00; /* Efecto de neón */
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    color: #c5c6c7; /* Color gris claro para enlaces */
+    font-size: 0.8rem; /* Tamaño de fuente pequeño */
+}
+
+.nav-link:hover {
+    color: #45a29e; /* Color verde-neón en hover */
+    text-shadow: 0 0 3px #45a29e;
+}
+
+.navbar-toggler {
+    border: none; /* Sin borde */
+}
+
+.navbar-toggler-icon {
+    background-color: transparent; /* Hacer transparente el fondo del ícono */
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+    background-color: #00ff00; /* Color verde neón para las líneas de la hamburguesa */
+}
+
+.btn-close {
+    color: #f1f1f1; /* Color del botón de cierre */
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Color verde neón para íconos específicos */
+.nav-link i {
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+    color: #00ff00; /* Color verde neón para los íconos */
+}
+
+.offcanvas-title {
+    color: #00ff00; /* Color verde neón para el título en el offcanvas */
+}
+
+/* Ajustes para el offcanvas en pantallas grandes */
+@media (min-width: 992px) {
+    .offcanvas {
+        width: 300px; /* Define un ancho fijo para pantallas grandes */
+    }
+}
+
+/* Agrega desplazamiento en caso de contenido extra */
+.offcanvas-body {
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav > li:hover {
+        background-color: #45a29e;
+    }
+}
