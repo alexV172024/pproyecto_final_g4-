@@ -66,7 +66,20 @@ $routes->get('/contacto', 'MenuController::contacto');
     $routes->post('videojuegos/update/(:num)', 'VideojuegosController::update/$1');
     $routes->get('videojuegos/delete/(:num)', 'VideojuegosController::delete/$1');
 
+    $routes->get('accesorios', 'AccesoriosController::index');
+    $routes->get('/accesorios/create', 'AccesoriosController::create');
+    $routes->post('/accesorios/store', 'AccesoriosController::store');
+    $routes->get('/accesorios/edit/(:num)', 'AccesoriosController::edit/$1');
+    $routes->post('/accesorios/update/(:num)', 'AccesoriosController::update/$1');
+    $routes->get('/accesorios/delete/(:num)', 'AccesoriosController::delete/$1');
+    
+    // app/Config/Routes.php
 
+    $routes->get('inventario', 'InventarioController::index');  // Muestra el listado de inventarios
+    $routes->get('inventario/nuevo', 'InventarioController::nuevo');  // Muestra el formulario para crear un nuevo inventario
+    $routes->post('inventario/guardar', 'InventarioController::guardar');  // Guarda el nuevo inventario
+
+    
 
 /*
  * --------------------------------------------------------------------

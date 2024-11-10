@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 05-11-2024 a las 23:31:28
+-- Tiempo de generación: 10-11-2024 a las 20:56:52
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -20,6 +20,59 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `tienda_de_videojuegos`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `accesorios`
+--
+
+CREATE TABLE `accesorios` (
+  `accesorio_id` int NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `marca` varchar(255) DEFAULT NULL,
+  `modelo` varchar(255) DEFAULT NULL,
+  `precio` decimal(10,2) DEFAULT NULL,
+  `proveedor_id` int DEFAULT NULL,
+  `stock` int DEFAULT '0',
+  `descripcion` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `accesorios`
+--
+
+INSERT INTO `accesorios` (`accesorio_id`, `nombre`, `marca`, `modelo`, `precio`, `proveedor_id`, `stock`, `descripcion`) VALUES
+(1, 'Computadora Portátil', 'Dell', 'Inspiron 15', 6500.00, 1, 10, NULL),
+(2, 'Computadora de Escritorio', 'HP', 'Pavilion 24', 5200.00, 1, 15, NULL),
+(3, 'Control de Xbox', 'Microsoft', 'Series X', 350.00, 2, 30, NULL),
+(4, 'Control de PlayStation', 'Sony', 'DualShock 4', 380.00, 2, 25, NULL),
+(5, 'Consola Xbox', 'Microsoft', 'Series S', 2800.00, 3, 8, NULL),
+(6, 'Consola PlayStation', 'Sony', 'PlayStation 5', 5000.00, 3, 5, NULL),
+(7, 'Audífonos Inalámbricos', 'Sony', 'WH-1000XM4', 1200.00, 4, 20, NULL),
+(8, 'Audífonos Gamer', 'Logitech', 'G Pro X', 900.00, 4, 18, NULL),
+(9, 'Teclado Mecánico', 'Razer', 'BlackWidow', 700.00, 5, 22, NULL),
+(10, 'Ratón Gamer', 'Logitech', 'G502', 500.00, 5, 30, NULL),
+(11, 'Monitor LED', 'Samsung', 'Odyssey G3', 1500.00, 6, 12, NULL),
+(12, 'Laptop Gaming', 'Asus', 'ROG Strix', 8900.00, 1, 7, NULL),
+(13, 'Volante para Juegos', 'Logitech', 'G923', 1100.00, 2, 10, NULL),
+(14, 'Memoria USB', 'Kingston', 'DataTraveler 128GB', 150.00, 7, 50, NULL),
+(15, 'Disco Duro Externo', 'Western Digital', 'My Passport 1TB', 500.00, 7, 40, NULL),
+(16, 'Tarjeta de Video', 'NVIDIA', 'RTX 3060', 4000.00, 5, 10, NULL),
+(17, 'Cámara Web', 'Logitech', 'C920', 350.00, 5, 25, NULL),
+(18, 'Router WiFi', 'TP-Link', 'Archer AX10', 450.00, 9, 15, NULL),
+(19, 'Adaptador Bluetooth', 'TP-Link', 'UB400', 100.00, 9, 35, NULL),
+(20, 'Tablet', 'Samsung', 'Galaxy Tab A7', 1600.00, 1, 10, NULL),
+(21, 'Altavoces', 'Bose', 'Companion 2 Series III', 900.00, 4, 18, NULL),
+(22, 'Consola Nintendo Switch', 'Nintendo', 'Switch OLED', 3000.00, 3, 6, NULL),
+(23, 'Estación de Carga', 'Sony', 'DualSense', 250.00, 2, 20, NULL),
+(24, 'Laptop Ultraliviana', 'Apple', 'MacBook Air M1', 10500.00, 1, 8, NULL),
+(25, 'Soporte para Monitor', 'AmazonBasics', 'Adjustable Stand', 100.00, 10, 25, NULL),
+(26, 'Fuente de Poder', 'Corsair', 'RM750', 550.00, 5, 12, NULL),
+(27, 'Memoria RAM', 'Corsair', 'Vengeance LPX 16GB', 450.00, 8, 22, NULL),
+(28, 'Refrigeración Líquida', 'Cooler Master', 'ML240L', 600.00, 8, 10, NULL),
+(29, 'Silla Gamer', 'DXRacer', 'Formula Series', 2000.00, 10, 5, NULL),
+(30, 'Estuche para Consola', 'Nintendo', 'Switch Carrying Case', 150.00, 3, 30, NULL);
 
 -- --------------------------------------------------------
 
@@ -130,6 +183,30 @@ INSERT INTO `detalle_ventas` (`detalle_id`, `venta_id`, `videojuego_id`, `cantid
 (48, 144, 45, 1, 500.00, 500.00),
 (49, 145, 46, 1, 430.00, 430.00),
 (50, 146, 47, 1, 250.00, 250.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `inventario`
+--
+
+CREATE TABLE `inventario` (
+  `inventario_id` int NOT NULL,
+  `accesorio_id` int NOT NULL,
+  `cantidad` int NOT NULL DEFAULT '0',
+  `precio` decimal(10,2) NOT NULL,
+  `ubicacion` varchar(255) DEFAULT NULL,
+  `fecha_ingreso` date NOT NULL,
+  `videojuego_id` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `inventario`
+--
+
+INSERT INTO `inventario` (`inventario_id`, `accesorio_id`, `cantidad`, `precio`, `ubicacion`, `fecha_ingreso`, `videojuego_id`) VALUES
+(1, 1, 10, 500.00, 'Estante 1', '2024-11-10', NULL),
+(2, 2, 15, 350.00, 'Estante 2', '2024-11-10', 5);
 
 -- --------------------------------------------------------
 
@@ -341,11 +418,18 @@ INSERT INTO `videojuegos` (`videojuego_id`, `titulo`, `plataforma`, `genero`, `p
 (47, 'Street Fighter V', 'Multiplataforma', 'Lucha', 250.00, 24, 7),
 (48, 'Tekken 7', 'Multiplataforma', 'Lucha', 260.00, 25, 7),
 (49, 'Mortal Kombat 11', 'Multiplataforma', 'Lucha', 270.00, 22, 8),
-(50, 'FIFA 22', 'Multiplataforma', 'Deportes', 350.00, 30, 8);
+(50, 'FIFA 22', 'Multiplataforma', 'Deportes', 350.00, 30, NULL);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `accesorios`
+--
+ALTER TABLE `accesorios`
+  ADD PRIMARY KEY (`accesorio_id`),
+  ADD KEY `proveedor_id` (`proveedor_id`);
 
 --
 -- Indices de la tabla `clientes`
@@ -360,6 +444,14 @@ ALTER TABLE `detalle_ventas`
   ADD PRIMARY KEY (`detalle_id`),
   ADD KEY `venta_id` (`venta_id`),
   ADD KEY `videojuego_id` (`videojuego_id`);
+
+--
+-- Indices de la tabla `inventario`
+--
+ALTER TABLE `inventario`
+  ADD PRIMARY KEY (`inventario_id`),
+  ADD KEY `accesorio_id` (`accesorio_id`),
+  ADD KEY `fk_videojuego` (`videojuego_id`);
 
 --
 -- Indices de la tabla `proveedores`
@@ -396,6 +488,12 @@ ALTER TABLE `videojuegos`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `accesorios`
+--
+ALTER TABLE `accesorios`
+  MODIFY `accesorio_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
@@ -408,10 +506,16 @@ ALTER TABLE `detalle_ventas`
   MODIFY `detalle_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
+-- AUTO_INCREMENT de la tabla `inventario`
+--
+ALTER TABLE `inventario`
+  MODIFY `inventario_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `proveedor_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `proveedor_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -429,11 +533,17 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `videojuegos`
 --
 ALTER TABLE `videojuegos`
-  MODIFY `videojuego_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `videojuego_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `accesorios`
+--
+ALTER TABLE `accesorios`
+  ADD CONSTRAINT `accesorios_ibfk_1` FOREIGN KEY (`proveedor_id`) REFERENCES `proveedores` (`proveedor_id`) ON DELETE SET NULL;
 
 --
 -- Filtros para la tabla `detalle_ventas`
@@ -441,6 +551,13 @@ ALTER TABLE `videojuegos`
 ALTER TABLE `detalle_ventas`
   ADD CONSTRAINT `detalle_ventas_ibfk_1` FOREIGN KEY (`venta_id`) REFERENCES `ventas` (`venta_id`),
   ADD CONSTRAINT `detalle_ventas_ibfk_2` FOREIGN KEY (`videojuego_id`) REFERENCES `videojuegos` (`videojuego_id`);
+
+--
+-- Filtros para la tabla `inventario`
+--
+ALTER TABLE `inventario`
+  ADD CONSTRAINT `fk_videojuego` FOREIGN KEY (`videojuego_id`) REFERENCES `videojuegos` (`videojuego_id`),
+  ADD CONSTRAINT `inventario_ibfk_1` FOREIGN KEY (`accesorio_id`) REFERENCES `accesorios` (`accesorio_id`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `usuarios`
