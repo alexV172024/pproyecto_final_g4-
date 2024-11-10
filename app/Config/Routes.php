@@ -50,6 +50,24 @@ $routes->get('/ubicacion', 'MenuController::ubicacion');
 // Ruta para la vista de contacto
 $routes->get('/contacto', 'MenuController::contacto');
 
+// Rutas para Proveedores
+    $routes->get('proveedores', 'ProveedoresController::index');
+    $routes->get('proveedores/create', 'ProveedoresController::create');
+    $routes->post('proveedores/store', 'ProveedoresController::store');
+    $routes->get('proveedores/edit/(:num)', 'ProveedoresController::edit/$1');
+    $routes->post('proveedores/update/(:num)', 'ProveedoresController::update/$1');
+    $routes->get('proveedores/delete/(:num)', 'ProveedoresController::delete/$1');
+
+    // Rutas para Videojuegos
+    $routes->get('videojuegos', 'VideojuegosController::index');
+    $routes->get('videojuegos/create', 'VideojuegosController::create');
+    $routes->post('videojuegos/store', 'VideojuegosController::store');
+    $routes->get('videojuegos/edit/(:num)', 'VideojuegosController::edit/$1');
+    $routes->post('videojuegos/update/(:num)', 'VideojuegosController::update/$1');
+    $routes->get('videojuegos/delete/(:num)', 'VideojuegosController::delete/$1');
+
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
