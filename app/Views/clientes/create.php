@@ -72,11 +72,7 @@
             <input type="text" class="form-control" id="contacto" name="contacto" required>
         </div>
 
-        <div class="mb-3">
-            <label for="historial_compras" class="form-label">Historial Compras</label>
-            <input type="text" class="form-control" id="historial_compras" name="historial_compras" required>
-        </div>
-
+        
         <div class="d-flex justify-content-between">
             <button type="submit" class="btn btn-primary">Guardar</button>
             <a href="<?= site_url('clientes'); ?>" class="btn btn-secondary">Cancelar</a>

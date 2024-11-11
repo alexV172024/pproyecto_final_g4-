@@ -131,7 +131,6 @@
                     <th>cliente_id</th>
                     <th>nombre</th>
                     <th>contacto</th>
-                    <th>historial_compras</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -141,7 +140,7 @@
                         <td><?= $cliente['cliente_id']; ?></td>
                         <td><?= $cliente['nombre']; ?></td>
                         <td><?= $cliente['contacto']; ?></td>
-                        <td><?= $cliente['historial_compras']; ?></td>
+                        
                         <td>
                             <!-- Botón para editar -->
                             <a href="<?= site_url('clientes/edit/' . $cliente['cliente_id']); ?>" class="btn btn-warning btn-sm">Editar</a>
