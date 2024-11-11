@@ -25,4 +25,9 @@ class MenuController extends Controller
     {
         return view('contacto'); // Carga la vista de contacto
     }
+
+    public function novedades()
+    {
+        return view('novedades'); // Carga la vista de novedades
+    }
 }
