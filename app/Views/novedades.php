@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GAMESTATION: INICIO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novedades de Juegos</title>
     <link rel="icon" href="Views/img/element.ico" type="image/x-icon">
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -67,6 +67,14 @@
         .container {
             padding-top: 20px; 
         }
+
+        p1 {
+    color: black;
+        }
+
+        h5 {
+    color: black;
+        }
     </style>
 </head>
 <body>
@@ -107,7 +115,7 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-6 d-flex justify-content-start">
-            <a href="<?= base_url('/novedades'); ?>" class="btn btn-primary me-2">Novedades</a>
+                <button class="btn btn-primary me-2">Novedades</button>
                 <button class="btn btn-success">Ofertas</button>
             </div>
             <div class="col-md-6 d-flex justify-content-end">
@@ -126,33 +134,46 @@
             </div>
         </div>
     </div>
+    <div class="container mt-5">
+        <h1 class="text-center">Novedades de Juegos</h1>
+        <p class="text-center">Aquí encontrarás los últimos videos sobre novedades de los juegos más populares.</p>
 
-    <!-- Reseña y video -->
-    <div class="container mt-4">
         <div class="row">
-            <div class="col-md-6">
-                <h3>Quiénes somos</h3><br>
-                <h4>Nuestra Historia</h4><br>
-                <p>nuestra tienda comenzó con la misión de ofrecer productos de alta calidad y 
-                   un excelente servicio al cliente. A lo largo de los años, nos hemos expandido 
-                   para ofrecer una amplia variedad de productos, manteniendo siempre un enfoque 
-                   en la satisfacción de nuestros clientes. Desde nuestros primeros días, nos hemos 
-                   por brindar una experiencia de compra única, en nuestra tienda en línea.</p> <br><br>
-                <h4>Lo que ofrecemos</h4> <br>  
-                <p>En nuestra tienda, encontrarás una amplia gama de productos que van desde videojuegos, 
-                   controles, consolas. Nos especializamos en toda clase de videojuegos y trabajamos con 
-                   los mejores proveedores para asegurar que nuestros clientes reciban productos de la más 
-                   alta calidad. Además, ofrecemos un servicio de atención al cliente personalizado para 
-                   resolver cualquier duda o necesidad.</p>         
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="410" height="315" src="https://www.youtube.com/embed/mfnc4_LCPNg?si=PahFU5MyQfVLV4CP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><p1>Marvel's Wolverine para PS5 | 4K </p></h5>
+                        <p1 class="card-text">Marvel’s Wolverine está en desarrollo por Insomniac Games para PlayStation 5. Creado en colaboración con Marvel Games y PlayStation.</p>
+                    </div>
+                    
+                </div>
+            </div><br>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="420" height="315" src="https://www.youtube.com/embed/RoE5DCsCzf4?si=ztTcPp3cgPNo5nh7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><p1>Marvel's Spider-Man 2</p></h5>
+                        <p1 class="card-text">Los cazadores de Kraven persiguen al Dr. Curt Connors, también conocido como Lagarto, y Spider-Men, Peter Parker y Miles Morales, necesitan detenerlos.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h3>Video</h3>
-                <div class="ratio ratio-16x9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/WN9sshzENbA?si=t4SWkShv7ieHyPqo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/videoID3" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                    <h5 class="card-title"><p1></p></h5>
+                    <p1 class="card-text"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </body>
 </html>

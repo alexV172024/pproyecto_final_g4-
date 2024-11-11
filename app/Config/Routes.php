@@ -50,6 +50,8 @@ $routes->get('/ubicacion', 'MenuController::ubicacion');
 // Ruta para la vista de contacto
 $routes->get('/contacto', 'MenuController::contacto');
 
+$routes->get('/novedades', 'MenuController::novedades');
+
 // Rutas para Proveedores
     $routes->get('proveedores', 'ProveedoresController::index');
     $routes->get('proveedores/create', 'ProveedoresController::create');
