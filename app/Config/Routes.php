@@ -72,7 +72,23 @@ $routes->get('/contacto', 'MenuController::contacto');
     $routes->get('/accesorios/edit/(:num)', 'AccesoriosController::edit/$1');
     $routes->post('/accesorios/update/(:num)', 'AccesoriosController::update/$1');
     $routes->get('/accesorios/delete/(:num)', 'AccesoriosController::delete/$1');
-    
+
+    // Rutas para Usuarios
+    $routes->get('usuarios', 'UsuariosController::index');
+    $routes->get('usuarios/create', 'UsuariosController::create');
+    $routes->post('usuarios/store', 'UsuariosController::store');
+    $routes->get('usuarios/edit/(:num)', 'UsuariosController::edit/$1');
+    $routes->post('usuarios/update/(:num)', 'UsuariosController::update/$1');
+    $routes->get('usuarios/delete/(:num)', 'UsuariosController::delete/$1');
+
+    // Rutas para Usuarios
+    $routes->get('clientes', 'ClientesController::index');
+    $routes->get('clientes/create', 'ClientesController::create');
+    $routes->post('clientes/store', 'ClientesController::store');
+    $routes->get('clientes/edit/(:num)', 'ClientesController::edit/$1');
+    $routes->post('clientes/update/(:num)', 'ClientesController::update/$1');
+    $routes->get('clientes/delete/(:num)', 'ClientesController::delete/$1');
+
     // app/Config/Routes.php
 
     $routes->get('inventario', 'InventarioController::index');  // Muestra el listado de inventarios
