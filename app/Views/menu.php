@@ -131,14 +131,24 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-6">
-                <h3>Quiénes somos</h3>
-                <p>Aquí va la reseña sobre quiénes somos. Puedes agregar información sobre la historia de la tienda, los productos que ofrecen, etc.</p>
+                <h3>Quiénes somos</h3><br>
+                <h4>Nuestra Historia</h4><br>
+                <p>nuestra tienda comenzó con la misión de ofrecer productos de alta calidad y 
+                   un excelente servicio al cliente. A lo largo de los años, nos hemos expandido 
+                   para ofrecer una amplia variedad de productos, manteniendo siempre un enfoque 
+                   en la satisfacción de nuestros clientes. Desde nuestros primeros días, nos hemos 
+                   por brindar una experiencia de compra única, en nuestra tienda en línea.</p> <br><br>
+                <h4>Lo que ofrecemos</h4> <br>  
+                <p>En nuestra tienda, encontrarás una amplia gama de productos que van desde videojuegos, 
+                   controles, consolas. Nos especializamos en toda clase de videojuegos y trabajamos con 
+                   los mejores proveedores para asegurar que nuestros clientes reciban productos de la más 
+                   alta calidad. Además, ofrecemos un servicio de atención al cliente personalizado para 
+                   resolver cualquier duda o necesidad.</p>         
             </div>
             <div class="col-md-6">
                 <h3>Video</h3>
                 <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/TuVideoID" title="YouTube video" allowfullscreen></iframe>
-                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/WN9sshzENbA?si=t4SWkShv7ieHyPqo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
             </div>
         </div>
     </div>
