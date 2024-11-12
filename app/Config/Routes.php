@@ -91,6 +91,22 @@ $routes->get('/novedades', 'MenuController::novedades');
     $routes->post('clientes/update/(:num)', 'ClientesController::update/$1');
     $routes->get('clientes/delete/(:num)', 'ClientesController::delete/$1');
 
+    // Rutas para Ventas
+    $routes->get('ventas', 'VentasController::index');
+    $routes->get('ventas/create', 'VentasController::create');  
+    $routes->post('ventas/store', 'VentasController::store');  
+    $routes->get('ventas/edit/(:num)', 'VentasController::edit/$1');  
+    $routes->post('ventas/update/(:num)', 'VentasController::update/$1');  
+    $routes->get('ventas/delete/(:num)', 'VentasController::delete/$1');  
+
+    // Rutas para Detalle de Ventas
+    $routes->get('/detalle_ventas', 'DetalleVentasController::index');
+    $routes->get('/detalle_ventas/create', 'DetalleVentasController::create');
+    $routes->post('/detalle_ventas/store', 'DetalleVentasController::store');
+    $routes->get('/detalle_ventas/edit/(:num)', 'DetalleVentasController::edit/$1');
+    $routes->post('/detalle_ventas/update/(:num)', 'DetalleVentasController::update/$1');
+    $routes->get('/detalle_ventas/delete/(:num)', 'DetalleVentasController::delete/$1');
+    
     // app/Config/Routes.php
 
     $routes->get('inventario', 'InventarioController::index');  // Muestra el listado de inventarios
