@@ -12,11 +12,10 @@
         <?php foreach ($ventas as $venta): ?>
             <li>
                 Venta ID: <?= $venta['venta_id']; ?> - 
-                Cliente ID: <?= $venta['cliente_id']; ?> - 
+                 
                 Videojuego ID: <?= $venta['videojuego_id']; ?> - 
                 Fecha de Venta: <?= $venta['fecha_venta']; ?> - 
                 Cantidad: <?= $venta['cantidad']; ?> - 
-                Usuario ID: <?= $venta['usuario_id']; ?> - 
                 <a href="<?= site_url('ventas/edit/' . $venta['venta_id']); ?>">Editar</a> - 
                 <a href="<?= site_url('ventas/delete/' . $venta['venta_id']); ?>">Eliminar</a>
             </li>

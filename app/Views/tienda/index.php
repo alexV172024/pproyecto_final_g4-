@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GAMESTATION: INICIO</title>
+    <title>GAMESTATION: TIENDA</title>
     <link rel="icon" href="Views/img/element.ico" type="image/x-icon">
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -28,10 +28,30 @@
 
         .banner {
             height: 200px; /* Altura del banner */
-            background-color: #45a29e; /* Color de fondo del banner */
+            background-color: #; /* Color de fondo del banner */
             display: flex; /* Para centrar el texto */
             align-items: center; /* Centrando verticalmente */
             justify-content: center; /* Centrando horizontalmente */
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px; /* Espaciado entre categorías */
+            margin-top: 20px; /* Espaciado superior */
+        }
+
+        .category-card {
+            background-color: #0b0c10; /* Fondo oscuro para las tarjetas */
+            border: 1px solid #45a29e; /* Borde color verde */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 20px;
+            text-align: center; /* Centrar texto */
+            transition: transform 0.2s; /* Transición suave para hover */
+        }
+
+        .category-card:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
         }
 
         .offcanvas {
@@ -65,7 +85,15 @@
         }
 
         .container {
-            padding-top: 20px; 
+            padding-top: 50px; /* Espaciado superior para el contenedor */
+        }
+
+        p1 {
+    color: black;
+        }
+
+        h5 {
+    color: black;
         }
     </style>
 </head>
@@ -84,7 +112,7 @@
                 </div>
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                     <ul class="navbar-nav fs-5 justify-content-evenly">
-                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/tienda'); ?>" class="nav-link">Tienda</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/menu'); ?>" class="nav-link">Inicio</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/ubicacion'); ?>" class="nav-link">Ubicacion</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/contacto'); ?>" class="nav-link">Contacto</a></li>
 
@@ -107,7 +135,7 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-6 d-flex justify-content-start">
-            <a href="<?= base_url('/novedades'); ?>" class="btn btn-primary me-2">Novedades</a>
+                <button class="btn btn-primary me-2">Novedades</button>
                 <button class="btn btn-success">Ofertas</button>
             </div>
             <div class="col-md-6 d-flex justify-content-end">
@@ -121,37 +149,61 @@
         <div class="row">
             <div class="col-12">
                 <div class="banner">
-                    <h2 class="text-center text-light">Banner Espacio</h2>
+                    <img src="https://www.shutterstock.com/image-vector/games-time-neon-text-gamepad-260nw-2288041501.jpg" alt="Acción" class="img-fluid" />
+
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Reseña y video -->
+    <!-- Videojuegos por categorías -->
     <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Quiénes somos</h3><br>
-                <h4>Nuestra Historia</h4><br>
-                <p>nuestra tienda comenzó con la misión de ofrecer productos de alta calidad y 
-                   un excelente servicio al cliente. A lo largo de los años, nos hemos expandido 
-                   para ofrecer una amplia variedad de productos, manteniendo siempre un enfoque 
-                   en la satisfacción de nuestros clientes. Desde nuestros primeros días, nos hemos 
-                   por brindar una experiencia de compra única, en nuestra tienda en línea.</p> <br><br>
-                <h4>Lo que ofrecemos</h4> <br>  
-                <p>En nuestra tienda, encontrarás una amplia gama de productos que van desde videojuegos, 
-                   controles, consolas. Nos especializamos en toda clase de videojuegos y trabajamos con 
-                   los mejores proveedores para asegurar que nuestros clientes reciban productos de la más 
-                   alta calidad. Además, ofrecemos un servicio de atención al cliente personalizado para 
-                   resolver cualquier duda o necesidad.</p>         
+        <h3 class="text-center">Videojuegos por Categorías</h3>
+        <div class="categories">
+            <div class="category-card">
+                <h4>Acción</h4>
+                <img src="https://img.asmedia.epimg.net/resizer/v2/UPZJI2WP7RGUDE5OKQ73FV2RX4.jpg?auth=6d8f041995078194f7433ccdbf9732f762ae5f6801f36380ec5604d99aac6bc9&width=360&height=203&smart=true" alt="Acción" class="img-fluid" />
             </div>
-            <div class="col-md-6">
-                <h3>Video</h3>
-                <div class="ratio ratio-16x9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/WN9sshzENbA?si=t4SWkShv7ieHyPqo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+            <div class="category-card">
+                <h4>Aventura</h4>
+                <img src="https://d2m1kqghccc19k.cloudfront.net/wp-content/uploads/2017/11/07010140/MARIO.jpg" alt="Aventura" class="img-fluid" />
             </div>
+            <div class="category-card">
+                <h4>Deportes</h4>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHMl5qi37xXq0qSkV7y2j080u7ryvjIU0Z8Q&s" alt="Deportes" class="img-fluid" />
+            </div>
+            <div class="category-card">
+                <h4>Simulación</h4>
+                <img src="https://cdn.dlcompare.com/others_jpg/upload/news/image/life-by-you-entra-en-early-access-image-15bbd59b.jpg.webp" alt="Simulación" class="img-fluid" />
+            </div>
+            <!-- Añade más categorías según sea necesario -->
         </div>
+    </div><br><br>
+    
+    <h2 class="text-center">Videojuegos Disponibles</h2>
+<div class="container mt-4">
+    <div class="row">
+        <?php foreach ($juegos as $juego): ?>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Mostramos solo los campos requeridos -->
+                        <p1><h5 class="card-title"><?= esc($juego['titulo']); ?></h5></p>
+                        <p1 class="card-text">Género: <?= esc($juego['genero']); ?></p>
+                        <p1 class="card-text">Plataforma: <?= esc($juego['plataforma']); ?></p>
+                        <p1 class="card-text">Precio: $<?= esc($juego['precio']); ?></p>
+                        <a href="<?= site_url('tienda/comprar/' . $juego['videojuego_id']); ?>" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
+</div>
+
+
+
+
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>

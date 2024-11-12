@@ -42,7 +42,12 @@ $routes->get('/menu', 'LoginController::menu');
 $routes->get('/registro_usuario', 'LoginController::registro_usuario');
 
 // Ruta para la vista de tienda
-$routes->get('/tienda', 'MenuController::tienda');
+$routes->get('tienda', 'TiendaController::index');
+$routes->get('tienda/comprar/(:num)', 'TiendaController::comprar/$1');
+$routes->get('/tienda/accion', 'MenuController::accion');
+$routes->get('/tienda/aventura', 'MenuController::aventura');
+$routes->get('/tienda/deportes', 'MenuController::deportes');
+$routes->get('/tienda/simulacion', 'MenuController::simulacion');
 
 // Ruta para la vista de ubicación
 $routes->get('/ubicacion', 'MenuController::ubicacion');
@@ -96,6 +101,11 @@ $routes->get('/novedades', 'MenuController::novedades');
     $routes->get('inventario', 'InventarioController::index');  // Muestra el listado de inventarios
     $routes->get('inventario/nuevo', 'InventarioController::nuevo');  // Muestra el formulario para crear un nuevo inventario
     $routes->post('inventario/guardar', 'InventarioController::guardar');  // Guarda el nuevo inventario
+
+    $routes->get('ventas', 'VentasController::index');
+    $routes->get('ventas/create', 'VentasController::create');
+    $routes->get('ventas/edit/(:num)', 'VentasController::edit/$1');
+    $routes->get('ventas/store', 'VentasController::store');
 
     
 
