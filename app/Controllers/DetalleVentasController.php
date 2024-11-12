@@ -21,9 +21,10 @@ class DetalleVentasController extends BaseController
         $model = new DetalleVentasModel();
         $model->insert([
             'venta_id' => $this->request->getPost('venta_id'),
-            'producto_id' => $this->request->getPost('producto_id'),
+            'videojuego_id' => $this->request->getPost('videojuego_id'),
             'cantidad' => $this->request->getPost('cantidad'),
-            'precio' => $this->request->getPost('precio'),
+            'precio_unitario' => $this->request->getPost('precio_unitario'),
+            'total' => $this->request->getPost('total'),
         ]);
         return redirect()->to('/detalle_ventas');
     }
@@ -40,9 +41,10 @@ class DetalleVentasController extends BaseController
         $model = new DetalleVentasModel();
         $model->update($id, [
             'venta_id' => $this->request->getPost('venta_id'),
-            'producto_id' => $this->request->getPost('producto_id'),
+            'videojuego_id' => $this->request->getPost('videojuego_id'),
             'cantidad' => $this->request->getPost('cantidad'),
-            'precio' => $this->request->getPost('precio'),
+            'precio_unitario' => $this->request->getPost('precio_unitario'),
+            'total' => $this->request->getPost('total'),
         ]);
         return redirect()->to('/detalle_ventas');
     }
