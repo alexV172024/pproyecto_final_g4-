@@ -43,47 +43,47 @@
 
         body {
             font-family: 'Press Start 2P', sans-serif;
-            color: #f1f1f1; /* Color de texto claro */
-            background-color: #121212; /* Fondo oscuro */
-            margin: 0; /* Eliminar márgenes predeterminados */
+            color: #f1f1f1; 
+            background-color: #121212;
+            margin: 0; 
         }
 
         .banner {
-            height: 200px; /* Altura del banner */
-            background-color: #45a29e; /* Color de fondo del banner */
-            display: flex; /* Para centrar el texto */
-            align-items: center; /* Centrando verticalmente */
-            justify-content: center; /* Centrando horizontalmente */
+            height: 200px; 
+            background-color: #45a29e; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
         }
 
         .offcanvas {
-            background-color: #000; /* Color de fondo negro para el menú offcanvas */
+            background-color: #000; 
         }
 
         .offcanvas-header {
-            background-color: #0b0c10; /* Fondo oscuro para el encabezado del offcanvas */
+            background-color: #0b0c10;
         }
 
         .offcanvas-body {
-            background-color: #000; /* Color de fondo negro para el cuerpo del offcanvas */
+            background-color: #000;
         }
 
         .offcanvas-title {
-            font-size: 1rem; /* Tamaño de fuente más pequeño para el título del offcanvas */
-            color: #39FF14; /* Color verde neón para GAMESTATION en el offcanvas */
+            font-size: 1rem; 
+            color: #39FF14; 
         }
 
         .navbar-brand {
-            font-size: 0.9rem; /* Reducir tamaño de fuente al 90% */
-            color: #39FF14; /* Color verde neón */
+            font-size: 0.9rem; 
+            color: #39FF14; 
         }
 
         .nav-link {
-            color: #f1f1f1; /* Color de texto claro para los enlaces */
+            color: #f1f1f1; 
         }
 
         .nav-link:hover {
-            color: #007bff; /* Color azul al pasar el cursor */
+            color: #007bff; 
         }
 
         .container {
