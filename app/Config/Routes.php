@@ -113,7 +113,8 @@ $routes->get('/novedades', 'MenuController::novedades');
     $routes->get('inventario/nuevo', 'InventarioController::nuevo');  // Muestra el formulario para crear un nuevo inventario
     $routes->post('inventario/guardar', 'InventarioController::guardar');  // Guarda el nuevo inventario
 
-    
+
+
 
 /*
  * --------------------------------------------------------------------

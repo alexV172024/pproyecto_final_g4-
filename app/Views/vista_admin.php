@@ -69,13 +69,13 @@
         <p>Selecciona una de las opciones del menú para navegar a las diferentes secciones.</p>
         
         <div>
-            <button class="btn btn-custom" onclick="location.href='usuarios.html'">Usuarios</button>
-            <button class="btn btn-custom" onclick="location.href='ventas.html'">Ventas</button>
-            <button class="btn btn-custom" onclick="location.href='detalle_ventas.html'">Detalle Ventas</button>
-            <button class="btn btn-custom" onclick="location.href='proveedores.html'">Proveedores</button>
-            <button class="btn btn-custom" onclick="location.href='inventario.html'">Inventario</button>
-            <button class="btn btn-custom" onclick="location.href='clientes.html'">Clientes</button>
-            <button class="btn btn-custom" onclick="location.href='accesorios.html'">Accesorios</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('usuarios'); ?>'">Usuarios</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('ventas'); ?>'">Ventas</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('detalle_ventas'); ?>'">Detalle Ventas</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('proveedores'); ?>'">Proveedores</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('inventario'); ?>'">Inventario</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('clientes'); ?>'">Clientes</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('accesorios'); ?>'">Accesorios</button>
         </div>
     </div>
 
