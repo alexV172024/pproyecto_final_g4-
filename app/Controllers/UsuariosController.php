@@ -21,8 +21,8 @@ class UsuariosController extends BaseController
         $model = new UsuariosModel();
         $model->insert([
             'nombre_usuario' => $this->request->getPost('nombre_usuario'),
-            'contraseña' => $this->request->getPost('contraseña'),
-            'cliente_id' => $this->request->getPost('cliente_id'),
+            'contrasenia' => $this->request->getPost('contrasenia'),
+           
         ]);
         return redirect()->to('/usuarios');
     }
@@ -39,8 +39,8 @@ class UsuariosController extends BaseController
         $model = new UsuariosModel();
         $model->update($id, [
             'nombre_usuario' => $this->request->getPost('nombre_usuario'),
-            'contraseña' => $this->request->getPost('contraseña'),
-            'cliente_id' => $this->request->getPost('cliente_id'),
+            'contrasenia' => $this->request->getPost('contrasenia'),
+            
         ]);
         return redirect()->to('/usuarios');
     }

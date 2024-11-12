@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 10-11-2024 a las 20:56:52
+-- Tiempo de generación: 11-11-2024 a las 05:15:56
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -83,35 +83,34 @@ INSERT INTO `accesorios` (`accesorio_id`, `nombre`, `marca`, `modelo`, `precio`,
 CREATE TABLE `clientes` (
   `cliente_id` int NOT NULL,
   `nombre` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contacto` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `historial_compras` text COLLATE utf8mb4_unicode_ci
+  `contacto` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`cliente_id`, `nombre`, `contacto`, `historial_compras`) VALUES
-(3, 'Carlos López', 'carlos.lopez@example.com', NULL),
-(4, 'Ana Martínez', 'ana.martinez@example.com', NULL),
-(5, 'Luis González', 'luis.gonzalez@example.com', NULL),
-(6, 'María Pérez', 'maria.perez@example.com', NULL),
-(7, 'Juan Sánchez', 'juan.sanchez@example.com', NULL),
-(8, 'Laura Díaz', 'laura.diaz@example.com', NULL),
-(9, 'Pedro Romero', 'pedro.romero@example.com', NULL),
-(10, 'Sofía Torres', 'sofia.torres@example.com', NULL),
-(11, 'Ricardo Vargas', 'ricardo.vargas@example.com', NULL),
-(12, 'Elena Flores', 'elena.flores@example.com', NULL),
-(13, 'Andrés Morales', 'andres.morales@example.com', NULL),
-(14, 'Patricia Rivera', 'patricia.rivera@example.com', NULL),
-(15, 'Jorge Castillo', 'jorge.castillo@example.com', NULL),
-(16, 'Gabriela Herrera', 'gabriela.herrera@example.com', NULL),
-(17, 'Daniel Ríos', 'daniel.rios@example.com', NULL),
-(18, 'Carmen Cruz', 'carmen.cruz@example.com', NULL),
-(19, 'Miguel Mendoza', 'miguel.mendoza@example.com', NULL),
-(20, 'Isabel Soto', 'isabel.soto@example.com', NULL),
-(21, 'Raúl Ortega', 'raul.ortega@example.com', NULL),
-(22, 'Lucía Silva', 'lucia.silva@example.com', NULL);
+INSERT INTO `clientes` (`cliente_id`, `nombre`, `contacto`) VALUES
+(3, 'Carlos López', 'carlos.lopez@example.com'),
+(4, 'Ana Martínez', 'ana.martinez@example.com'),
+(5, 'Luis González', 'luis.gonzalez@example.com'),
+(6, 'María Pérez', 'maria.perez@example.com'),
+(7, 'Juan Sánchez', 'juan.sanchez@example.com'),
+(8, 'Laura Díaz', 'laura.diaz@example.com'),
+(9, 'Pedro Romero', 'pedro.romero@example.com'),
+(10, 'Sofía Torres', 'sofia.torres@example.com'),
+(11, 'Ricardo Vargas', 'ricardo.vargas@example.com'),
+(12, 'Elena Flores', 'elena.flores@example.com'),
+(13, 'Andrés Morales', 'andres.morales@example.com'),
+(14, 'Patricia Rivera', 'patricia.rivera@example.com'),
+(15, 'Jorge Castillo', 'jorge.castillo@example.com'),
+(16, 'Gabriela Herrera', 'gabriela.herrera@example.com'),
+(17, 'Daniel Ríos', 'daniel.rios@example.com'),
+(18, 'Carmen Cruz', 'carmen.cruz@example.com'),
+(19, 'Miguel Mendoza', 'miguel.mendoza@example.com'),
+(20, 'Isabel Soto', 'isabel.soto@example.com'),
+(21, 'Raúl Ortega', 'raul.ortega@example.com'),
+(22, 'Lucía Silva', 'lucia.silva@example.com');
 
 -- --------------------------------------------------------
 
@@ -226,7 +225,7 @@ CREATE TABLE `proveedores` (
 --
 
 INSERT INTO `proveedores` (`proveedor_id`, `nombre`, `contacto`, `productos_suministrados`) VALUES
-(1, 'Proveedora GameSoft', 'game@proveedor.com', 'Accesorios, Consolas, Juegos'),
+(1, 'Proveedoras GameSoft', 'game@proveedor.com', 'Accesorios, Consolas, Juegos'),
 (2, 'Distribuidora GamerMax', 'info@gamermax.com', 'Consolas, Juegos'),
 (3, 'GameWorld S.A.', 'contacto@gameworld.com', 'Videojuegos, Consolas, Accesorios'),
 (4, 'DigitalGaming Ltd.', 'ventas@digitalgaming.com', 'Videojuegos para PC y Consolas'),
@@ -246,35 +245,34 @@ INSERT INTO `proveedores` (`proveedor_id`, `nombre`, `contacto`, `productos_sumi
 CREATE TABLE `usuarios` (
   `usuario_id` int NOT NULL,
   `nombre_usuario` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contraseña` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cliente_id` int DEFAULT NULL
+  `contrasenia` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`usuario_id`, `nombre_usuario`, `contraseña`, `cliente_id`) VALUES
-(3, 'clopez', 'password123', 3),
-(4, 'amartinez', 'password123', 4),
-(5, 'lgonzalez', 'password123', 5),
-(6, 'mperez', 'password123', 6),
-(7, 'jsanchez', 'password123', 7),
-(8, 'ldiaz', 'password123', 8),
-(9, 'promero', 'password123', 9),
-(10, 'storres', 'password123', 10),
-(11, 'rvargas', 'password123', 11),
-(12, 'eflores', 'password123', 12),
-(13, 'amorales', 'password123', 13),
-(14, 'privera', 'password123', 14),
-(15, 'jcastillo', 'password123', 15),
-(16, 'gherrera', 'password123', 16),
-(17, 'drios', 'password123', 17),
-(18, 'ccruz', 'password123', 18),
-(19, 'mmendoza', 'password123', 19),
-(20, 'isoto', 'password123', 20),
-(21, 'rortega', 'password123', 21),
-(22, 'lsilva', 'password123', 22);
+INSERT INTO `usuarios` (`usuario_id`, `nombre_usuario`, `contrasenia`) VALUES
+(3, 'clopez', 'password123'),
+(4, 'amartinez', 'password123'),
+(5, 'lgonzalez', 'password123'),
+(6, 'mperez', 'password123'),
+(7, 'jsanchez', 'password123'),
+(8, 'ldiaz', 'password123'),
+(9, 'promero', 'password123'),
+(10, 'storres', 'password123'),
+(11, 'rvargas', 'password123'),
+(12, 'eflores', 'password123'),
+(13, 'amorales', 'password123'),
+(14, 'privera', 'password123'),
+(15, 'jcastillo', 'password123'),
+(16, 'gherrera', 'password123'),
+(17, 'drios', 'password123'),
+(18, 'ccruz', 'password123'),
+(19, 'mmendoza', 'password123'),
+(20, 'isoto', 'password123'),
+(21, 'rortega', 'password123'),
+(44, 'mgomez', '');
 
 -- --------------------------------------------------------
 
@@ -284,69 +282,67 @@ INSERT INTO `usuarios` (`usuario_id`, `nombre_usuario`, `contraseña`, `cliente_
 
 CREATE TABLE `ventas` (
   `venta_id` int NOT NULL,
-  `cliente_id` int DEFAULT NULL,
   `videojuego_id` int DEFAULT NULL,
   `fecha_venta` date DEFAULT NULL,
   `cantidad` int DEFAULT NULL,
-  `total` decimal(10,2) DEFAULT NULL,
-  `usuario_id` int DEFAULT NULL
+  `total` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `ventas`
 --
 
-INSERT INTO `ventas` (`venta_id`, `cliente_id`, `videojuego_id`, `fecha_venta`, `cantidad`, `total`, `usuario_id`) VALUES
-(103, 3, 4, '2024-10-01', 1, NULL, 3),
-(104, 5, 5, '2024-10-02', 1, NULL, 5),
-(105, 7, 6, '2024-10-03', 1, NULL, 7),
-(106, 9, 7, '2024-10-04', 1, NULL, 9),
-(107, 11, 8, '2024-10-05', 1, NULL, 11),
-(108, 13, 9, '2024-10-06', 1, NULL, 13),
-(109, 15, 10, '2024-10-07', 1, NULL, 15),
-(110, 17, 11, '2024-10-08', 1, NULL, 17),
-(111, 19, 12, '2024-10-09', 1, NULL, 19),
-(112, 21, 13, '2024-10-10', 1, NULL, 21),
-(113, 4, 14, '2024-10-11', 1, NULL, 4),
-(114, 6, 15, '2024-10-12', 1, NULL, 6),
-(115, 8, 16, '2024-10-13', 1, NULL, 8),
-(116, 10, 17, '2024-10-14', 1, NULL, 10),
-(117, 12, 18, '2024-10-15', 1, NULL, 12),
-(118, 14, 19, '2024-10-16', 1, NULL, 14),
-(119, 16, 20, '2024-10-17', 1, NULL, 16),
-(120, 18, 21, '2024-10-18', 1, NULL, 18),
-(121, 20, 22, '2024-10-19', 1, NULL, 20),
-(122, 22, 23, '2024-10-20', 1, NULL, 22),
-(123, 3, 24, '2024-10-21', 1, NULL, 3),
-(124, 5, 25, '2024-10-22', 1, NULL, 5),
-(125, 7, 26, '2024-10-23', 1, NULL, 7),
-(126, 9, 27, '2024-10-24', 1, NULL, 9),
-(127, 11, 28, '2024-10-25', 1, NULL, 11),
-(128, 13, 29, '2024-10-26', 1, NULL, 13),
-(129, 15, 30, '2024-10-27', 1, NULL, 15),
-(130, 17, 31, '2024-10-28', 1, NULL, 17),
-(131, 19, 32, '2024-10-29', 1, NULL, 19),
-(132, 21, 33, '2024-10-30', 1, NULL, 21),
-(133, 4, 34, '2024-10-31', 1, NULL, 4),
-(134, 6, 35, '2024-11-01', 1, NULL, 6),
-(135, 8, 36, '2024-11-02', 1, NULL, 8),
-(136, 10, 37, '2024-11-03', 1, NULL, 10),
-(137, 12, 38, '2024-11-04', 1, NULL, 12),
-(138, 14, 39, '2024-10-01', 1, NULL, 14),
-(139, 16, 40, '2024-10-02', 1, NULL, 16),
-(140, 18, 41, '2024-10-03', 1, NULL, 18),
-(141, 20, 42, '2024-10-04', 1, NULL, 20),
-(142, 22, 43, '2024-10-05', 1, NULL, 22),
-(143, 3, 44, '2024-10-06', 1, NULL, 3),
-(144, 5, 45, '2024-10-07', 1, NULL, 5),
-(145, 7, 46, '2024-10-08', 1, NULL, 7),
-(146, 9, 47, '2024-10-09', 1, NULL, 9),
-(147, 11, 4, '2024-10-10', 1, NULL, 11),
-(148, 13, 5, '2024-10-11', 1, NULL, 13),
-(149, 15, 6, '2024-10-12', 1, NULL, 15),
-(150, 17, 7, '2024-10-13', 1, NULL, 17),
-(151, 19, 8, '2024-10-14', 1, NULL, 19),
-(152, 21, 9, '2024-10-15', 1, NULL, 21);
+INSERT INTO `ventas` (`venta_id`, `videojuego_id`, `fecha_venta`, `cantidad`, `total`) VALUES
+(103, 4, '2024-10-01', 1, NULL),
+(104, 5, '2024-10-02', 1, NULL),
+(105, 6, '2024-10-03', 1, NULL),
+(106, 7, '2024-10-04', 1, NULL),
+(107, 8, '2024-10-05', 1, NULL),
+(108, 9, '2024-10-06', 1, NULL),
+(109, 10, '2024-10-07', 1, NULL),
+(110, 11, '2024-10-08', 1, NULL),
+(111, 12, '2024-10-09', 1, NULL),
+(112, 13, '2024-10-10', 1, NULL),
+(113, 14, '2024-10-11', 1, NULL),
+(114, 15, '2024-10-12', 1, NULL),
+(115, 16, '2024-10-13', 1, NULL),
+(116, 17, '2024-10-14', 1, NULL),
+(117, 18, '2024-10-15', 1, NULL),
+(118, 19, '2024-10-16', 1, NULL),
+(119, 20, '2024-10-17', 1, NULL),
+(120, 21, '2024-10-18', 1, NULL),
+(121, 22, '2024-10-19', 1, NULL),
+(122, 23, '2024-10-20', 1, NULL),
+(123, 24, '2024-10-21', 1, NULL),
+(124, 25, '2024-10-22', 1, NULL),
+(125, 26, '2024-10-23', 1, NULL),
+(126, 27, '2024-10-24', 1, NULL),
+(127, 28, '2024-10-25', 1, NULL),
+(128, 29, '2024-10-26', 1, NULL),
+(129, 30, '2024-10-27', 1, NULL),
+(130, 31, '2024-10-28', 1, NULL),
+(131, 32, '2024-10-29', 1, NULL),
+(132, 33, '2024-10-30', 1, NULL),
+(133, 34, '2024-10-31', 1, NULL),
+(134, 35, '2024-11-01', 1, NULL),
+(135, 36, '2024-11-02', 1, NULL),
+(136, 37, '2024-11-03', 1, NULL),
+(137, 38, '2024-11-04', 1, NULL),
+(138, 39, '2024-10-01', 1, NULL),
+(139, 40, '2024-10-02', 1, NULL),
+(140, 41, '2024-10-03', 1, NULL),
+(141, 42, '2024-10-04', 1, NULL),
+(142, 43, '2024-10-05', 1, NULL),
+(143, 44, '2024-10-06', 1, NULL),
+(144, 45, '2024-10-07', 1, NULL),
+(145, 46, '2024-10-08', 1, NULL),
+(146, 47, '2024-10-09', 1, NULL),
+(147, 4, '2024-10-10', 1, NULL),
+(148, 5, '2024-10-11', 1, NULL),
+(149, 6, '2024-10-12', 1, NULL),
+(150, 7, '2024-10-13', 1, NULL),
+(151, 8, '2024-10-14', 1, NULL),
+(152, 9, '2024-10-15', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -464,17 +460,14 @@ ALTER TABLE `proveedores`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`usuario_id`),
-  ADD UNIQUE KEY `nombre_usuario` (`nombre_usuario`),
-  ADD KEY `fk_cliente_usuario` (`cliente_id`);
+  ADD UNIQUE KEY `nombre_usuario` (`nombre_usuario`);
 
 --
 -- Indices de la tabla `ventas`
 --
 ALTER TABLE `ventas`
   ADD PRIMARY KEY (`venta_id`),
-  ADD KEY `cliente_id` (`cliente_id`),
-  ADD KEY `videojuego_id` (`videojuego_id`),
-  ADD KEY `fk_usuario_ventas` (`usuario_id`);
+  ADD KEY `videojuego_id` (`videojuego_id`);
 
 --
 -- Indices de la tabla `videojuegos`
@@ -521,7 +514,7 @@ ALTER TABLE `proveedores`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `usuario_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `usuario_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
@@ -560,17 +553,9 @@ ALTER TABLE `inventario`
   ADD CONSTRAINT `inventario_ibfk_1` FOREIGN KEY (`accesorio_id`) REFERENCES `accesorios` (`accesorio_id`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD CONSTRAINT `fk_cliente_usuario` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`cliente_id`);
-
---
 -- Filtros para la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  ADD CONSTRAINT `fk_usuario_ventas` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`usuario_id`),
-  ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`cliente_id`),
   ADD CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`videojuego_id`) REFERENCES `videojuegos` (`videojuego_id`);
 
 --

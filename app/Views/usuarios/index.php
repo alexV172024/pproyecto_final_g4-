@@ -141,8 +141,8 @@
                     <tr>
                         <td><?= $usuario['usuario_id']; ?></td>
                         <td><?= $usuario['nombre_usuario']; ?></td>
-                        <td><?= $usuario['contraseña']; ?></td>
-                        <td><?= $usuario['cliente_id']; ?></td>
+                        <td><?= $usuario['contrasenia']; ?></td>
+                       
                         <td>
                             <!-- Botón para editar -->
                             <a href="<?= site_url('usuarios/edit/' . $usuario['usuario_id']); ?>" class="btn btn-warning btn-sm">Editar</a>

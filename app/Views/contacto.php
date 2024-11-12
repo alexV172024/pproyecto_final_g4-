@@ -10,65 +10,64 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a tu archivo CSS separado -->
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Fuente retro */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
         body {
             font-family: 'Press Start 2P', sans-serif;
-            color: #f1f1f1; /* Color de texto claro */
-            background-color: #121212; /* Fondo oscuro */
-            margin: 0; /* Eliminar márgenes predeterminados */
+            color: #f1f1f1;
+            background-color: #121212;
+            margin: 0;
         }
 
         .banner {
-            height: 200px; /* Altura del banner */
-            background-color: #45a29e; /* Color de fondo del banner */
-            display: flex; /* Para centrar el texto */
-            align-items: center; /* Centrando verticalmente */
-            justify-content: center; /* Centrando horizontalmente */
+            height: 200px;
+            background-color: #45a29e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .offcanvas {
-            background-color: #000; /* Color de fondo negro para el menú offcanvas */
+            background-color: #000;
         }
 
         .offcanvas-header {
-            background-color: #0b0c10; /* Fondo oscuro para el encabezado del offcanvas */
+            background-color: #0b0c10;
         }
 
         .offcanvas-body {
-            background-color: #000; /* Color de fondo negro para el cuerpo del offcanvas */
+            background-color: #000;
         }
 
         .offcanvas-title {
-            font-size: 1rem; /* Tamaño de fuente más pequeño para el título del offcanvas */
-            color: #39FF14; /* Color verde neón para GAMESTATION en el offcanvas */
+            font-size: 1rem;
+            color: #39FF14;
         }
 
         .navbar-brand {
-            font-size: 0.9rem; /* Reducir tamaño de fuente al 90% */
-            color: #39FF14; /* Color verde neón */
+            font-size: 0.9rem;
+            color: #39FF14;
         }
 
         .nav-link {
-            color: #f1f1f1; /* Color de texto claro para los enlaces */
+            color: #f1f1f1;
         }
 
         .nav-link:hover {
-            color: #007bff; /* Color azul al pasar el cursor */
+            color: #007bff;
         }
 
         .container {
-            padding-top: 20px; /* Espaciado superior para el contenedor */
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
-    <!-- MENU START -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-        <a href="<?= base_url('/menu'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
+            <a href="<?= base_url('/menu'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -82,7 +81,6 @@
                         <li class="nav-item p-3 py-md-1"><a href="tienda" class="nav-link">Tienda</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="ubicacion" class="nav-link">Ubicación</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="contacto" class="nav-link">Contacto</a></li>
-                        <li class="nav-item p-3 py-md-1"><a href="inicio_sesion" class="nav-link"><i class="bi bi-person-fill"></i><span>Iniciar Sesión</span></a></li>
                         <li class="nav-item p-3 py-md-1"><a href="carrito.php" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                     <div class="d-lg-none align-self-center py-3">
@@ -94,14 +92,13 @@
             </section>
         </div>
     </nav>
-    <!-- MENU END -->
 
     <div class="container mt-4">
         <h1>Contáctanos</h1>
         <p class="lead">Puedes enviarnos un mensaje a nuestro correo o contactarnos por teléfono.</p>
 
         <!-- Formulario de contacto -->
-        <form action="mailto:correoempresa@gmail.com" method="POST" enctype="text/plain">
+        <form action="enviar_mensaje.php" method="POST">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -121,8 +118,8 @@
         <div class="mt-5">
             <h4>Teléfonos</h4>
             <ul>
-                <li>+56 9 1234 5678</li>
-                <li>+56 9 8765 4321</li>
+                <li>+502 2568-3623</li>
+                <li>+502 4449-9900</li>
             </ul>
         </div>
     </div>

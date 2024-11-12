@@ -69,13 +69,10 @@
 
         <div class="mb-3">
             <label for="contraseña" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="contraseña" name="contraseña" value="<?= $usuario['contraseña']; ?>" required>
+            <input type="password" class="form-control" id="contraseña" name="contraseña" value="<?= $usuario['contrasenia']; ?>" required>
         </div>
 
-        <div class="mb-3">
-            <label for="cliente_id" class="form-label">Cliente ID</label>
-            <input type="text" class="form-control" id="cliente_id" name="cliente_id" value="<?= $usuario['cliente_id']; ?>" required>
-        </div>
+       
 
         <div class="d-flex justify-content-between">
             <button type="submit" class="btn btn-primary">Actualizar</button>
