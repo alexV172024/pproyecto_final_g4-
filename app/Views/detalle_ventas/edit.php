@@ -8,7 +8,7 @@
 <body>
     <h2>Editar Detalle de Venta</h2>
 
-    <form action="<?= site_url('detalle_ventas/update/' . $detalle_venta['detalle_venta_id']) ?>" method="post">
+    <form action="<?= site_url('detalle_ventas/update/' . $detalle_venta['detalle_id']) ?>" method="post">
         <label for="venta_id">Venta ID:</label>
         <input type="number" name="venta_id" value="<?= esc($detalle_venta['venta_id']) ?>" required><br>
 

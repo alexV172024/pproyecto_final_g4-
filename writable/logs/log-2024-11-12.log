@@ -146,3 +146,102 @@ in APPPATH\Views\detalle_ventas\index.php on line 14.
  9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-12 03:02:21 --> ErrorException: Undefined array key "detalle_venta_id"
+[Method: GET, Route: detalle_ventas]
+in APPPATH\Views\detalle_ventas\index.php on line 14.
+ 1 APPPATH\Views\detalle_ventas\index.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "detalle_venta_id"', 'C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('detalle_ventas/index', [], true)
+ 5 APPPATH\Controllers\DetalleVentasController.php(11): view('detalle_ventas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DetalleVentasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetalleVentasController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-12 03:02:21 --> ErrorException: Undefined array key "detalle_venta_id"
+[Method: GET, Route: detalle_ventas]
+in APPPATH\Views\detalle_ventas\index.php on line 14.
+ 1 APPPATH\Views\detalle_ventas\index.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "detalle_venta_id"', 'C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('detalle_ventas/index', [], true)
+ 5 APPPATH\Controllers\DetalleVentasController.php(11): view('detalle_ventas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DetalleVentasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetalleVentasController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-11-12 03:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-12 03:02:38 --> ErrorException: Undefined array key "detalle_venta_id"
+[Method: GET, Route: detalle_ventas]
+in APPPATH\Views\detalle_ventas\index.php on line 14.
+ 1 APPPATH\Views\detalle_ventas\index.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "detalle_venta_id"', 'C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('detalle_ventas/index', [], true)
+ 5 APPPATH\Controllers\DetalleVentasController.php(11): view('detalle_ventas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DetalleVentasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetalleVentasController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-12 03:02:38 --> ErrorException: Undefined array key "detalle_venta_id"
+[Method: GET, Route: detalle_ventas]
+in APPPATH\Views\detalle_ventas\index.php on line 14.
+ 1 APPPATH\Views\detalle_ventas\index.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "detalle_venta_id"', 'C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('detalle_ventas/index', [], true)
+ 5 APPPATH\Controllers\DetalleVentasController.php(11): view('detalle_ventas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DetalleVentasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetalleVentasController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-12 07:10:46 --> ErrorException: Undefined array key "detalle_venta_id"
+[Method: GET, Route: detalle_ventas]
+in APPPATH\Views\detalle_ventas\index.php on line 14.
+ 1 APPPATH\Views\detalle_ventas\index.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "detalle_venta_id"', 'C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('detalle_ventas/index', [], true)
+ 5 APPPATH\Controllers\DetalleVentasController.php(11): view('detalle_ventas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DetalleVentasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetalleVentasController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-12 07:11:55 --> ErrorException: Undefined array key "detalle_venta_id"
+[Method: GET, Route: detalle_ventas]
+in APPPATH\Views\detalle_ventas\index.php on line 14.
+ 1 APPPATH\Views\detalle_ventas\index.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "detalle_venta_id"', 'C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('detalle_ventas/index', [], true)
+ 5 APPPATH\Controllers\DetalleVentasController.php(11): view('detalle_ventas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DetalleVentasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetalleVentasController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-12 07:11:56 --> ErrorException: Undefined array key "detalle_venta_id"
+[Method: GET, Route: detalle_ventas]
+in APPPATH\Views\detalle_ventas\index.php on line 14.
+ 1 APPPATH\Views\detalle_ventas\index.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "detalle_venta_id"', 'C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\detalle_ventas\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('detalle_ventas/index', [], true)
+ 5 APPPATH\Controllers\DetalleVentasController.php(11): view('detalle_ventas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DetalleVentasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetalleVentasController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

@@ -11,18 +11,18 @@
     <ul>
         <?php foreach ($detalle_ventas as $detalle): ?>
             <li>
-                Detalle Venta ID: <?= $detalle['detalle_venta_id']; ?> - 
+                Detalle Venta ID: <?= $detalle['detalle_id']; ?> - 
                 Venta ID: <?= $detalle['venta_id']; ?> - 
                 Producto ID: <?= $detalle['producto_id']; ?> - 
                 Cantidad: <?= $detalle['cantidad']; ?> - 
                 Precio: <?= $detalle['precio']; ?> - 
-                <a href="<?= site_url('detalle_ventas/edit/' . $detalle['detalle_venta_id']); ?>">Editar</a> - 
-                <a href="<?= site_url('detalle_ventas/delete/' . $detalle['detalle_venta_id']); ?>">Eliminar</a>
+                <a href="<?= site_url('detalle_ventas/edit/' . $detalle['detalle_id']); ?>">Editar</a> - 
+                <a href="<?= site_url('detalle_ventas/delete/' . $detalle['detalle_id']); ?>">Eliminar</a>
             </li>
         <?php endforeach; ?>
     </ul>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
+    
 </body>
 </html>
