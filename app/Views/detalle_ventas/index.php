@@ -13,9 +13,10 @@
             <li>
                 Detalle Venta ID: <?= $detalle['detalle_id']; ?> - 
                 Venta ID: <?= $detalle['venta_id']; ?> - 
-                Producto ID: <?= $detalle['producto_id']; ?> - 
+                Videojuego ID: <?= $detalle['videojuego_id']; ?> - 
                 Cantidad: <?= $detalle['cantidad']; ?> - 
-                Precio: <?= $detalle['precio']; ?> - 
+                Precio Unitario: <?= $detalle['precio_unitario']; ?> - 
+                Total: <?= $detalle['total']; ?> - 
                 <a href="<?= site_url('detalle_ventas/edit/' . $detalle['detalle_id']); ?>">Editar</a> - 
                 <a href="<?= site_url('detalle_ventas/delete/' . $detalle['detalle_id']); ?>">Eliminar</a>
             </li>

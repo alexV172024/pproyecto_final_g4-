@@ -6,5 +6,5 @@ class DetalleVentasModel extends Model
 {
     protected $table = 'detalle_ventas';
     protected $primaryKey = 'detalle_id';
-    protected $allowedFields = ['detalle_id', 'venta_id', 'videojuego_id', 'cantidad', 'precio_unitario', 'total'];
+    protected $allowedFields = ['venta_id', 'videojuego_id', 'cantidad', 'precio_unitario', 'total'];
 }
