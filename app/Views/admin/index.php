@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vista Administrador</title>
+    <title>Admin</title>
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -59,7 +59,7 @@
 
     <div class="container-fluid content-wrapper">
         <h1>Bienvenido a la Vista Administrador</h1>
-        <p>Selecciona una de las opciones del menú para navegar a las diferentes secciones.</p>
+        <p>Selecciona una de las opciones del menú para navegar a las diferentes secciones</p>
         
         <div>
             <button class="btn btn-custom" onclick="location.href='<?= base_url('ventas'); ?>'">Ventas</button>

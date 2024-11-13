@@ -4,10 +4,10 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 
-class VistaAdmin extends Controller
+class AdminController extends Controller
 {
     public function index()
     {
-        return view('vista_admin'); 
+        return view('admin');
     }
 }
