@@ -28,7 +28,7 @@
 
         .banner {
             height: 200px; /* Altura del banner */
-            background-color: #45a29e; /* Color de fondo del banner */
+            background-color: #; /* Color de fondo del banner */
             display: flex; /* Para centrar el texto */
             align-items: center; /* Centrando verticalmente */
             justify-content: center; /* Centrando horizontalmente */
@@ -36,7 +36,7 @@
 
         .categories {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px; /* Espaciado entre categorías */
             margin-top: 20px; /* Espaciado superior */
         }
@@ -85,7 +85,15 @@
         }
 
         .container {
-            padding-top: 20px; /* Espaciado superior para el contenedor */
+            padding-top: 50px; /* Espaciado superior para el contenedor */
+        }
+
+        p1 {
+    color: black;
+        }
+
+        h5 {
+    color: black;
         }
     </style>
 </head>
@@ -93,7 +101,7 @@
     <!-- MENU START  -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-        <a href="<?= base_url('/menu'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
+            <a href="<?= base_url('/menu'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -104,13 +112,17 @@
                 </div>
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                     <ul class="navbar-nav fs-5 justify-content-evenly">
-                    <li class="nav-item p-3 py-md-1"><a href="tienda" class="nav-link">Tienda</a></li> <!-- Enlace a la tienda -->
-                        <li class="nav-item p-3 py-md-1"><a href="ubicacion" class="nav-link">Ubicacion</a></li>
-                        <li class="nav-item p-3 py-md-1"><a href="" class="nav-link">Contacto</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/menu'); ?>" class="nav-link">Inicio</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/ubicacion'); ?>" class="nav-link">Ubicacion</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/contacto'); ?>" class="nav-link">Contacto</a></li>
+
+                        <!-- Reemplazar "Iniciar Sesión" por el nombre del usuario -->
+                        <?php if(session()->get('nombre_usuario')): ?>
+                            <li class="nav-item p-3 py-md-1"><span class="nav-link">Hola, <?= session()->get('nombre_usuario'); ?></span></li>
+                        <?php endif; ?>
                         <li class="nav-item p-3 py-md-1"><a href="carrito.php" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                     <div class="d-lg-none align-self-center py-3">
-                        <a href="login.php" class="text-info fs-2"><i class="bi bi-person-fill" style="color: #00ff00;"></i></a>
                         <a href="carrito.php" class="text-info fs-2"><i class="bi bi-cart-fill" style="color: #00ff00;"></i></a>
                         <a href="https://github.com" target="_blank" class="text-info fs-2"><i class="bi bi-github" style="color: #00ff00;"></i></a>
                     </div>
@@ -137,7 +149,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="banner">
-                    <h2 class="text-center text-light">Bienvenido a nuestra Tienda</h2>
+                    <img src="https://www.shutterstock.com/image-vector/games-time-neon-text-gamepad-260nw-2288041501.jpg" alt="Acción" class="img-fluid" />
+
                 </div>
             </div>
         </div>
@@ -148,24 +161,49 @@
         <h3 class="text-center">Videojuegos por Categorías</h3>
         <div class="categories">
             <div class="category-card">
-                <h4>Aventura</h4>
-                <img src="Views/img/adventure-game.png" alt="Aventura" class="img-fluid" />
+                <h4>Acción</h4>
+                <img src="https://img.asmedia.epimg.net/resizer/v2/UPZJI2WP7RGUDE5OKQ73FV2RX4.jpg?auth=6d8f041995078194f7433ccdbf9732f762ae5f6801f36380ec5604d99aac6bc9&width=360&height=203&smart=true" alt="Acción" class="img-fluid" />
             </div>
             <div class="category-card">
-                <h4>Acción</h4>
-                <img src="Views/img/action-game.png" alt="Acción" class="img-fluid" />
+                <h4>Aventura</h4>
+                <img src="https://d2m1kqghccc19k.cloudfront.net/wp-content/uploads/2017/11/07010140/MARIO.jpg" alt="Aventura" class="img-fluid" />
             </div>
             <div class="category-card">
                 <h4>Deportes</h4>
-                <img src="Views/img/sports-game.png" alt="Deportes" class="img-fluid" />
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHMl5qi37xXq0qSkV7y2j080u7ryvjIU0Z8Q&s" alt="Deportes" class="img-fluid" />
             </div>
             <div class="category-card">
                 <h4>Simulación</h4>
-                <img src="Views/img/simulation-game.png" alt="Simulación" class="img-fluid" />
+                <img src="https://cdn.dlcompare.com/others_jpg/upload/news/image/life-by-you-entra-en-early-access-image-15bbd59b.jpg.webp" alt="Simulación" class="img-fluid" />
             </div>
             <!-- Añade más categorías según sea necesario -->
         </div>
+    </div><br><br>
+    
+    <h2 class="text-center">Videojuegos Disponibles</h2>
+<div class="container mt-4">
+    <div class="row">
+        <?php foreach ($juegos as $juego): ?>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Mostramos solo los campos requeridos -->
+                        <p1><h5 class="card-title"><?= esc($juego['titulo']); ?></h5></p>
+                        <p1 class="card-text">Género: <?= esc($juego['genero']); ?></p>
+                        <p1 class="card-text">Plataforma: <?= esc($juego['plataforma']); ?></p>
+                        <p1 class="card-text">Precio: $<?= esc($juego['precio']); ?></p>
+                        <a href="<?= site_url('tienda/comprar/' . $juego['videojuego_id']); ?>" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
+</div>
+
+
+
+
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>

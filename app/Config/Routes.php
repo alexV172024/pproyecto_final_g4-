@@ -42,7 +42,12 @@ $routes->get('/menu', 'LoginController::menu');
 $routes->get('/registro_usuario', 'LoginController::registro_usuario');
 
 // Ruta para la vista de tienda
-$routes->get('/tienda', 'MenuController::tienda');
+$routes->get('tienda', 'TiendaController::index');
+$routes->get('tienda/comprar/(:num)', 'TiendaController::comprar/$1');
+$routes->get('/tienda/accion', 'MenuController::accion');
+$routes->get('/tienda/aventura', 'MenuController::aventura');
+$routes->get('/tienda/deportes', 'MenuController::deportes');
+$routes->get('/tienda/simulacion', 'MenuController::simulacion');
 
 // Ruta para la vista de ubicación
 $routes->get('/ubicacion', 'MenuController::ubicacion');
@@ -71,6 +76,7 @@ $routes->get('/admin', 'VistaAdminController::index');
     $routes->post('videojuegos/update/(:num)', 'VideojuegosController::update/$1');
     $routes->get('videojuegos/delete/(:num)', 'VideojuegosController::delete/$1');
 
+    //Rutas para Accesorios
     $routes->get('accesorios', 'AccesoriosController::index');
     $routes->get('/accesorios/create', 'AccesoriosController::create');
     $routes->post('/accesorios/store', 'AccesoriosController::store');
@@ -86,7 +92,7 @@ $routes->get('/admin', 'VistaAdminController::index');
     $routes->post('usuarios/update/(:num)', 'UsuariosController::update/$1');
     $routes->get('usuarios/delete/(:num)', 'UsuariosController::delete/$1');
 
-    // Rutas para Usuarios
+    // Rutas para Clientes
     $routes->get('clientes', 'ClientesController::index');
     $routes->get('clientes/create', 'ClientesController::create');
     $routes->post('clientes/store', 'ClientesController::store');
@@ -115,9 +121,6 @@ $routes->get('/admin', 'VistaAdminController::index');
     $routes->get('inventario', 'InventarioController::index');  // Muestra el listado de inventarios
     $routes->get('inventario/nuevo', 'InventarioController::nuevo');  // Muestra el formulario para crear un nuevo inventario
     $routes->post('inventario/guardar', 'InventarioController::guardar');  // Guarda el nuevo inventario
-
-
-
 
 /*
  * --------------------------------------------------------------------

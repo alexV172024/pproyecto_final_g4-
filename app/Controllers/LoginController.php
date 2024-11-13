@@ -19,6 +19,11 @@ class LoginController extends Controller
         $nombre_usuario = $this->request->getPost('nombre_usuario');
         $contraseña = $this->request->getPost('contraseña');
 
+        // Validar si los campos están vacíos
+        if (empty($nombre_usuario) || empty($contraseña)) {
+            return redirect()->to('/')->with('error', 'Por favor ingrese usuario y contraseña');
+        }
+
         // Conexión a la base de datos
         $db = \Config\Database::connect();
         $builder = $db->table('usuarios');
@@ -27,7 +32,11 @@ class LoginController extends Controller
         $user = $builder->where('nombre_usuario', $nombre_usuario)->get()->getRowArray();
 
         // Verificar si el usuario existe y si la contraseña es correcta
-        if ($user && $contraseña === $user['contraseña']) {
+        if ($user && password_verify($contraseña, $user['contraseña'])) {
+            // Almacenar información del usuario en la sesión
+            session()->set('user_id', $user['id']);
+            session()->set('username', $user['nombre_usuario']);
+            
             // Si las credenciales son correctas, redirigir a la vista del menú
             return redirect()->to('/menu');
         } else {
