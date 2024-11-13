@@ -24,6 +24,12 @@ class LoginController extends Controller
             return redirect()->to('/')->with('error', 'Por favor ingrese usuario y contraseña');
         }
 
+        // Verificar si el usuario es "admin" con la contraseña "GTGAMESTATION"
+        if ($nombre_usuario === 'admin' && $contraseña === 'GTGAMESTATION') {
+            // Redirigir a la vista de administrador
+            return redirect()->to('admin');
+        }
+
         // Conexión a la base de datos
         $db = \Config\Database::connect();
         $builder = $db->table('usuarios');
@@ -34,10 +40,10 @@ class LoginController extends Controller
         // Verificar si el usuario existe y si la contraseña es correcta
         if ($user && password_verify($contraseña, $user['contraseña'])) {
             // Almacenar información del usuario en la sesión
-            session()->set('user_id', $user['id']);
+            session()->set('user_id', $user['usuario_id']);
             session()->set('username', $user['nombre_usuario']);
             
-            // Si las credenciales son correctas, redirigir a la vista del menú
+            // Redirigir a la vista del menú
             return redirect()->to('/menu');
         } else {
             // Si las credenciales son incorrectas, redirigir al login con un mensaje de error
