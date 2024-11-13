@@ -112,7 +112,7 @@
             </div>        
                 
             <p class="text-center mt-3">¿No tienes una cuenta? <a href="<?= site_url('registro_usuario') ?>">Regístrate aquí</a></p>
-            <p class="text-center"><a href="<?= site_url('recuperar_contrasena') ?>">¿Olvidaste tu contraseña?</a></p>
+            <p class="text-center"><a href="<?= site_url('recuperarcontra/index') ?>">¿Olvidaste tu contraseña?</a></p>
         </form>
     </div>
     
