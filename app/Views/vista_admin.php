@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,40 +17,33 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
         body {
             font-family: 'Press Start 2P', sans-serif;
             color: #f1f1f1; 
             background-color: #121212;
             margin: 0; 
         }
-
         .navbar {
             background-color: #000;
         }
-
         .navbar-brand {
             color: #39FF14 !important;
             font-size: 1.2rem;
             text-align: center;
             width: 100%;
         }
-
         .container-fluid {
             padding-top: 20px;
         }
-
         .content-wrapper {
             text-align: center;
         }
-
         .btn-custom {
             margin: 10px;
             background-color: #39FF14;
             color: #000;
             font-size: 1rem;
         }
-
         .btn-custom:hover {
             background-color: #007bff;
             color: #fff;
@@ -69,13 +62,13 @@
         <p>Selecciona una de las opciones del menú para navegar a las diferentes secciones.</p>
         
         <div>
-            <button class="btn btn-custom" onclick="location.href='<?= base_url('usuarios'); ?>'">Usuarios</button>
-            <button class="btn btn-custom" onclick="location.href='<?= base_url('ventas'); ?>'">Ventas</button>
-            <button class="btn btn-custom" onclick="location.href='<?= base_url('detalle_ventas'); ?>'">Detalle Ventas</button>
-            <button class="btn btn-custom" onclick="location.href='<?= base_url('proveedores'); ?>'">Proveedores</button>
-            <button class="btn btn-custom" onclick="location.href='<?= base_url('inventario'); ?>'">Inventario</button>
-            <button class="btn btn-custom" onclick="location.href='<?= base_url('clientes'); ?>'">Clientes</button>
-            <button class="btn btn-custom" onclick="location.href='<?= base_url('accesorios'); ?>'">Accesorios</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('usuarios/index'); ?>'">Usuarios</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('ventas/index'); ?>'">Ventas</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('detalle_ventas/index'); ?>'">Detalle Ventas</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('proveedores/index'); ?>'">Proveedores</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('inventario/index'); ?>'">Inventario</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('clientes/index'); ?>'">Clientes</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('accesorios/index'); ?>'">Accesorios</button>
         </div>
     </div>
 
