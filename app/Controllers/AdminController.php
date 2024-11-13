@@ -8,6 +8,6 @@ class VistaAdmin extends Controller
 {
     public function index()
     {
-        return view('vista_admin');
+        return view('vista_admin'); 
     }
-}       
+}
