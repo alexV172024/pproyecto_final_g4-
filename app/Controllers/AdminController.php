@@ -10,4 +10,4 @@ class VistaAdmin extends Controller
     {
         return view('vista_admin');
     }
-}
+}       
