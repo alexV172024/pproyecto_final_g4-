@@ -58,9 +58,9 @@ $routes->get('/contacto', 'MenuController::contacto');
 $routes->get('/novedades', 'MenuController::novedades');
 
 // Ruta para la vista de administrador
-$routes->get('admin', 'AdminController::index');
+$routes->get('/vista_admin', 'AdminController::index');
 
-// Rutas para Proveedores
+    // Rutas para Proveedores
     $routes->get('proveedores', 'ProveedoresController::index');
     $routes->get('proveedores/create', 'ProveedoresController::create');
     $routes->post('proveedores/store', 'ProveedoresController::store');
@@ -117,10 +117,9 @@ $routes->get('admin', 'AdminController::index');
     $routes->get('/detalle_ventas/delete/(:num)', 'DetalleVentasController::delete/$1');
     
     // app/Config/Routes.php
-
-    $routes->get('inventario', 'InventarioController::index');  // Muestra el listado de inventarios
-    $routes->get('inventario/nuevo', 'InventarioController::nuevo');  // Muestra el formulario para crear un nuevo inventario
-    $routes->post('inventario/guardar', 'InventarioController::guardar');  // Guarda el nuevo inventario
+    $routes->get('inventario', 'InventarioController::index');  
+    $routes->get('inventario/nuevo', 'InventarioController::nuevo');  
+    $routes->post('inventario/guardar', 'InventarioController::guardar');  
 
 /*
  * --------------------------------------------------------------------
