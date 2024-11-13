@@ -58,7 +58,7 @@ $routes->get('/contacto', 'MenuController::contacto');
 $routes->get('/novedades', 'MenuController::novedades');
 
 // Ruta para la vista de administrador
-$routes->get('/admin', 'AdminController::index');
+$routes->get('admin', 'AdminController::index');
 
 // Rutas para Proveedores
     $routes->get('proveedores', 'ProveedoresController::index');
