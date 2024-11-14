@@ -62,6 +62,7 @@ $routes->get('admin', 'AdminController::index');
 
 //Ruta para la recuperacion de contra
 $routes->get('recuperarcontra', 'RecuperarContraController::index');
+$routes->post('recuperarcontra/procesar', 'RecuperarContraController::procesarRecuperacion');
 
     // Rutas para Proveedores
     $routes->get('proveedores', 'ProveedoresController::index');
