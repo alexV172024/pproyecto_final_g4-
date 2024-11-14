@@ -118,6 +118,11 @@
     </style>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0b0c10;">
+        <div class="container">
+            <a href="javascript:window.history.back();" class="navbar-brand fw-semibold" style="color: #39FF14;">Regresar</a>
+        </div>
+    </nav>
     <div class="container my-5">
         <h1 class="mb-4">Usuarios</h1>
 

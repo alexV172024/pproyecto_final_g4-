@@ -107,7 +107,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0b0c10;">
         <div class="container">
-            <a href="javascript:window.history.back();" class="navbar-brand fw-semibold" style="color: #39FF14;">Regresar</a>
+        <a href="<?= site_url('admin') ?>" class="btn btn-primary mb-3">Regresar</a>
         </div>
     </nav>
 
