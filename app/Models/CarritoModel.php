@@ -6,5 +6,7 @@ use CodeIgniter\Model;
 
 class CarritoModel extends Model
 {
-    protected $table = 'carrito'; 
+    protected $table = 'carrito';
+    protected $primaryKey = 'carrito_id';
+    protected $allowedFields = ['videojuego_id', 'cantidad'];
 }
