@@ -104,14 +104,8 @@
     </style>
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0b0c10;">
-        <div class="container">
-            <a href="javascript:window.history.back();" class="navbar-brand fw-semibold" style="color: #39FF14;">Regresar</a>
-        </div>
-    </nav>
-
     <div class="container my-5">
+    <a href="javascript:window.history.back();" class="navbar-brand fw-semibold" style="color: #000000;">Regresar</a>
         <h2 class="mb-4">Listado de Detalles de Ventas</h2>
 
         <a href="<?= site_url('detalle_ventas/create') ?>" class="btn btn-primary mb-3">Crear nuevo detalle de venta</a>

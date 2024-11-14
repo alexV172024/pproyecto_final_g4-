@@ -119,7 +119,8 @@
 </head>
 <body>
     <div class="container my-5">
-        <h1 class="mb-4">Clientes</h1>
+    <a href="javascript:window.history.back();" class="navbar-brand fw-semibold" style="color: #000000;">Regresar</a>    
+    <h1 class="mb-4">Clientes</h1>
 
         <!-- Botón para crear nuevo cliente-->
         <a href="<?= site_url('clientes/create') ?>" class="btn btn-primary mb-3">Crear nuevo cliente</a>
