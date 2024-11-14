@@ -192,7 +192,7 @@
                         <p1 class="card-text">Género: <?= esc($juego['genero']); ?></p>
                         <p1 class="card-text">Plataforma: <?= esc($juego['plataforma']); ?></p>
                         <p1 class="card-text">Precio: $<?= esc($juego['precio']); ?></p>
-                        <a href="<?= site_url('tienda/comprar/' . $juego['videojuego_id']); ?>" class="btn btn-primary">Comprar</a>
+                        <a href="<?= site_url('carrito/agregar/' . $juego['videojuego_id']); ?>" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
             </div>

@@ -2,39 +2,33 @@
 
 namespace App\Controllers;
 
-use App\Models\RecuperarContraModel; // Asegúrate de usar el modelo adecuado
 use CodeIgniter\Controller;
+use App\Models\RecuperarContraModel;
 
 class RecuperarContraController extends Controller
 {
     public function index()
     {
-        return view('recuperarcontra/index');  // Mostrar el formulario de recuperación
+        return view('recuperarcontra/index');
     }
 
-    // Método para procesar el formulario
     public function procesarRecuperacion()
     {
-        // Obtener el nombre de usuario desde el formulario
+        // Aquí iría el código para procesar el formulario
+        // 1. Obtener el nombre de usuario del formulario
         $usuario = $this->request->getPost('usuario');
+        
+        // 2. Usar el modelo para verificar el usuario en la base de datos
+        $model = new RecuperarContraModel();
+        $usuarioEncontrado = $model->verificarUsuario($usuario);
 
-        // Instanciar el modelo
-        $model = new RecuperarContraModel();  // Usamos el modelo RecuperarContraModel
-
-        // Verificar si el usuario existe en la base de datos
-        $usuarioDatos = $model->verificarUsuario($usuario);
-
-        if ($usuarioDatos) {
-            // Si el usuario existe, mostramos su contraseña
-            return view('recuperarcontra/mostrarContraseña', [
-                'usuario' => $usuario,
-                'contraseña' => $usuarioDatos['contraseña']  // Mostrar la contraseña almacenada
-            ]);
+        // 3. Si el usuario existe, mostramos su contraseña
+        if ($usuarioEncontrado) {
+            // Mostrar la contraseña al usuario
+            return view('recuperarcontra/mostrar', ['usuario' => $usuarioEncontrado]);
         } else {
-            // Si el usuario no existe, mostramos un mensaje de error
-            return view('recuperarcontra/error', [
-                'mensaje' => 'El nombre de usuario no existe en nuestros registros.'
-            ]);
+            // Si no se encuentra al usuario, mostrar mensaje de error
+            return redirect()->back()->with('mensaje', 'Usuario no encontrado');
         }
     }
 }

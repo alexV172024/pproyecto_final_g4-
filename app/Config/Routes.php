@@ -64,6 +64,10 @@ $routes->get('admin', 'AdminController::index');
 $routes->get('recuperarcontra', 'RecuperarContraController::index');
 $routes->post('recuperarcontra/procesar', 'RecuperarContraController::procesarRecuperacion');
 
+//Ruta para el carrito
+$routes->get('carrito', 'CarritoController::index');
+$routes->get('carrito/agregar/(:num)', 'CarritoController::agregar/$1');
+
     // Rutas para Proveedores
     $routes->get('proveedores', 'ProveedoresController::index');
     $routes->get('proveedores/create', 'ProveedoresController::create');
