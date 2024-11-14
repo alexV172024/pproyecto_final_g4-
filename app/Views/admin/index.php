@@ -69,6 +69,7 @@
             <button class="btn btn-custom" onclick="location.href='<?= base_url('inventario'); ?>'">Inventario</button>
             <button class="btn btn-custom" onclick="location.href='<?= base_url('clientes'); ?>'">Clientes</button>
             <button class="btn btn-custom" onclick="location.href='<?= base_url('accesorios'); ?>'">Accesorios</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('/menu'); ?>'">Sitio Web Clientes</button>
         </div>
     </div>
 

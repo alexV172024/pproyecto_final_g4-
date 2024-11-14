@@ -141,7 +141,7 @@
                     <tr>
                         <td><?= $usuario['usuario_id']; ?></td>
                         <td><?= $usuario['nombre_usuario']; ?></td>
-                        <td><?= $usuario['contrasenia']; ?></td>
+                        <td><?= $usuario['contraseña']; ?></td>
                        
                         <td>
                             <!-- Botón para editar -->
