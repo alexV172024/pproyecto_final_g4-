@@ -59,8 +59,7 @@
                             <p class="card-text">Modelo: <?= esc($accesorio['modelo']); ?></p>
                             <p class="card-text">Precio: $<?= esc($accesorio['precio']); ?></p>
                             <p class="card-text">Stock: <?= esc($accesorio['stock']); ?></p>
-                            <a href="<?= site_url('accesorios/edit/' . $accesorio['accesorio_id']); ?>" class="btn btn-primary">Editar</a>
-                            <a href="<?= site_url('accesorios/delete/' . $accesorio['accesorio_id']); ?>" class="btn btn-danger" onclick="return confirm('¿Seguro que deseas eliminar este accesorio?');">Eliminar</a>
+                            <button type="submit" class="btn btn-success">Comprar</button>
                         </div>
                     </div>
                 </div>
