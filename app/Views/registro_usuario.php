@@ -75,6 +75,16 @@
         .text-center a:hover {
             color: #2ecc71;
         }
+
+        .btn-custom {
+            background-color: #39FF14;
+            border: none;
+            font-weight: bold;
+        }
+
+        .btn-custom:hover {
+            background-color: #2ecc71;
+        }
     </style>
 </head>
 <body>
@@ -82,98 +92,20 @@
         <h2>REGISTRA TUS DATOS EN GAMESTATION</h2>
         <p>Completa el siguiente formulario para solicitar una cuenta. La información que proporcionas está sujeta a nuestra <a href="">Política de Privacidad</a>.</p>
         
-        <form class="row row-cols-lg-3 g-3 align-items-center">
-            <div class="col">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+        <form action="procesar_recuperacion.php" method="post">
+            <div class="mb-3 text-start">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" name="nombre" id="nombre" required>
             </div>
-            
-            <div class="col">
-                <label for="apellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+            <div class="mb-3 text-start">
+                <label for="usuario" class="form-label">Usuario:</label>
+                <input type="text" class="form-control" name="usuario" id="usuario" required>
             </div>
-            
-            <div class="col">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="ejemplo@email.com">
+            <div class="mb-3 text-start">
+                <label for="contacto" class="form-label">Contacto:</label>
+                <input type="text" class="form-control" name="contacto" id="contacto" required>
             </div>
-            
-            <div class="col">
-                <label for="contra" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="contra" placeholder="Contraseña">
-            </div>
-            
-            <div class="col">
-                <label for="confirmarcontra" class="form-label">Confirme Contraseña</label>
-                <input type="password" class="form-control" id="confirmarcontra" placeholder="Confirme contraseña">
-            </div>
-
-            <div class="col">
-                <label for="tipo-usuario" class="form-label">Tipo de Usuario</label>
-                <select id="tipo-usuario" class="form-select">
-                    <option selected disabled>Selecciona un tipo de usuario</option>
-                    <option value="cliente">Cliente</option>
-                    <option value="administrador">Administrador</option>
-                </select>
-            </div>
-            
-            <div class="col">
-                <label for="direccion" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="direccion" placeholder="Dirección completa">
-            </div>
-            
-            <div class="col">
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" id="telefono" placeholder="(+502) 1234-5678">
-            </div>
-            
-            <div class="col">
-                <label for="departamento" class="form-label">Departamento</label>
-                <select id="departamento" class="form-select">
-                    <option selected disabled>Selecciona un departamento</option>
-                    <option value="guatemala">Guatemala</option>
-                    <option value="sacatepequez">Sacatepéquez</option>
-                    <option value="chimaltenango">Chimaltenango</option>
-                </select>
-            </div>
-            
-            <div class="col">
-                <label for="municipio" class="form-label">Municipio</label>
-                <input type="text" class="form-control" id="municipio" placeholder="Antigua Guatemala">
-            </div>
-
-            <div class="col">
-                <label class="form-label">Tipo de Solicitante</label>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="tipo-solicitante" id="particular">
-                    <label class="form-check-label" for="particular">Particular</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="tipo-solicitante" id="empresa" checked>
-                    <label class="form-check-label" for="empresa">Empresa</label>
-                </div>
-            </div>
-
-            <div class="col">
-                <label for="nombre_completo" class="form-label">Nombre Completo</label>
-                <input type="text" class="form-control" id="nombre_completo" placeholder="Nombre completo">
-            </div>
-
-            <div class="col">
-                <label for="nit" class="form-label">NIT</label>
-                <input type="text" class="form-control" id="nit" placeholder="0000000001">
-            </div>
-            
-            <div class="col-12">
-                <div class="form-check">
-                    <input type="checkbox" id="terminos" class="form-check-input">
-                    <label for="terminos" class="form-check-label">Aceptar los términos y condiciones</label>
-                </div>
-            </div>
-            
-            <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary">Registrarse</button>
-            </div>
+            <button type="submit" class="btn btn-custom">Enviar</button>
         </form>
     </div>
 
