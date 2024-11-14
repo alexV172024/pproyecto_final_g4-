@@ -116,7 +116,7 @@
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/ubicacion'); ?>" class="nav-link">Ubicacion</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/contacto'); ?>" class="nav-link">Contacto</a></li>
                         
-                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('accesorios'); ?>" class="nav-link">Accesorios</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/produtos'); ?>" class="nav-link">Accesorios</a></li>
 
                         <!-- Reemplazar "Iniciar Sesión" por el nombre del usuario -->
                         <?php if(session()->get('nombre_usuario')): ?>

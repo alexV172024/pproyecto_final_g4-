@@ -65,10 +65,4 @@ class AccesoriosController extends BaseController
         return redirect()->to('/accesorios');
     }
 
-    public function mostrarAccesorios()
-    {
-        $model = new AccesorioModel();  
-        $accesorios = $model->findAll();  
-        return view('accesorios', ['accesorios' => $accesorios]);
-    }
 }
