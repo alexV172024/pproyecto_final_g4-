@@ -95,7 +95,7 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
         <div class="text-center mt-3">
-            <a href="<?= base_url('/inicio'); ?>" class="navbar-brand fw-semibold">Volver al inicio de sesión</a> 
+        <a href="javascript:window.history.back();" class="navbar-brand fw-semibold">Volver al inicio de sesionr</a> 
         </div>
     </div>
 </body>
