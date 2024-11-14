@@ -8,6 +8,6 @@ class RecuperarContraController extends Controller
 {
     public function index()
     {
-        return view('recuperarcontra');
+        return view('recuperarcontra/index');
     }
 }
