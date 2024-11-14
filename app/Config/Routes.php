@@ -60,9 +60,6 @@ $routes->get('/novedades', 'MenuController::novedades');
 // Ruta para la vista de administrador
 $routes->get('admin', 'AdminController::index');
 
-//Ruta para recuperar contraseña
-$routes->get('recuperarcontra', 'RecuperarContraController::index');
-
     // Rutas para Proveedores
     $routes->get('proveedores', 'ProveedoresController::index');
     $routes->get('proveedores/create', 'ProveedoresController::create');
