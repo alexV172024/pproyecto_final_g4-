@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 11-11-2024 a las 05:15:56
+-- Tiempo de generación: 14-11-2024 a las 22:43:22
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -36,7 +36,7 @@ CREATE TABLE `accesorios` (
   `proveedor_id` int DEFAULT NULL,
   `stock` int DEFAULT '0',
   `descripcion` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `accesorios`
@@ -82,35 +82,38 @@ INSERT INTO `accesorios` (`accesorio_id`, `nombre`, `marca`, `modelo`, `precio`,
 
 CREATE TABLE `clientes` (
   `cliente_id` int NOT NULL,
-  `nombre` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contacto` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contacto` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `historial_compras` text COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`cliente_id`, `nombre`, `contacto`) VALUES
-(3, 'Carlos López', 'carlos.lopez@example.com'),
-(4, 'Ana Martínez', 'ana.martinez@example.com'),
-(5, 'Luis González', 'luis.gonzalez@example.com'),
-(6, 'María Pérez', 'maria.perez@example.com'),
-(7, 'Juan Sánchez', 'juan.sanchez@example.com'),
-(8, 'Laura Díaz', 'laura.diaz@example.com'),
-(9, 'Pedro Romero', 'pedro.romero@example.com'),
-(10, 'Sofía Torres', 'sofia.torres@example.com'),
-(11, 'Ricardo Vargas', 'ricardo.vargas@example.com'),
-(12, 'Elena Flores', 'elena.flores@example.com'),
-(13, 'Andrés Morales', 'andres.morales@example.com'),
-(14, 'Patricia Rivera', 'patricia.rivera@example.com'),
-(15, 'Jorge Castillo', 'jorge.castillo@example.com'),
-(16, 'Gabriela Herrera', 'gabriela.herrera@example.com'),
-(17, 'Daniel Ríos', 'daniel.rios@example.com'),
-(18, 'Carmen Cruz', 'carmen.cruz@example.com'),
-(19, 'Miguel Mendoza', 'miguel.mendoza@example.com'),
-(20, 'Isabel Soto', 'isabel.soto@example.com'),
-(21, 'Raúl Ortega', 'raul.ortega@example.com'),
-(22, 'Lucía Silva', 'lucia.silva@example.com');
+INSERT INTO `clientes` (`cliente_id`, `nombre`, `contacto`, `historial_compras`) VALUES
+(3, 'Carlos López', 'carlos.lopez@example.com', NULL),
+(4, 'Ana Martínez', 'ana.martinez@example.com', NULL),
+(5, 'Luis González', 'luis.gonzalez@example.com', NULL),
+(6, 'María Pérez', 'maria.perez@example.com', NULL),
+(7, 'Juan Sánchez', 'juan.sanchez@example.com', NULL),
+(8, 'Laura Díaz', 'laura.diaz@example.com', NULL),
+(9, 'Pedro Romero', 'pedro.romero@example.com', NULL),
+(10, 'Sofía Torres', 'sofia.torres@example.com', NULL),
+(11, 'Ricardo Vargas', 'ricardo.vargas@example.com', NULL),
+(12, 'Elena Flores', 'elena.flores@example.com', NULL),
+(13, 'Andrés Morales', 'andres.morales@example.com', NULL),
+(14, 'Patricia Rivera', 'patricia.rivera@example.com', NULL),
+(15, 'Jorge Castillo', 'jorge.castillo@example.com', NULL),
+(16, 'Gabriela Herrera', 'gabriela.herrera@example.com', NULL),
+(17, 'Daniel Ríos', 'daniel.rios@example.com', NULL),
+(18, 'Carmen Cruz', 'carmen.cruz@example.com', NULL),
+(19, 'Miguel Mendoza', 'miguel.mendoza@example.com', NULL),
+(20, 'Isabel Soto', 'isabel.soto@example.com', NULL),
+(21, 'Raúl Ortega', 'raul.ortega@example.com', NULL),
+(22, 'Lucía Silva', 'lucia.silva@example.com', NULL),
+(23, 'Manuel Lopez', 'manuel@mail.com', NULL),
+(24, 'Jose Mendez', 'jmendez@mail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -197,7 +200,7 @@ CREATE TABLE `inventario` (
   `ubicacion` varchar(255) DEFAULT NULL,
   `fecha_ingreso` date NOT NULL,
   `videojuego_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `inventario`
@@ -215,9 +218,9 @@ INSERT INTO `inventario` (`inventario_id`, `accesorio_id`, `cantidad`, `precio`,
 
 CREATE TABLE `proveedores` (
   `proveedor_id` int NOT NULL,
-  `nombre` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contacto` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `productos_suministrados` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contacto` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `productos_suministrados` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -244,35 +247,37 @@ INSERT INTO `proveedores` (`proveedor_id`, `nombre`, `contacto`, `productos_sumi
 
 CREATE TABLE `usuarios` (
   `usuario_id` int NOT NULL,
-  `nombre_usuario` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contrasenia` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+  `nombre_usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contraseña` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`usuario_id`, `nombre_usuario`, `contrasenia`) VALUES
-(3, 'clopez', 'password123'),
-(4, 'amartinez', 'password123'),
-(5, 'lgonzalez', 'password123'),
-(6, 'mperez', 'password123'),
-(7, 'jsanchez', 'password123'),
-(8, 'ldiaz', 'password123'),
-(9, 'promero', 'password123'),
-(10, 'storres', 'password123'),
-(11, 'rvargas', 'password123'),
-(12, 'eflores', 'password123'),
-(13, 'amorales', 'password123'),
-(14, 'privera', 'password123'),
-(15, 'jcastillo', 'password123'),
-(16, 'gherrera', 'password123'),
-(17, 'drios', 'password123'),
-(18, 'ccruz', 'password123'),
-(19, 'mmendoza', 'password123'),
-(20, 'isoto', 'password123'),
-(21, 'rortega', 'password123'),
-(44, 'mgomez', '');
+INSERT INTO `usuarios` (`usuario_id`, `nombre_usuario`, `contraseña`, `is_admin`) VALUES
+(3, 'clopez', '$2y$10$rDQgyy/h0LJ851TXnBoN4OgZcSu/0afAVXgnvewnTcTZ9jXmr2XE2', 0),
+(4, 'amartinez', '$2y$10$UF2zDs8OgTSkXJkDt4dcjeqTdaFxnggmEZ.Ys8PRiPIZYEt3Y82Ga', 0),
+(5, 'lgonzalez', '$2y$10$GY70pONSFTyHTWy/hPzuxOAXhJUOw35D1MUEecfhEqNoPd35PvvrG', 0),
+(6, 'mperez', '$2y$10$erZffZY0QsNDn8ZFYbt/z.SdQjPCJX0oIcUhUKq4bJKCRHMECJmEm', 0),
+(7, 'jsanchez', '$2y$10$XKLZnmr49Dujk/1wY7vqqe5vr.9Z4YY0wV.wMTwuTfJl5CST5lCDC', 0),
+(8, 'ldiaz', '$2y$10$sA1jYYNj2/1EqtGYAKanFOLUNu9VIJlOOHJOaSte24tRCkICwM4Fe', 0),
+(9, 'promero', '$2y$10$5NLdP2R7zXsJYowWGiYvi.Lg4hPiu3RFTR5y.APRVMZ3u8d4.H.Nm', 0),
+(10, 'storres', '$2y$10$zn8mrSDeNBDCBjVJrEhBIOVbq77E68Dl9hMNSx4y6qMgwHEJC3qAq', 0),
+(11, 'rvargas', '$2y$10$cU8q.r6OqfOS6uHbnEzDUOlHbiYSRA5w1uLnztW0AJZ7T7rL.40hu', 0),
+(12, 'eflores', '$2y$10$kvn0lyWbZvjQ5ymtOkRogezJRa1rQZOZ7iVFhHiuWl5DN535GMW.C', 0),
+(13, 'amorales', '$2y$10$GQ8JtHY0lbphhImccqVkJOZZKERNVGBV8mXU.EywfnTVstEs7O/82', 0),
+(14, 'privera', '$2y$10$Eddup9WH7WM9K9z1BPTt6uF7Vx26WNT1rjdXa5ICIO1u/bJpJSAOy', 0),
+(15, 'jcastillo', '$2y$10$NQpseQAjM.dwO24EkMfE6OvZdzUK4oVz1Pb6kWJxEF3OuPdsydVEe', 0),
+(16, 'gherrera', '$2y$10$KUf3R2H1M.8/fttcpBwDa.TZCqo211NbUPPSE9u4ypyF0ymFiE2WG', 0),
+(17, 'drios', '$2y$10$STvhySOfvW6CnkjJgKv1Oe5K6K/YQr5yUcLPB2qhgy9evQls.QNVW', 0),
+(18, 'ccruz', '$2y$10$gXM50ByFOmpUDqRq6FcMvulyS56XNdQDz2jMzHJBfMxbavlLVVf2C', 0),
+(19, 'mmendoza', '$2y$10$CNZJP4mJmF8T8ubgaUCIfup2Exe7OSS6iT16qpNwrGjREOHtKlDSm', 0),
+(20, 'isoto', '$2y$10$q.h1DWjK8NbAQt0c9P2vR.ixbqM3PKZ6Z2iHoUs.9DWrQzf9Lrcja', 0),
+(21, 'rortega', '$2y$10$DpL7cXbuhNycvma0R54YBeGkN8Ui6Lprm3pFu1wdVbQJL.W9.kZvS', 0),
+(47, 'admin@admin.com', '$2y$10$PYgqw/hkiRUy2PTP8ludF.m/u0BNOLdjvCV1QIYpdGWZ.31d46aau', 1),
+(48, 'felipeh', '$2y$10$nD2K.qyK8NEuGPiINPNR1OIEyVj3ycHCeswlS4TL8HaFMapNx3EIe', 0);
 
 -- --------------------------------------------------------
 
@@ -352,9 +357,9 @@ INSERT INTO `ventas` (`venta_id`, `videojuego_id`, `fecha_venta`, `cantidad`, `t
 
 CREATE TABLE `videojuegos` (
   `videojuego_id` int NOT NULL,
-  `titulo` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `plataforma` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `genero` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `titulo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `plataforma` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `genero` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `precio` decimal(10,2) DEFAULT NULL,
   `cantidad` int NOT NULL,
   `proveedor_id` int DEFAULT NULL
@@ -365,9 +370,9 @@ CREATE TABLE `videojuegos` (
 --
 
 INSERT INTO `videojuegos` (`videojuego_id`, `titulo`, `plataforma`, `genero`, `precio`, `cantidad`, `proveedor_id`) VALUES
-(1, 'The Last of Us', 'PlayStation', 'Acción', 59.99, 10, 1),
-(2, 'Halo Infinite', 'Xbox', 'Shooter', 49.99, 15, 1),
-(3, 'Super Mario Odyssey', 'Nintendo Switch', 'Aventura', 39.99, 20, 2),
+(1, 'The Last of Us', 'PlayStation', 'Acción', 599.99, 10, NULL),
+(2, 'Halo Infinite', 'Xbox', 'Shooter', 499.99, 15, NULL),
+(3, 'Super Mario Odyssey', 'Nintendo Switch', 'Aventura', 399.99, 20, NULL),
 (4, 'The Legend of Zelda: Breath of the Wild', 'Nintendo Switch', 'Aventura', 650.00, 15, 1),
 (5, 'Super Mario Odyssey', 'Nintendo Switch', 'Plataformas', 450.00, 20, 1),
 (6, 'Mario Kart 8 Deluxe', 'Nintendo Switch', 'Carreras', 500.00, 18, 2),
@@ -414,7 +419,8 @@ INSERT INTO `videojuegos` (`videojuego_id`, `titulo`, `plataforma`, `genero`, `p
 (47, 'Street Fighter V', 'Multiplataforma', 'Lucha', 250.00, 24, 7),
 (48, 'Tekken 7', 'Multiplataforma', 'Lucha', 260.00, 25, 7),
 (49, 'Mortal Kombat 11', 'Multiplataforma', 'Lucha', 270.00, 22, 8),
-(50, 'FIFA 22', 'Multiplataforma', 'Deportes', 350.00, 30, NULL);
+(50, 'FIFA 22', 'Multiplataforma', 'Deportes', 350.00, 30, NULL),
+(53, 'Super Mario Bros 2', 'Wii', 'Aventura', 584.00, 20, 2);
 
 --
 -- Índices para tablas volcadas
@@ -490,7 +496,7 @@ ALTER TABLE `accesorios`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `cliente_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `cliente_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_ventas`
@@ -514,7 +520,7 @@ ALTER TABLE `proveedores`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `usuario_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `usuario_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
@@ -526,7 +532,7 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `videojuegos`
 --
 ALTER TABLE `videojuegos`
-  MODIFY `videojuego_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `videojuego_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- Restricciones para tablas volcadas

@@ -1097,6 +1097,7 @@ INFO - 2024-11-14 20:16:47 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-11-14 20:17:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-11-14 20:17:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-11-14 20:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+<<<<<<< HEAD
 >>>>>>> b535fda8d0e10f8de8232e8b0b82ce71dbdacf3b
 INFO - 2024-11-14 22:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 ERROR - 2024-11-14 22:49:02 --> mysqli_sql_exception: Table 'tienda_de_videojuegos.accesorios' doesn't exist in C:\xampp\htdocs\pproyecto_final_g4-\system\Database\MySQLi\Connection.php:312
@@ -1848,3 +1849,13 @@ INFO - 2024-11-14 23:42:07 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-11-14 23:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-11-14 23:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-11-14 23:42:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+=======
+INFO - 2024-11-14 21:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-14 21:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-14 21:39:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-14 21:39:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-14 21:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-14 21:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-14 21:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-14 23:41:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+>>>>>>> 7da868fb4ece64e9f4bd7270d37f5937d903cc55
