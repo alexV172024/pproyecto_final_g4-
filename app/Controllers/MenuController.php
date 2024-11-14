@@ -30,4 +30,9 @@ class MenuController extends Controller
     {
         return view('novedades'); // Carga la vista de novedades
     }
+
+    public function ofertas()
+    {
+        return view('ofertas'); // Carga la vista de ofertas
+    }
 }

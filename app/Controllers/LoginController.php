@@ -25,7 +25,7 @@ class LoginController extends Controller
         }
 
         // Verificar si el usuario es "admin" con la contraseña "GTGAMESTATION"
-        if ($nombre_usuario === 'admin' && $contraseña === 'GTGAMESTATION') {
+        if ($nombre_usuario === 'admin@admin.com' && $contraseña === 'admin') {
             // Redirigir a la vista de administrador
             return redirect()->to('admin');
         }
@@ -42,6 +42,7 @@ class LoginController extends Controller
             // Almacenar información del usuario en la sesión
             session()->set('user_id', $user['usuario_id']);
             session()->set('username', $user['nombre_usuario']);
+            session()->set('nombre_usuario', $user['nombre_usuario']);  // Corregido aquí
             
             // Redirigir a la vista del menú
             return redirect()->to('/menu');

@@ -104,10 +104,10 @@
     </style>
 </head>
 <body>
+
     <div class="container my-5">
     <a href="javascript:window.history.back();" class="navbar-brand fw-semibold" style="color: #000000;">Regresar</a>    
     <h2 class="mb-4">Listado de Ventas</h2>
-
         <a href="<?= site_url('ventas/create') ?>" class="btn btn-primary mb-3">Crear nueva venta</a>
 
         <table class="table table-bordered table-striped">

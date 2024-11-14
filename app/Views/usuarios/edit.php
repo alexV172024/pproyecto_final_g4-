@@ -69,7 +69,7 @@
 
         <div class="mb-3">
             <label for="contraseña" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="contraseña" name="contraseña" value="<?= $usuario['contrasenia']; ?>" required>
+            <input type="password" class="form-control" id="contraseña" name="contraseña" value="<?= $usuario['contraseña']; ?>" required>
         </div>
 
        

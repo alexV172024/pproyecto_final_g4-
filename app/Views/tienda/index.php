@@ -122,6 +122,7 @@
                         <?php if(session()->get('nombre_usuario')): ?>
                             <li class="nav-item p-3 py-md-1"><span class="nav-link">Hola, <?= session()->get('nombre_usuario'); ?></span></li>
                         <?php endif; ?>
+                        <a href="<?= site_url('/') ?>">Cerrar sesión</a>
                         <li class="nav-item p-3 py-md-1"><a href="carrito.php" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                     <div class="d-lg-none align-self-center py-3">
@@ -160,7 +161,7 @@
 
     <!-- Videojuegos por categorías -->
     <div class="container mt-4">
-        <h3 class="text-center">Videojuegos por Categorías</h3>
+        <!--<h3 class="text-center">Videojuegos por Categorías</h3>--> 
         <div class="categories">
             <div class="category-card">
                 <h4>Acción</h4>
@@ -193,8 +194,13 @@
                         <p1><h5 class="card-title"><?= esc($juego['titulo']); ?></h5></p>
                         <p1 class="card-text">Género: <?= esc($juego['genero']); ?></p>
                         <p1 class="card-text">Plataforma: <?= esc($juego['plataforma']); ?></p>
+<<<<<<< HEAD
                         <p1 class="card-text">Precio: $<?= esc($juego['precio']); ?></p>
                         <a href="<?= site_url('carrito/agregar/' . $juego['videojuego_id']); ?>" class="btn btn-primary">Comprar</a>
+=======
+                        <p1 class="card-text">Precio: Q <?= esc($juego['precio']); ?></p>
+                        <a href="<?= site_url('tienda/comprar/' . $juego['videojuego_id']); ?>" class="btn btn-primary">Comprar</a>
+>>>>>>> b535fda8d0e10f8de8232e8b0b82ce71dbdacf3b
                     </div>
                 </div>
             </div>
