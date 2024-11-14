@@ -163,11 +163,10 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/videoID3" allowfullscreen></iframe>
-                    </div>
+                    <iframe width="420" height="315" src="https://www.youtube.com/embed/NA6CAgv6p6g?si=P5RrLVWEzSrWoEGq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
                     <div class="card-body">
-                    <h5 class="card-title"><p1></p></h5>
-                    <p1 class="card-text"></p>
+                    <h5 class="card-title"><p1>Wii U - Mario Kart 8</p></h5>
+                    <p1 class="card-text">Mario Kart 8 para Wii U es un juego de carreras lleno de emoción, donde los personajes de Nintendo compiten en pistas llenas de obstáculos y antigravedad. Con gráficos HD y modos en línea, ofrece diversión para todos.</p>
                     </div>
                 </div>
             </div>
