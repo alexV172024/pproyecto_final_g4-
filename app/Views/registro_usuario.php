@@ -105,7 +105,14 @@
                 <label for="contacto" class="form-label">Contacto:</label>
                 <input type="text" class="form-control" name="contacto" id="contacto" required>
             </div>
-            <button type="submit" class="btn btn-custom">Enviar</button>
+            
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-custom">Enviar</button>
+            </div>
+            
+            <div class="text-center mt-3">
+                <a href="javascript:window.history.back();" class="navbar-brand fw-semibold">Volver al Inicio de Sesion</a> 
+            </div>
         </form>
     </div>
 
