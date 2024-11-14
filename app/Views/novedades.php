@@ -92,7 +92,8 @@
                 </div>
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                     <ul class="navbar-nav fs-5 justify-content-evenly">
-                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/menu'); ?>" class="nav-link">Tienda</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/menu'); ?>" class="nav-link">Inicio</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/tienda'); ?>" class="nav-link">Tienda</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/ubicacion'); ?>" class="nav-link">Ubicacion</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/contacto'); ?>" class="nav-link">Contacto</a></li>
 
@@ -100,6 +101,7 @@
                         <?php if(session()->get('nombre_usuario')): ?>
                             <li class="nav-item p-3 py-md-1"><span class="nav-link">Hola, <?= session()->get('nombre_usuario'); ?></span></li>
                         <?php endif; ?>
+                        <a href="<?= site_url('/') ?>">Cerrar sesión</a>
                         <li class="nav-item p-3 py-md-1"><a href="carrito.php" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                     <div class="d-lg-none align-self-center py-3">
@@ -116,14 +118,14 @@
         <div class="row">
             <div class="col-md-6 d-flex justify-content-start">
                 <button class="btn btn-primary me-2">Novedades</button>
-                <button class="btn btn-success">Ofertas</button>
-            </div>
+                <a href="<?= base_url('/ofertas'); ?>" class="btn btn-primary me-2">Ofertas</a>
+                </div>
             <div class="col-md-6 d-flex justify-content-end">
                 <input type="text" class="form-control w-50" placeholder="Buscar juego...">
             </div>
         </div>
     </div>
-    
+
 
     <!-- Espacio para banner -->
     <div class="container mt-4">

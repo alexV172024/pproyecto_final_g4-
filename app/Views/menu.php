@@ -110,7 +110,7 @@
         <div class="row">
             <div class="col-md-6 d-flex justify-content-start">
             <a href="<?= base_url('/novedades'); ?>" class="btn btn-primary me-2">Novedades</a>
-                <button class="btn btn-success">Ofertas</button>
+            <a href="<?= base_url('/ofertas'); ?>" class="btn btn-primary me-2">Ofertas</a>
             </div>
             <div class="col-md-6 d-flex justify-content-end">
                 <input type="text" class="form-control w-50" placeholder="Buscar juego...">
