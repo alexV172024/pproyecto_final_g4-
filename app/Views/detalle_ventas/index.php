@@ -1,63 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de Ventas</title>
-</head>
-<body>
-    <h2>Listado de Detalles de Ventas</h2>
-    <a href="<?= site_url('detalle_ventas/create') ?>">Crear nuevo detalle de venta</a>
-    <ul>
-        <?php foreach ($detalle_ventas as $detalle): ?>
-            <li>
-                Detalle Venta ID: <?= $detalle['detalle_id']; ?> - 
-                Venta ID: <?= $detalle['venta_id']; ?> - 
-                Videojuego ID: <?= $detalle['videojuego_id']; ?> - 
-                Cantidad: <?= $detalle['cantidad']; ?> - 
-                Precio Unitario: <?= $detalle['precio_unitario']; ?> - 
-                Total: <?= $detalle['total']; ?> - 
-                <a href="<?= site_url('detalle_ventas/edit/' . $detalle['detalle_id']); ?>">Editar</a> - 
-                <a href="<?= site_url('detalle_ventas/delete/' . $detalle['detalle_id']); ?>">Eliminar</a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
-</body>
-
-<link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-        crossorigin="anonymous"
-    />
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a tu archivo CSS separado -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Fuente retro */
 
         body {
             font-family: 'Press Start 2P', sans-serif;
-            color: #f1f1f1; 
+            color: #f1f1f1;
             background-color: #121212;
-            margin: 0; 
+            margin: 0;
         }
 
         .banner {
-            height: 200px; 
-            background-color: #45a29e; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
+            height: 200px;
+            background-color: #45a29e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .offcanvas {
-            background-color: #000; 
+            background-color: #000;
         }
 
         .offcanvas-header {
@@ -69,25 +36,87 @@
         }
 
         .offcanvas-title {
-            font-size: 1rem; 
-            color: #39FF14; 
+            font-size: 1rem;
+            color: #39FF14;
         }
 
         .navbar-brand {
-            font-size: 0.9rem; 
-            color: #39FF14; 
+            font-size: 1rem;
+            color: #39FF14;
         }
 
         .nav-link {
-            color: #f1f1f1; 
+            color: #f1f1f1;
         }
 
         .nav-link:hover {
-            color: #007bff; 
+            color: #007bff;
         }
 
         .container {
-            padding-top: 20px; 
+            padding-top: 20px;
+        }
+
+        .table {
+            color: #f1f1f1;
+        }
+
+        .navbar {
+            background-color: #0b0c10;
         }
     </style>
+</head>
+<body>
+
+    <!-- Barra de navegación con el enlace para regresar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a href="javascript:window.history.back();" class="navbar-brand fw-semibold">Volver al Inicio de Sesion</a>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h2 class="mb-4">Listado de Detalles de Ventas</h2>
+
+        <!-- Botón para crear nuevo detalle de venta -->
+        <a href="<?= site_url('detalle_ventas/create') ?>" class="btn btn-primary mb-3">Crear nuevo detalle de venta</a>
+
+        <!-- Tabla de detalles de ventas -->
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Detalle Venta ID</th>
+                    <th>Venta ID</th>
+                    <th>Videojuego ID</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($detalle_ventas as $detalle): ?>
+                    <tr>
+                        <td><?= $detalle['detalle_id']; ?></td>
+                        <td><?= $detalle['venta_id']; ?></td>
+                        <td><?= $detalle['videojuego_id']; ?></td>
+                        <td><?= $detalle['cantidad']; ?></td>
+                        <td><?= $detalle['precio_unitario']; ?></td>
+                        <td><?= $detalle['total']; ?></td>
+                        <td>
+                            <!-- Botón para editar -->
+                            <a href="<?= site_url('detalle_ventas/edit/' . $detalle['detalle_id']); ?>" class="btn btn-warning btn-sm">Editar</a>
+
+                            <!-- Botón para eliminar -->
+                            <a href="<?= site_url('detalle_ventas/delete/' . $detalle['detalle_id']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este detalle de venta?');">Eliminar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
 </html>
