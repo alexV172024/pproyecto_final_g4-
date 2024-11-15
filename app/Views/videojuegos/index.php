@@ -7,6 +7,7 @@
 </head>
 <body>
 <h2>Listado de Videojuegos</h2>
+<a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
 <a href="<?= site_url('videojuegos/create') ?>">Crear nuevo videojuego</a>
 <ul>
     <?php foreach ($videojuegos as $videojuego): ?>

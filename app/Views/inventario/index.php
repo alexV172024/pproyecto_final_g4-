@@ -5,7 +5,8 @@
     <title>Inventario</title>
 </head>
 <body>
-    <h1>Listado de Inventario</h1>
+<a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a>     
+<h1>Listado de Inventario</h1>
     
     <!-- Botón para agregar un nuevo registro al inventario -->
     <!--<a href="<?= site_url('inventario/nuevo'); ?>" class="btn btn-primary">Nuevo Inventario</a>-->

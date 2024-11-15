@@ -70,6 +70,7 @@
 </head>
 <body>
 <h2>Listado de Proveedores</h2>
+<a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
 <a href="<?= site_url('proveedores/create') ?>">Crear nuevo proveedor</a>
 <ul>
     <?php foreach ($proveedores as $proveedor): ?>

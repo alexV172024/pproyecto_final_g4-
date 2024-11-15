@@ -120,7 +120,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0b0c10;">
         <div class="container">
-            <a href="javascript:window.history.back();" class="navbar-brand fw-semibold" style="color: #39FF14;">Regresar</a>
+            <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
         </div>
     </nav>
     <div class="container my-5">

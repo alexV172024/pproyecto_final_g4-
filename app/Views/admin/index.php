@@ -62,13 +62,14 @@
         <p>Selecciona una de las opciones del menú para navegar a las diferentes secciones</p>
         
         <div>
-            <button class="btn btn-custom" onclick="location.href='<?= base_url('ventas'); ?>'">Ventas</button>
             <button class="btn btn-custom" onclick="location.href='<?= base_url('usuarios'); ?>'">Usuarios</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('ventas'); ?>'">Ventas</button>
             <button class="btn btn-custom" onclick="location.href='<?= base_url('detalle_ventas'); ?>'">Detalle Ventas</button>
             <button class="btn btn-custom" onclick="location.href='<?= base_url('proveedores'); ?>'">Proveedores</button>
             <button class="btn btn-custom" onclick="location.href='<?= base_url('inventario'); ?>'">Inventario</button>
             <button class="btn btn-custom" onclick="location.href='<?= base_url('clientes'); ?>'">Clientes</button>
             <button class="btn btn-custom" onclick="location.href='<?= base_url('accesorios'); ?>'">Accesorios</button>
+            <button class="btn btn-custom" onclick="location.href='<?= base_url('videojuegos'); ?>'">Videojuegos</button>
             <button class="btn btn-custom" onclick="location.href='<?= base_url('/menu'); ?>'">Sitio Web Clientes</button>
         </div>
     </div>

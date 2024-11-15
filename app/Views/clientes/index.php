@@ -119,7 +119,7 @@
 </head>
 <body>
     <div class="container my-5">
-    <a href="javascript:window.history.back();" class="navbar-brand fw-semibold" style="color: #000000;">Regresar</a>    
+    <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a>  
     <h1 class="mb-4">Clientes</h1>
 
         <!-- Botón para crear nuevo cliente-->

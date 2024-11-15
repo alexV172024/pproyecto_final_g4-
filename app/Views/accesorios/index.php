@@ -5,6 +5,7 @@
     <title>Listado de Accesorios</title>
 </head>
 <body>
+<a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
     <h1>Listado de Accesorios</h1>
     <a href="<?= site_url('accesorios/create') ?>">Crear Nuevo Accesorio</a>
     <table border="1">
