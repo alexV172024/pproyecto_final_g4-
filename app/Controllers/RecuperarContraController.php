@@ -2,33 +2,31 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
-use App\Models\RecuperarContraModel;
+use App\Models\RecuperarcontraModel;
 
-class RecuperarContraController extends Controller
+class RecuperarContraController extends BaseController
 {
     public function index()
     {
+        // Método de prueba o redirección
         return view('recuperarcontra/index');
     }
 
     public function procesarRecuperacion()
     {
-        // Aquí iría el código para procesar el formulario
-        // 1. Obtener el nombre de usuario del formulario
-        $usuario = $this->request->getPost('usuario');
+        $recuperarModel = new RecuperarcontraModel();
+        $nombreUsuario = $this->request->getPost('usuario');
         
-        // 2. Usar el modelo para verificar el usuario en la base de datos
-        $model = new RecuperarContraModel();
-        $usuarioEncontrado = $model->verificarUsuario($usuario);
+        $usuario = $recuperarModel->where('nombre_usuario', $nombreUsuario)->first();
 
-        // 3. Si el usuario existe, mostramos su contraseña
-        if ($usuarioEncontrado) {
-            // Mostrar la contraseña al usuario
-            return view('recuperarcontra/mostrar', ['usuario' => $usuarioEncontrado]);
+        if ($usuario) {
+            $data['contraseña'] = $usuario['contraseña'];
+            $data['mensaje'] = 'Contraseña recuperada exitosamente.';
         } else {
-            // Si no se encuentra al usuario, mostrar mensaje de error
-            return redirect()->back()->with('mensaje', 'Usuario no encontrado');
+            $data['contraseña'] = '';
+            $data['mensaje'] = 'Usuario no encontrado.';
         }
+
+        return view('recuperarcontra/index', $data);
     }
 }

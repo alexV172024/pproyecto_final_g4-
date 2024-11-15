@@ -88,22 +88,28 @@
     <div class="container">
         <h2>Recuperar Contraseña</h2>
         <form action="<?= base_url('recuperarcontra/procesarRecuperacion'); ?>" method="post">
-            <div class="mb-3">
-                <label for="usuario" class="form-label">Nombre de Usuario:</label>
-                <input type="text" class="form-control" name="usuario" id="usuario" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
+    <div class="mb-3">
+        <label for="usuario" class="form-label">Nombre de Usuario:</label>
+        <input type="text" class="form-control" name="usuario" id="usuario" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
 
-        <?php if (session()->getFlashdata('mensaje')): ?>
-            <div class="alert alert-info mt-3">
-                <?= session()->getFlashdata('mensaje') ?>
-            </div>
-        <?php endif; ?>
+<!-- Cuadro de texto deshabilitado para mostrar la contraseña -->
+<label class="form-label mt-3">Su contraseña es:</label>
+<input type="text" class="form-control" value="<?= isset($contraseña) ? $contraseña : '' ?>" disabled>
 
-        <div class="text-center mt-3">
-            <a href="javascript:window.history.back();" class="navbar-brand fw-semibold">Volver al inicio de sesión</a> 
-        </div>
+<?php if (isset($mensaje)): ?>
+    <div class="alert alert-info mt-3">
+        <?= $mensaje ?>
+    </div>
+<?php endif; ?>
+
+
+<div class="text-center mt-3">
+                <a href="javascript:window.history.back();" class="navbar-brand fw-semibold">Volver al Inicio de Sesion</a> 
+            </div>
+
     </div>
 </body>
 </html>

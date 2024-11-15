@@ -69,7 +69,7 @@ $routes->get('admin', 'AdminController::index');
 
 //Ruta para la recuperacion de contra
 $routes->get('recuperarcontra', 'RecuperarContraController::index');
-$routes->post('recuperarcontra/procesar', 'RecuperarContraController::procesarRecuperacion');
+$routes->post('recuperarcontra/procesarRecuperacion', 'RecuperarContraController::procesarRecuperacion');
 
 //Ruta para el carrito
 $routes->get('carrito', 'CarritoController::index');
