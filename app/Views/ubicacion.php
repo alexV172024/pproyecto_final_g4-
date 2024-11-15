@@ -87,6 +87,9 @@
                         <li class="nav-item p-3 py-md-1"><a href="tienda" class="nav-link">Tienda</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="ubicacion" class="nav-link">Ubicación</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="" class="nav-link">Contacto</a></li>
+
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/productos'); ?>" class="nav-link">Accesorios</a></li>
+                        
                         <li class="nav-item p-3 py-md-1"><a href="carrito.php" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                     <div class="d-lg-none align-self-center py-3">
