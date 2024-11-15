@@ -2,16 +2,20 @@
 
 namespace App\Controllers;
 
-use App\Models\ProductosModel;
+use CodeIgniter\Controller;
+use App\Models\ProductosModel;  // Importa el modelo
 
-class Productos extends BaseController
+class ProductosController extends Controller
 {
     public function index()
     {
-        $productoModel = new ProductosModel();
+        // Crear una instancia del modelo ProductosModel
+        $productosModel = new ProductosModel();
+        
+        // Obtener todos los productos
+        $data['productos'] = $productosModel->findAll();  // O cualquier método que necesites
 
-        $data['accesorios'] = $productoModel->getProductos();
-
-        return view('productos', $data);  
+        // Cargar la vista y pasar los productos como datos
+        return view('productos', $data);  // 'productos' es el nombre de la vista
     }
 }

@@ -4,17 +4,11 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ProductoModel extends Model
+class ProductosModel extends Model
 {
-    protected $table      = 'productos';  
-    protected $primaryKey = 'id';      
+    protected $table = 'productos';  // Nombre de la tabla en la base de datos
+    protected $primaryKey = 'id';   // Clave primaria
+    protected $allowedFields = ['nombre', 'marca', 'modelo', 'precio', 'stock'];  // Campos permitidos
 
-    protected $allowedFields = ['nombre', 'marca', 'modelo', 'precio', 'stock'];  
-
-    protected $useTimestamps = true;  
-    
-    public function getProductos()
-    {
-        return $this->findAll();  
-    }
+    // Si necesitas puedes agregar reglas de validación o personalizar métodos
 }

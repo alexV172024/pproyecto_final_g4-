@@ -96,7 +96,7 @@ $routes->get('carrito/agregar/(:num)', 'CarritoController::agregar/$1');
     $routes->post('/accesorios/update/(:num)', 'AccesoriosController::update/$1');
     $routes->get('/accesorios/delete/(:num)', 'AccesoriosController::delete/$1');
 
-    $routes->get('productos', 'Productos::index'); 
+    $routes->get('/productos', 'ProductosController::index');
 
     // Rutas para Usuarios
     $routes->get('usuarios', 'UsuariosController::index');
