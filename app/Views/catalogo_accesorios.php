@@ -89,8 +89,9 @@
                             <p class="card-text">Marca: <?= esc($accesorio['marca']); ?></p>
                             <p class="card-text">Modelo: <?= esc($accesorio['modelo']); ?></p>
                             <p class="card-text">Precio: Q <?= esc($accesorio['precio']); ?></p>
-                            <a href="<?= site_url('accesorios/comprar/' . $accesorio['accesorio_id']); ?>" class="btn btn-primary">Comprar</a>
-                            
+
+                            <a href="<?= site_url('carrito/agregar/' . $accesorio['accesorio_id']); ?>" class="btn btn-primary">Comprar</a>
+
                         </div>
                     </div>
                 </div>
