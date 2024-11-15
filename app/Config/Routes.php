@@ -49,6 +49,9 @@ $routes->get('/tienda/aventura', 'MenuController::aventura');
 $routes->get('/tienda/deportes', 'MenuController::deportes');
 $routes->get('/tienda/simulacion', 'MenuController::simulacion');
 
+//Ruta para la vista accesorios de parte del usuario
+$routes->get('/catalogo_accesorios', 'CatalogoAccesorios::index');
+
 // Ruta para la vista de ubicación
 $routes->get('/ubicacion', 'MenuController::ubicacion');
 
