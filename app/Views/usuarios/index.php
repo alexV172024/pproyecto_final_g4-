@@ -117,10 +117,9 @@
         }
     </style>
 </head>
-<body>
-            <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
+<body>      
     <div class="container my-5">
-  
+    <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
     <h1 class="mb-4">Usuarios</h1>
 
         

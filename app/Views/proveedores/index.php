@@ -21,7 +21,7 @@
             max-width: 100%;
         }
 
-        h2 {
+        h1 {
             color: #343a40;
             text-align: center;
             margin-bottom: 20px;
@@ -104,20 +104,34 @@
     </style>
 </head>
 <body>
-<h2>Listado de Proveedores</h2>
-<a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
-<a href="<?= site_url('proveedores/create') ?>">Crear nuevo proveedor</a>
-<ul>
-    <?php foreach ($proveedores as $proveedor): ?>
-        <li>
-            <?= $proveedor['nombre']; ?> - 
-            <a href="<?= site_url('proveedores/edit/' . $proveedor['proveedor_id']); ?>">Editar</a> - 
-            <a href="<?= site_url('proveedores/delete/' . $proveedor['proveedor_id']); ?>">Eliminar</a>
+    <div class="container my-5">
+        <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a>
+        <h1 class="mb-4">Listado de Proveedores</h1>
 
-        </li>
-    <?php endforeach; ?>
-</ul>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <a href="<?= site_url('proveedores/create') ?>" class="btn btn-primary mb-3">Crear nuevo proveedor</a>
 
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>proveedor_id</th>
+                    <th>nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($proveedores as $proveedor): ?>
+                    <tr>
+                        <td><?= $proveedor['proveedor_id']; ?></td>
+                        <td><?= $proveedor['nombre']; ?></td>
+                        <td>
+                            <a href="<?= site_url('proveedores/edit/' . $proveedor['proveedor_id']); ?>" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="<?= site_url('proveedores/delete/' . $proveedor['proveedor_id']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este proveedor?');">Eliminar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

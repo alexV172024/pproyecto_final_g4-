@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Listado de Accesorios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -20,7 +21,7 @@
             max-width: 100%;
         }
 
-        h2 {
+        h1 {
             color: #343a40;
             text-align: center;
             margin-bottom: 20px;
@@ -103,39 +104,43 @@
     </style>
 </head>
 <body>
-<a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
-    <h1>Listado de Accesorios</h1>
-    <a href="<?= site_url('accesorios/create') ?>">Crear Nuevo Accesorio</a>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Precio</th>
-                <th>Proveedor</th>
-                <th>Stock</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($accesorios as $accesorio): ?>
-            <tr>
-                <td><?= $accesorio['accesorio_id']; ?></td>
-                <td><?= $accesorio['nombre']; ?></td>
-                <td><?= $accesorio['marca']; ?></td>
-                <td><?= $accesorio['modelo']; ?></td>
-                <td><?= $accesorio['precio']; ?></td>
-                <td><?= $accesorio['proveedor_id']; ?></td>
-                <td><?= $accesorio['stock']; ?></td>
-                <td>
-                <a href="<?= site_url('accesorios/edit/' . $accesorio['accesorio_id']); ?>">Editar</a>
-                <a href="<?= site_url('accesorios/delete/' . $accesorio['accesorio_id']); ?>" onclick="return confirm('¿Seguro que deseas eliminar este accesorio?');">Eliminar</a>
-            </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+    <div class="container my-5">
+        <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
+        <h1 class="mb-4">Listado de Accesorios</h1>
+
+        <a href="<?= site_url('accesorios/create') ?>" class="btn btn-primary mb-3">Crear Nuevo Accesorio</a>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Precio</th>
+                    <th>Proveedor</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($accesorios as $accesorio): ?>
+                    <tr>
+                        <td><?= $accesorio['accesorio_id']; ?></td>
+                        <td><?= $accesorio['nombre']; ?></td>
+                        <td><?= $accesorio['marca']; ?></td>
+                        <td><?= $accesorio['modelo']; ?></td>
+                        <td><?= $accesorio['precio']; ?></td>
+                        <td><?= $accesorio['proveedor_id']; ?></td>
+                        <td><?= $accesorio['stock']; ?></td>
+                        <td>
+                            <a href="<?= site_url('accesorios/edit/' . $accesorio['accesorio_id']); ?>" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="<?= site_url('accesorios/delete/' . $accesorio['accesorio_id']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este accesorio?');">Eliminar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

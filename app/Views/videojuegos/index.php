@@ -21,7 +21,7 @@
             max-width: 100%;
         }
 
-        h2 {
+        h1, h2 {
             color: #343a40;
             text-align: center;
             margin-bottom: 20px;
@@ -104,19 +104,33 @@
     </style>
 </head>
 <body>
-<h2>Listado de Videojuegos</h2>
-<a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
-<a href="<?= site_url('videojuegos/create') ?>">Crear nuevo videojuego</a>
-<ul>
-    <?php foreach ($videojuegos as $videojuego): ?>
-        <li>
-            <?= $videojuego['titulo']; ?> - 
-            <a href="<?= site_url('videojuegos/edit/' . $videojuego['videojuego_id']); ?>">Editar</a> - 
-<a href="<?= site_url('videojuegos/delete/' . $videojuego['videojuego_id']); ?>">Eliminar</a>
+    <div class="container my-5">
+        <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a>
+        <h2 class="mb-4">Listado de Videojuegos</h2>
 
-        </li>
-    <?php endforeach; ?>
-</ul>
+        <a href="<?= site_url('videojuegos/create') ?>" class="btn btn-primary mb-3">Crear nuevo videojuego</a>
 
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($videojuegos as $videojuego): ?>
+                    <tr>
+                        <td><?= $videojuego['videojuego_id']; ?></td>
+                        <td><?= $videojuego['titulo']; ?></td>
+                        <td>
+                            <a href="<?= site_url('videojuegos/edit/' . $videojuego['videojuego_id']); ?>" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="<?= site_url('videojuegos/delete/' . $videojuego['videojuego_id']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este videojuego?');">Eliminar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

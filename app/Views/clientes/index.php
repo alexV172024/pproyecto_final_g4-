@@ -18,10 +18,10 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 100%;
+            max-width: 100%; 
         }
 
-        h2 {
+        h1 {
             color: #343a40;
             text-align: center;
             margin-bottom: 20px;
@@ -105,13 +105,11 @@
 </head>
 <body>
     <div class="container my-5">
-    <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a>  
-    <h1 class="mb-4">Clientes</h1>
+        <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a>  
+        <h1 class="mb-4">Clientes</h1>
 
-        <!-- Botón para crear nuevo cliente-->
         <a href="<?= site_url('clientes/create') ?>" class="btn btn-primary mb-3">Crear nuevo cliente</a>
 
-        <!-- Tabla de clientes -->
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -129,10 +127,8 @@
                         <td><?= $cliente['contacto']; ?></td>
                         
                         <td>
-                            <!-- Botón para editar -->
                             <a href="<?= site_url('clientes/edit/' . $cliente['cliente_id']); ?>" class="btn btn-warning btn-sm">Editar</a>
 
-                            <!-- Botón para eliminar -->
                             <a href="<?= site_url('clientes/delete/' . $cliente['cliente_id']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este usuario?');">Eliminar</a>
                         </td>
                     </tr>
@@ -140,5 +136,5 @@
             </tbody>
         </table>
     </div>
-</body>
+</body>  
 </html>
