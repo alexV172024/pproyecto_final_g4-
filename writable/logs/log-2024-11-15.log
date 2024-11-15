@@ -291,3 +291,34 @@ INFO - 2024-11-15 08:11:45 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-11-15 08:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-11-15 08:12:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-11-15 16:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-15 16:08:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-15 16:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-15 16:17:34 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: catalogo_accesorios]
+in APPPATH\Views\catalogo_accesorios.php on line 93.
+ 1 APPPATH\Views\catalogo_accesorios.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\catalogo_accesorios.php', 93)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\catalogo_accesorios.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('catalogo_accesorios', [], true)
+ 5 APPPATH\Controllers\CatalogoAccesorios.php(14): view('catalogo_accesorios', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CatalogoAccesorios->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CatalogoAccesorios))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-11-15 16:17:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-15 16:17:47 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: catalogo_accesorios]
+in APPPATH\Views\catalogo_accesorios.php on line 93.
+ 1 APPPATH\Views\catalogo_accesorios.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\catalogo_accesorios.php', 93)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\pproyecto_final_g4-\\app\\Views\\catalogo_accesorios.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('catalogo_accesorios', [], true)
+ 5 APPPATH\Controllers\CatalogoAccesorios.php(14): view('catalogo_accesorios', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CatalogoAccesorios->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CatalogoAccesorios))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

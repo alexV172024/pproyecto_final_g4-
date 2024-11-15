@@ -20,5 +20,19 @@ class CarritoController extends Controller
         return redirect()->to('/carrito');
     }
 
-    // Otros métodos para ver el carrito, eliminar, etc.
+    public function ver()
+    {
+    $carrito = session()->get('carrito') ?: [];
+    $accesoriosModel = new \App\Models\AccesoriosModel();
+    $items = [];
+
+    foreach ($carrito as $accesorio_id) {
+        $accesorio = $accesoriosModel->find($accesorio_id);
+        if ($accesorio) {
+            $items[] = $accesorio;
+        }
+    }
+
+    return view('carrito', ['carrito' => $items]);
 }
+} 

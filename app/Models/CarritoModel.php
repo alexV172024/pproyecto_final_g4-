@@ -47,4 +47,4 @@ class CarritoModel extends Model
     {
         $this->emptyTable();
     }
-}
+} 

@@ -52,21 +52,21 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($carrito as $item): ?>
-                    <tr>
-                        <td><?= esc($item['nombre']); ?></td>
-                        <td><?= esc($item['marca']); ?></td>
-                        <td><?= esc($item['modelo']); ?></td>
-                        <td><?= esc($item['precio']); ?> Q</td>
-                        <td>
-                            <!-- Aquí puedes agregar botones de eliminación o modificación de la cantidad -->
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
+    <?php foreach ($carrito as $item): ?>
+        <tr>
+            <td><?= esc($item['nombre']); ?></td>
+            <td><?= esc($item['marca']); ?></td>
+            <td><?= esc($item['modelo']); ?></td>
+            <td><?= esc($item['precio']); ?> Q</td>
+            <td>
+                <a href="<?= site_url('carrito/eliminar/' . $item['id']); ?>" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</tbody>
         </table>
     <?php else: ?>
         <p>No hay productos en el carrito.</p>
     <?php endif; ?>
 </body>
-</html>
+</html> 

@@ -72,8 +72,8 @@ $routes->get('recuperarcontra', 'RecuperarContraController::index');
 $routes->post('recuperarcontra/procesarRecuperacion', 'RecuperarContraController::procesarRecuperacion');
 
 //Ruta para el carrito
-$routes->get('/carrito', 'CarritoController::index');  // :'(
-$routes->get('/carrito/agregar/(:num)', 'CarritoController::agregar/$1');
+$routes->get('carrito/agregar/(:num)', 'CarritoController::agregar/$1');
+$routes->get('carrito', 'CarritoController::ver');
 
     // Rutas para Proveedores
     $routes->get('proveedores', 'ProveedoresController::index');

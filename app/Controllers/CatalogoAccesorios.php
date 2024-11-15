@@ -14,3 +14,4 @@ class CatalogoAccesorios extends BaseController
         return view('catalogo_accesorios', $data); 
     }
 }
+ 
