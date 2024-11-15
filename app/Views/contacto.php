@@ -79,11 +79,10 @@
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                     <ul class="navbar-nav fs-5 justify-content-evenly">
                         <li class="nav-item p-3 py-md-1"><a href="tienda" class="nav-link">Tienda</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/catalogo_accesorios'); ?>" class="nav-link">Catalogo</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="ubicacion" class="nav-link">Ubicación</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="contacto" class="nav-link">Contacto</a></li>
 
-                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/productos'); ?>" class="nav-link">Accesorios</a></li>
-                        
                         <li class="nav-item p-3 py-md-1"><a href="carrito.php" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                     <div class="d-lg-none align-self-center py-3">

@@ -53,6 +53,7 @@
                     <ul class="navbar-nav fs-5">
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/menu'); ?>" class="nav-link">Inicio</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/tienda'); ?>" class="nav-link">Tienda</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/catalogo_accesorios'); ?>" class="nav-link">Catalogo</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/ubicacion'); ?>" class="nav-link">Ubicación</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/contacto'); ?>" class="nav-link">Contacto</a></li>
                         <?php if(session()->get('nombre_usuario')): ?>

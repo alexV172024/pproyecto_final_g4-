@@ -2,29 +2,23 @@
 
 namespace App\Controllers;
 
-use App\Models\CarritoModel;
+use CodeIgniter\Controller;
 
-class CarritoController extends BaseController
+class CarritoController extends Controller
 {
-    public function agregar($id)
+    public function agregar($accesorio_id)
     {
-        $carritoModel = new CarritoModel();
+        $carrito = session()->get('carrito');
+        if (!$carrito) {
+            $carrito = [];
+        }
 
-        $datosCarrito = [
-            'videojuego_id' => $id,
-            'cantidad' => 1 
-        ];
+        // Añadir el accesorio al carrito
+        $carrito[] = $accesorio_id;
+        session()->set('carrito', $carrito);
 
-        $carritoModel->insert($datosCarrito);
-
-        return redirect()->to('/carrito')->with('success', 'Juego agregado al carrito');
+        return redirect()->to('/carrito');
     }
 
-    public function index()
-    {
-        $carritoModel = new CarritoModel();
-        $items = $carritoModel->findAll();
-
-        return view('carrito/index', ['items' => $items]);
-    }
+    // Otros métodos para ver el carrito, eliminar, etc.
 }

@@ -9,8 +9,8 @@ class CatalogoAccesorios extends BaseController
     public function index()
     {
         $accesoriosModel = new AccesoriosModel();
-        $data['accesorios'] = $accesoriosModel->findAll();  // Obtén todos los accesorios
+        $data['accesorios'] = $accesoriosModel->findAll();  
 
-        return view('catalogo_accesorios', $data);  // Carga la vista con los datos
+        return view('catalogo_accesorios', $data); 
     }
 }
