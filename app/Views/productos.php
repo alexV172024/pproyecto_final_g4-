@@ -50,7 +50,7 @@
     <h2 class="text-center">Accesorios Disponibles</h2>
     <div class="container mt-4">
         <div class="row">
-            <?php foreach ($accesorios as $accesorio): ?>
+            <?php foreach ($productos as $accesorio): ?>
                 <div class="col-md-4 mb-3">
                     <div class="category-card">
                         <div class="card-body">
