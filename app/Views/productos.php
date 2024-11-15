@@ -47,6 +47,7 @@
     </style>
 </head>
 <body>
+<a href="<?= base_url('/menu'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
     <h2 class="text-center">Accesorios Disponibles</h2>
     <div class="container mt-4">
         <div class="row">
