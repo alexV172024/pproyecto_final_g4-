@@ -4,67 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proveedores</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-        crossorigin="anonymous"
-    />
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a tu archivo CSS separado -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Fuente retro */
-
         body {
-            font-family: 'Press Start 2P', sans-serif;
-            color: #f1f1f1; /* Color de texto claro */
-            background-color: #121212; /* Fondo oscuro */
-            margin: 0; /* Eliminar márgenes predeterminados */
-        }
-
-        .banner {
-            height: 200px; /* Altura del banner */
-            background-color: #45a29e; /* Color de fondo del banner */
-            display: flex; /* Para centrar el texto */
-            align-items: center; /* Centrando verticalmente */
-            justify-content: center; /* Centrando horizontalmente */
-        }
-
-        .offcanvas {
-            background-color: #000; /* Color de fondo negro para el menú offcanvas */
-        }
-
-        .offcanvas-header {
-            background-color: #0b0c10; /* Fondo oscuro para el encabezado del offcanvas */
-        }
-
-        .offcanvas-body {
-            background-color: #000; /* Color de fondo negro para el cuerpo del offcanvas */
-        }
-
-        .offcanvas-title {
-            font-size: 1rem; /* Tamaño de fuente más pequeño para el título del offcanvas */
-            color: #39FF14; /* Color verde neón para GAMESTATION en el offcanvas */
-        }
-
-        .navbar-brand {
-            font-size: 0.9rem; /* Reducir tamaño de fuente al 90% */
-            color: #39FF14; /* Color verde neón */
-        }
-
-        .nav-link {
-            color: #f1f1f1; /* Color de texto claro para los enlaces */
-        }
-
-        .nav-link:hover {
-            color: #007bff; /* Color azul al pasar el cursor */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
         }
 
         .container {
-            padding-top: 20px; 
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+        }
+
+        h2 {
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #343a40 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        td a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+            border-color: #d39e00;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.8rem;
+            }
+
+            td, th {
+                padding: 6px;
+            }
+
+            .container {
+                padding: 15px;
+            }
         }
     </style>
 </head>
