@@ -38,35 +38,39 @@
     </style>
 </head>
 <body>
-    <h1>Carrito de Compras</h1>
-    
+    <h1 class="text-center">Carrito de Compras</h1>
+
     <?php if (!empty($carrito)): ?>
-        <table>
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Precio</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody>
-    <?php foreach ($carrito as $item): ?>
-        <tr>
-            <td><?= esc($item['nombre']); ?></td>
-            <td><?= esc($item['marca']); ?></td>
-            <td><?= esc($item['modelo']); ?></td>
-            <td><?= esc($item['precio']); ?> Q</td>
-            <td>
-                <a href="<?= site_url('carrito/eliminar/' . $item['id']); ?>" class="btn btn-danger btn-sm">Eliminar</a>
-            </td>
-        </tr>
-    <?php endforeach; ?>
-</tbody>
-        </table>
+        <div class="container mt-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Precio</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($carrito as $item): ?>
+                        <tr>
+                            
+                            <td><?= esc($item['nombre']); ?></td>
+                            <td><?= esc($item['marca']); ?></td>
+                            <td><?= esc($item['modelo']); ?></td>
+                            <td><?= esc($item['precio']); ?> Q</td>
+                            <td>
+                                <a href="<?= site_url('carrito/eliminar/' . $item['id']); ?>" class="btn btn-danger btn-sm">Eliminar</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
     <?php else: ?>
-        <p>No hay productos en el carrito.</p>
+        <p class="text-center">No hay productos en el carrito.</p>
     <?php endif; ?>
+
 </body>
-</html> 
+</html>

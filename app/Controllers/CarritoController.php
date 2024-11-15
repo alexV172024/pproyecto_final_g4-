@@ -1,63 +1,60 @@
 <?php
+
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\AccesoriosModel;
-use App\Models\CarritoModel;
 
-class CarritoController extends Controller
+class Carrito extends Controller
 {
-    // Agregar accesorio al carrito
-    public function agregar($accesorio_id)
+    public function index()
     {
+        // Obtener los productos del carrito de la sesión
         $carrito = session()->get('carrito');
-        if (!$carrito) {
-            $carrito = [];
-        }
-
-        // Añadir el accesorio al carrito
-        $carrito[] = $accesorio_id;
-        session()->set('carrito', $carrito);
-
-        return redirect()->to('/carrito');
+        
+        return view('carrito', ['carrito' => $carrito]);
     }
 
-    // Ver los productos en el carrito
-    public function ver()
+    public function agregar()
+    {
+   
+        $accesorio = [
+            'id' => $this->request->getPost('id'),
+            'nombre' => $this->request->getPost('nombre'),
+            'marca' => $this->request->getPost('marca'),
+            'modelo' => $this->request->getPost('modelo'),
+            'precio' => $this->request->getPost('precio')
+        ];
+
+        // Obtener el carrito actual de la sesión
+        $carrito = session()->get('carrito') ?? [];
+
+        // Agregar el accesorio al carrito
+        $carrito[] = $accesorio;
+
+        // Guardar el carrito actualizado en la sesión
+        session()->set('carrito', $carrito);
+
+        // Redirigir al carrito
+        return redirect()->to(site_url('carrito'));
+    }
+
+    public function eliminar($id)
     {
         // Obtener el carrito de la sesión
-        $carrito = session()->get('carrito') ?: [];
-        
-        // Crear instancia del modelo AccesoriosModel
-        $accesoriosModel = new AccesoriosModel();
-        
-        // Crear un array para almacenar los accesorios del carrito
-        $items = [];
+        $carrito = session()->get('carrito');
 
-        // Recorrer los IDs de los accesorios en el carrito
-        foreach ($carrito as $accesorio_id) {
-            // Obtener información del accesorio usando el modelo
-            $accesorio = $accesoriosModel->find($accesorio_id);
-            if ($accesorio) {
-                // Añadir accesorio al carrito
-                $items[] = $accesorio;
+        // Eliminar el accesorio del carrito
+        foreach ($carrito as $key => $item) {
+            if ($item['id'] == $id) {
+                unset($carrito[$key]);
+                break;
             }
         }
 
-        // Pasar los productos a la vista
-        return view('carrito', ['carrito' => $items]);
-    }
+        // Guardar el carrito actualizado en la sesión
+        session()->set('carrito', $carrito);
 
-    // Eliminar un accesorio del carrito (opcional)
-    public function eliminar($accesorio_id)
-    {
-        $carrito = session()->get('carrito');
-        if ($carrito) {
-            // Filtrar el carrito para eliminar el accesorio con el ID dado
-            $carrito = array_filter($carrito, fn($item) => $item !== $accesorio_id);
-            session()->set('carrito', $carrito);
-        }
-
-        return redirect()->to('/carrito');
+        // Redirigir al carrito
+        return redirect()->to(site_url('carrito'));
     }
 }
