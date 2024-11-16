@@ -69,15 +69,17 @@
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
+
                 </table>
+                
             </div>
+
         <?php else: ?>
             <div class="alert alert-warning text-center empty-cart-alert" role="alert">
                 No hay productos en el carrito.
             </div>
         <?php endif; ?>
 
-        <!-- Botón para regresar al catálogo -->
         <div class="text-center mt-4">
             <a href="<?= base_url('/catalogo_accesorios'); ?>" class="btn btn-secondary">Volver al Catálogo</a>
         </div>
