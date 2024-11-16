@@ -12,7 +12,6 @@
             padding: 0;
             background-color: #f8f9fa;
         }
-
         .container {
             background-color: white;
             padding: 20px;
@@ -20,7 +19,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 100%; 
         }
-
         h1 {
             color: #343a40;
             text-align: center;

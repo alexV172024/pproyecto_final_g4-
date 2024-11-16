@@ -19,4 +19,5 @@
         <input type="text" class="form-control" id="ubicacion" name="ubicacion" required>
     </div>
     <button type="submit" class="btn btn-success">Guardar Inventario</button>
+
 </form>

@@ -9,4 +9,5 @@ class AccesoriosModel extends Model
     protected $table = 'accesorios';
     protected $primaryKey = 'id';
     protected $allowedFields = ['nombre', 'marca', 'modelo', 'precio'];
+
 }
