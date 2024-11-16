@@ -92,21 +92,22 @@
 
                             <!-- Formulario para agregar al carrito -->
                             <form action="<?= site_url('carrito/agregar'); ?>" method="POST">
-                                <?= csrf_field(); ?>  <!-- Protección CSRF -->
-                                <input type="hidden" name="id" value="<?= esc($accesorio['accesorio_id']); ?>">
-                                <input type="hidden" name="nombre" value="<?= esc($accesorio['nombre']); ?>">
-                                <input type="hidden" name="marca" value="<?= esc($accesorio['marca']); ?>">
-                                <input type="hidden" name="modelo" value="<?= esc($accesorio['modelo']); ?>">
-                                <input type="hidden" name="precio" value="<?= esc($accesorio['precio']); ?>">
-                                <button type="submit" class="btn btn-primary">Comprar</button>
-                            </form>
+    <?= csrf_field(); ?>  <!-- Protección CSRF -->
+    <input type="hidden" name="tipo" value="accesorio">
+    <input type="hidden" name="id" value="<?= esc($accesorio['accesorio_id']); ?>">
+    <input type="hidden" name="nombre" value="<?= esc($accesorio['nombre']); ?>">
+    <input type="hidden" name="marca" value="<?= esc($accesorio['marca']); ?>">
+    <input type="hidden" name="modelo" value="<?= esc($accesorio['modelo']); ?>">
+    <input type="hidden" name="precio" value="<?= esc($accesorio['precio']); ?>">
+    <button type="submit" class="btn btn-primary">Comprar</button>
+</form>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
     </div>
-
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
