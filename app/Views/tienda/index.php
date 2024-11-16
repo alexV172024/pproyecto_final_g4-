@@ -17,85 +17,91 @@
     />
     <link rel="stylesheet" href="css/style.css"> <!-- Enlace a tu archivo CSS separado -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Fuente retro */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Fuente retro */
 
-        body {
-            font-family: 'Press Start 2P', sans-serif;
-            color: #f1f1f1; /* Color de texto claro */
-            background-color: #121212; /* Fondo oscuro */
-            margin: 0; /* Eliminar márgenes predeterminados */
-        }
+    body {
+        font-family: 'Press Start 2P', sans-serif;
+        color: #f1f1f1; /* Color de texto claro */
+        background-color: #121212; /* Fondo oscuro */
+        margin: 0; /* Eliminar márgenes predeterminados */
+    }
 
-        .banner {
-            height: 200px; /* Altura del banner */
-            background-color: #; /* Color de fondo del banner */
-            display: flex; /* Para centrar el texto */
-            align-items: center; /* Centrando verticalmente */
-            justify-content: center; /* Centrando horizontalmente */
-        }
+    .banner {
+        height: 200px; /* Altura del banner */
+        background-color: #; /* Color de fondo del banner */
+        display: flex; /* Para centrar el texto */
+        align-items: center; /* Centrando verticalmente */
+        justify-content: center; /* Centrando horizontalmente */
+    }
 
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px; /* Espaciado entre categorías */
-            margin-top: 20px; /* Espaciado superior */
-        }
+    .categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px; /* Espaciado entre categorías */
+        margin-top: 20px; /* Espaciado superior */
+    }
 
-        .category-card {
-            background-color: #0b0c10; /* Fondo oscuro para las tarjetas */
-            border: 1px solid #45a29e; /* Borde color verde */
-            border-radius: 5px; /* Bordes redondeados */
-            padding: 20px;
-            text-align: center; /* Centrar texto */
-            transition: transform 0.2s; /* Transición suave para hover */
-        }
+    .category-card {
+        background-color: #0b0c10; /* Fondo oscuro para las tarjetas */
+        border: 1px solid #45a29e; /* Borde color verde */
+        border-radius: 5px; /* Bordes redondeados */
+        padding: 20px;
+        text-align: center; /* Centrar texto */
+        transition: transform 0.2s; /* Transición suave para hover */
+    }
 
-        .category-card:hover {
-            transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
-        }
+    .category-card:hover {
+        transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+    }
 
-        .offcanvas {
-            background-color: #000; /* Color de fondo negro para el menú offcanvas */
-        }
+    .offcanvas {
+        background-color: #000; /* Color de fondo negro para el menú offcanvas */
+    }
 
-        .offcanvas-header {
-            background-color: #0b0c10; /* Fondo oscuro para el encabezado del offcanvas */
-        }
+    .offcanvas-header {
+        background-color: #0b0c10; /* Fondo oscuro para el encabezado del offcanvas */
+    }
 
-        .offcanvas-body {
-            background-color: #000; /* Color de fondo negro para el cuerpo del offcanvas */
-        }
+    .offcanvas-body {
+        background-color: #000; /* Color de fondo negro para el cuerpo del offcanvas */
+    }
 
-        .offcanvas-title {
-            font-size: 1rem; /* Tamaño de fuente más pequeño para el título del offcanvas */
-            color: #39FF14; /* Color verde neón para GAMESTATION en el offcanvas */
-        }
+    .offcanvas-title {
+        font-size: 1rem; /* Tamaño de fuente más pequeño para el título del offcanvas */
+        color: #39FF14; /* Color verde neón para GAMESTATION en el offcanvas */
+    }
 
-        .navbar-brand {
-            font-size: 0.9rem; /* Reducir tamaño de fuente al 90% */
-            color: #39FF14; /* Color verde neón */
-        }
+    .navbar-brand {
+        font-size: 0.9rem; /* Reducir tamaño de fuente al 90% */
+        color: #39FF14; /* Color verde neón */
+    }
 
-        .nav-link {
-            color: #f1f1f1; /* Color de texto claro para los enlaces */
-        }
+    .nav-link {
+        color: #f1f1f1; /* Color de texto claro para los enlaces */
+    }
 
-        .nav-link:hover {
-            color: #007bff; /* Color azul al pasar el cursor */
-        }
+    .nav-link:hover {
+        color: #007bff; /* Color azul al pasar el cursor */
+    }
 
-        .container {
-            padding-top: 50px; /* Espaciado superior para el contenedor */
-        }
+    .container {
+        padding-top: 50px; /* Espaciado superior para el contenedor */
+    }
 
-        p1 {
-    color: black;
-        }
+    p1 {
+        color: black;
+    }
 
-        h5 {
-    color: black;
-        }
-    </style>
+    h5 {
+        color: black;
+    }
+
+
+    .card-text {
+        color: black; /* Cambiar el color del texto a negro */
+    }
+</style>
+
 </head>
 <body>
     <!-- MENU START  -->
@@ -137,8 +143,8 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-6 d-flex justify-content-start">
-            <a href="<?= base_url('/novedades'); ?>" class="btn btn-primary me-2">Novedades</a>
-            <a href="<?= base_url('/ofertas'); ?>" class="btn btn-primary me-2">Ofertas</a>
+                <a href="<?= base_url('/novedades'); ?>" class="btn btn-primary me-2">Novedades</a>
+                <a href="<?= base_url('/ofertas'); ?>" class="btn btn-primary me-2">Ofertas</a>
             </div>
             <div class="col-md-6 d-flex justify-content-end">
                 <input type="text" class="form-control w-50" placeholder="Buscar juego...">
@@ -152,14 +158,13 @@
             <div class="col-12">
                 <div class="banner">
                     <img src="https://www.shutterstock.com/image-vector/games-time-neon-text-gamepad-260nw-2288041501.jpg" alt="Acción" class="img-fluid" />
-
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Videojuegos por categorías -->
-    <div class="container mt-4">
+     <!-- Videojuegos por categorías -->
+     <div class="container mt-4">
         <!--<h3 class="text-center">Videojuegos por Categorías</h3>--> 
         <div class="categories">
             <div class="category-card">
@@ -178,40 +183,32 @@
                 <h4>Simulación</h4>
                 <img src="https://cdn.dlcompare.com/others_jpg/upload/news/image/life-by-you-entra-en-early-access-image-15bbd59b.jpg.webp" alt="Simulación" class="img-fluid" />
             </div>
-            <!-- Añade más categorías según sea necesario -->
+     
         </div>
     </div><br><br>
     
+
+    <!-- Productos disponibles -->
     <h2 class="text-center">Videojuegos Disponibles</h2>
-<div class="container mt-4">
-    <div class="row">
-        <?php foreach ($juegos as $juego): ?>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <!-- Mostramos solo los campos requeridos -->
-                        <p1><h5 class="card-title"><?= esc($juego['titulo']); ?></h5></p>
-                        <p1 class="card-text">Género: <?= esc($juego['genero']); ?></p>
-                        <p1 class="card-text">Plataforma: <?= esc($juego['plataforma']); ?></p>
-<<<<<<< HEAD
-                        <p1 class="card-text">Precio: $<?= esc($juego['precio']); ?></p>
-                        <a href="<?= site_url('carrito/agregar/' . $juego['videojuego_id']); ?>" class="btn btn-primary">Comprar</a>
-=======
-                        <p1 class="card-text">Precio: Q <?= esc($juego['precio']); ?></p>
-                        <a href="<?= site_url('tienda/comprar/' . $juego['videojuego_id']); ?>" class="btn btn-primary">Comprar</a>
->>>>>>> b535fda8d0e10f8de8232e8b0b82ce71dbdacf3b
+    <div class="container mt-4">
+        <div class="row">
+            <?php foreach ($juegos as $juego): ?>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-text"><?= esc($juego['titulo']); ?></h5>
+                            <p class="card-text">Género: <?= esc($juego['genero']); ?></p>
+                            <p class="card-text">Plataforma: <?= esc($juego['plataforma']); ?></p>
+                            <p class="card-text">Precio: Q <?= esc($juego['precio']); ?></p>
+                            <a href="<?= site_url('tienda/comprar/' . $juego['videojuego_id']); ?>" class="btn btn-primary">Comprar</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
     </div>
-</div>
 
-
-
-
-</div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

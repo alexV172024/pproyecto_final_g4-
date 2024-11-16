@@ -84,7 +84,7 @@
                 </div>
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                     <ul class="navbar-nav fs-5 justify-content-evenly">
-                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/tienda'); ?>" class="nav-link">Tienda</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('tienda'); ?>" class="nav-link">Tienda</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/catalogo_accesorios'); ?>" class="nav-link">Catalogo</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/contacto'); ?>" class="nav-link">Contacto</a></li>
                         
@@ -94,7 +94,7 @@
                         <?php endif; ?>
                         <a href="<?= site_url('/') ?>">Cerrar sesión</a>
 
-                        <li class="nav-item p-3 py-md-1"><a href="carrito.php" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="carrito" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                     <div class="d-lg-none align-self-center py-3">
                         <a href="carrito.php" class="text-info fs-2"><i class="bi bi-cart-fill" style="color: #00ff00;"></i></a>

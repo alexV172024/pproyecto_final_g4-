@@ -89,7 +89,7 @@
                         <li class="nav-item p-3 py-md-1"><a href="ubicacion" class="nav-link">Ubicación</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="contacto" class="nav-link">Contacto</a></li>
                         
-                        <li class="nav-item p-3 py-md-1"><a href="carrito.php" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="carrito" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                     <div class="d-lg-none align-self-center py-3">
                         <a href="login.php" class="text-info fs-2"><i class="bi bi-person-fill" style="color: #00ff00;"></i></a>

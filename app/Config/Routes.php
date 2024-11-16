@@ -73,9 +73,10 @@ $routes->get('recuperarcontra', 'RecuperarContraController::index');
 $routes->post('recuperarcontra/procesarRecuperacion', 'RecuperarContraController::procesarRecuperacion');
 
 //Ruta para el carrito
-$routes->get('carrito', 'CarritoController::index'); // Ruta para ver el carrito
-$routes->get('carrito/eliminar/(:num)', 'CarritoController::eliminar/$1'); // Ruta para eliminar un producto
-$routes->get('/carrito/agregar/(:num)', 'CarritoController::agregar/$1');
+$routes->get('carrito', 'CarritoController::index');
+$routes->post('carrito/agregar', 'CarritoController::agregar');
+$routes->get('carrito/eliminar/(:num)', 'CarritoController::eliminar/$1');
+
     // Rutas para Proveedores
     $routes->get('proveedores', 'ProveedoresController::index');
     $routes->get('proveedores/create', 'ProveedoresController::create');

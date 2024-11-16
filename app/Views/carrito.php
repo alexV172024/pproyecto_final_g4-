@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>GAMESTATION: Carrito de Compras</title>
-    <link rel="icon" href="Views/img/element.ico" type="image/x-icon">
+    <link rel="icon" href="<?= base_url('img/element.ico'); ?>" type="image/x-icon">
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -35,42 +35,52 @@
         .carrito-item:hover {
             transform: scale(1.05);
         }
+        .empty-cart-alert {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1 class="text-center">Carrito de Compras</h1>
+    <div class="container mt-5">
+        <h1 class="text-center">Carrito de Compras</h1>
 
-    <?php if (!empty($carrito)): ?>
-        <div class="container mt-4">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Marca</th>
-                        <th>Modelo</th>
-                        <th>Precio</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($carrito as $item): ?>
+        <?php if (!empty($carrito)): ?>
+            <div class="container mt-4">
+                <table class="table table-dark table-hover">
+                    <thead>
                         <tr>
-                            
-                            <td><?= esc($item['nombre']); ?></td>
-                            <td><?= esc($item['marca']); ?></td>
-                            <td><?= esc($item['modelo']); ?></td>
-                            <td><?= esc($item['precio']); ?> Q</td>
-                            <td>
-                                <a href="<?= site_url('carrito/eliminar/' . $item['id']); ?>" class="btn btn-danger btn-sm">Eliminar</a>
-                            </td>
+                            <th>Producto</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Precio</th>
+                            <th>Acción</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    <?php else: ?>
-        <p class="text-center">No hay productos en el carrito.</p>
-    <?php endif; ?>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($carrito as $item): ?>
+                            <tr>
+                                <td><?= esc($item['nombre']); ?></td>
+                                <td><?= esc($item['marca']); ?></td>
+                                <td><?= esc($item['modelo']); ?></td>
+                                <td><?= number_format(esc($item['precio']), 2); ?> Q</td>
+                                <td>
+                                    <a href="<?= site_url('carrito/eliminar/' . $item['id']); ?>" class="btn btn-danger btn-sm">Eliminar</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        <?php else: ?>
+            <div class="alert alert-warning text-center empty-cart-alert" role="alert">
+                No hay productos en el carrito.
+            </div>
+        <?php endif; ?>
 
+        <!-- Botón para regresar al catálogo -->
+        <div class="text-center mt-4">
+            <a href="<?= base_url('/catalogo_accesorios'); ?>" class="btn btn-secondary">Volver al Catálogo</a>
+        </div>
+    </div>
 </body>
 </html>
