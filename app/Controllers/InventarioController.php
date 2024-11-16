@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+
 use App\Models\InventarioModel;
 
 class InventarioController extends BaseController

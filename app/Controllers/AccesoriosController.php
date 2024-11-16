@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+
 use App\Models\AccesorioModel;
 
 class AccesoriosController extends BaseController
