@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class TiendaModel extends Model
 {
-    protected $table = 'videojuegos'; // Nombre de la tabla en la base de datos
+    protected $table = 'videojuegos'; 
     protected $primaryKey = 'videojuego_id';
 
     protected $allowedFields = ['videojuego_id', 'plataforma', 'genero', 'precio', 'cantidad', 'proveedor_id'];

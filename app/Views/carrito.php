@@ -49,20 +49,32 @@
                 <table class="table table-dark table-hover">
                     <thead>
                         <tr>
-                            <th>Producto</th>
-                            <th>Marca</th>
-                            <th>Modelo</th>
-                            <th>Precio</th>
-                            <th>Acción</th>
+                            <th>Especificaciones de la compra</th>
+                            <th></th> 
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($carrito as $item): ?>
+                        <?php 
+                            $total = 0; // Variable para acumular el total
+                            foreach ($carrito as $item): 
+                                $total += $item['precio']; // Sumar el precio de cada producto
+                        ?>
                             <tr>
-                                <td><?= esc($item['nombre']); ?></td>
-                                <td><?= esc($item['marca']); ?></td>
-                                <td><?= esc($item['modelo']); ?></td>
-                                <td><?= number_format(esc($item['precio']), 2); ?> Q</td>
+                                <td>
+                                    <?= esc($item['nombre']); ?>
+                                    <?= esc($item['marca']); ?>
+                                    <?= esc($item['modelo']); ?>
+                                    <?php if (isset($item['titulo'])): ?>
+                                         <?= esc($item['titulo']); ?>
+                                    <?php endif; ?>
+                                    <?php if (isset($item['plataforma'])): ?>
+                                        <?= esc($item['plataforma']); ?>
+                                    <?php endif; ?>
+                                    <?php if (isset($item['genero'])): ?>
+                                        <?= esc($item['genero']); ?>
+                                    <?php endif; ?>
+                                    - Precio: Q <?= number_format(esc($item['precio']), 2); ?> 
+                                </td>
                                 <td>
                                     <a href="<?= site_url('carrito/eliminar/' . $item['id']); ?>" class="btn btn-danger btn-sm">Eliminar</a>
                                 </td>
@@ -71,15 +83,31 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- Mostrar el total de la compra -->
+            <div class="text-center mt-4">
+                <h3>Total de la compra: Q <?= number_format($total, 2); ?></h3>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="text-center mt-4">
+                <!-- Botón de pagar (sin acción) -->
+                <button class="btn btn-success">Pagar</button>
+
+                <!-- Botón para borrar todo (sin acción) -->
+                <a href="<?= site_url('carrito/borrar_todo'); ?>" class="btn btn-danger ms-2">Borrar Todo</a>
+
+            </div>
+
         <?php else: ?>
             <div class="alert alert-warning text-center empty-cart-alert" role="alert">
                 No hay productos en el carrito.
             </div>
         <?php endif; ?>
 
-        <!-- Botón para regresar al catálogo -->
         <div class="text-center mt-4">
-            <a href="<?= base_url('/catalogo_accesorios'); ?>" class="btn btn-secondary">Volver al Catálogo</a>
+            <a href="<?= base_url('/catalogo_accesorios'); ?>" class="btn btn-secondary">Volver al Accesorios</a>
+            <a href="<?= base_url('tienda'); ?>" class="btn btn-secondary">Volver al VideoJuegos</a>
         </div>
     </div>
 </body>

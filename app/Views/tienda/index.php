@@ -15,77 +15,77 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a tu archivo CSS separado -->
+    <link rel="stylesheet" href="css/style.css"> 
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Fuente retro */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
 
     body {
         font-family: 'Press Start 2P', sans-serif;
-        color: #f1f1f1; /* Color de texto claro */
-        background-color: #121212; /* Fondo oscuro */
-        margin: 0; /* Eliminar márgenes predeterminados */
+        color: #f1f1f1; 
+        background-color: #121212; 
+        margin: 0; 
     }
 
     .banner {
-        height: 200px; /* Altura del banner */
-        background-color: #; /* Color de fondo del banner */
-        display: flex; /* Para centrar el texto */
-        align-items: center; /* Centrando verticalmente */
-        justify-content: center; /* Centrando horizontalmente */
+        height: 200px;
+        background-color: #121212; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
     }
 
     .categories {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px; /* Espaciado entre categorías */
-        margin-top: 20px; /* Espaciado superior */
+        gap: 20px;
+        margin-top: 20px; 
     }
 
     .category-card {
-        background-color: #0b0c10; /* Fondo oscuro para las tarjetas */
-        border: 1px solid #45a29e; /* Borde color verde */
-        border-radius: 5px; /* Bordes redondeados */
+        background-color: #0b0c10; 
+        border: 1px solid #45a29e; 
+        border-radius: 5px; 
         padding: 20px;
-        text-align: center; /* Centrar texto */
-        transition: transform 0.2s; /* Transición suave para hover */
+        text-align: center; 
+        transition: transform 0.2s; 
     }
 
     .category-card:hover {
-        transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+        transform: scale(1.05); 
     }
 
     .offcanvas {
-        background-color: #000; /* Color de fondo negro para el menú offcanvas */
+        background-color: #000; 
     }
 
     .offcanvas-header {
-        background-color: #0b0c10; /* Fondo oscuro para el encabezado del offcanvas */
+        background-color: #0b0c10; 
     }
 
     .offcanvas-body {
-        background-color: #000; /* Color de fondo negro para el cuerpo del offcanvas */
+        background-color: #000; 
     }
 
     .offcanvas-title {
-        font-size: 1rem; /* Tamaño de fuente más pequeño para el título del offcanvas */
-        color: #39FF14; /* Color verde neón para GAMESTATION en el offcanvas */
+        font-size: 1rem; 
+        color: #39FF14; 
     }
 
     .navbar-brand {
-        font-size: 0.9rem; /* Reducir tamaño de fuente al 90% */
-        color: #39FF14; /* Color verde neón */
+        font-size: 0.9rem; 
+        color: #39FF14; 
     }
 
     .nav-link {
-        color: #f1f1f1; /* Color de texto claro para los enlaces */
+        color: #f1f1f1; 
     }
 
     .nav-link:hover {
-        color: #007bff; /* Color azul al pasar el cursor */
+        color: #007bff; 
     }
 
     .container {
-        padding-top: 50px; /* Espaciado superior para el contenedor */
+        padding-top: 50px; 
     }
 
     p1 {
@@ -96,11 +96,11 @@
         color: black;
     }
 
-
     .card-text {
-        color: black; /* Cambiar el color del texto a negro */
+        color: black; 
     }
 </style>
+
 
 </head>
 <body>
@@ -146,9 +146,15 @@
                 <a href="<?= base_url('/novedades'); ?>" class="btn btn-primary me-2">Novedades</a>
                 <a href="<?= base_url('/ofertas'); ?>" class="btn btn-primary me-2">Ofertas</a>
             </div>
-            <div class="col-md-6 d-flex justify-content-end">
-                <input type="text" class="form-control w-50" placeholder="Buscar juego...">
-            </div>
+           <!-- Campo de búsqueda -->
+<div class="col-md-6 d-flex justify-content-end">
+    <form action="<?= base_url('tienda'); ?>" method="POST" class="d-flex w-50">
+        <?= csrf_field(); ?>
+        <input type="text" name="busqueda" class="form-control" placeholder="Buscar juego..." value="<?= esc($busqueda ?? ''); ?>">
+        <button type="submit" class="btn btn-primary ms-2">Buscar</button>
+    </form>
+</div>
+
         </div>
     </div>
 
@@ -165,7 +171,7 @@
  
      <!-- Videojuegos por categorías -->
      <div class="container mt-4">
-        <!--<h3 class="text-center">Videojuegos por Categorías</h3>--> 
+       
         <div class="categories">
             <div class="category-card">
                 <h4>Acción</h4>
@@ -203,7 +209,7 @@
  
                              <!-- Formulario para agregar al carrito -->
                              <form action="<?= site_url('carrito/agregar'); ?>" method="POST">
-                                <?= csrf_field(); ?>  <!-- Protección CSRF -->
+                                <?= csrf_field(); ?> 
                                     <input type="hidden" name="tipo" value="videojuego">
                                     <input type="hidden" name="id" value="<?= esc($juego['videojuego_id']); ?>">
                                     <input type="hidden" name="titulo" value="<?= esc($juego['titulo']); ?>">
