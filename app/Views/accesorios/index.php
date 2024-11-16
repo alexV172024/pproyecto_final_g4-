@@ -12,7 +12,6 @@
             padding: 0;
             background-color: #f8f9fa;
         }
-
         .container {
             background-color: white;
             padding: 20px;
@@ -107,9 +106,7 @@
     <div class="container my-5">
         <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
         <h1 class="mb-4">Listado de Accesorios</h1>
-
         <a href="<?= site_url('accesorios/create') ?>" class="btn btn-primary mb-3">Crear Nuevo Accesorio</a>
-
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>

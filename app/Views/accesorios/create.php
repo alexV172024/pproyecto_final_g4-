@@ -9,10 +9,8 @@
     <form action="<?= site_url('accesorios/store') ?>" method="post">
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" required><br>
-
         <label for="marca">Marca:</label>
         <input type="text" name="marca" required><br>
-
         <label for="modelo">Modelo:</label>
         <input type="text" name="modelo" required><br>
 

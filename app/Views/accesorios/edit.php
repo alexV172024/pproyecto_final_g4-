@@ -9,10 +9,8 @@
     <form action="<?= site_url('accesorios/update/' . $accesorio['accesorio_id']); ?>" method="post">
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" value="<?= $accesorio['nombre']; ?>" required><br>
-
         <label for="marca">Marca:</label>
         <input type="text" name="marca" value="<?= $accesorio['marca']; ?>" required><br>
-
         <label for="modelo">Modelo:</label>
         <input type="text" name="modelo" value="<?= $accesorio['modelo']; ?>" required><br>
 
