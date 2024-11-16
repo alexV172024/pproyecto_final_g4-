@@ -35,4 +35,8 @@ class MenuController extends Controller
     {
         return view('ofertas'); // Carga la vista de ofertas
     }
+    public function creditos()
+    {
+        return view('creditos'); // Carga la vista de creditos
+    }
 }

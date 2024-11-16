@@ -68,6 +68,9 @@ $routes->get('/ofertas', 'MenuController::ofertas');
 // Ruta para la vista de administrador
 $routes->get('admin', 'AdminController::index');
 
+//Creditos
+$routes->get('/creditos', 'MenuController::creditos');
+
 //Ruta para la recuperacion de contra
 $routes->get('recuperarcontra', 'RecuperarContraController::index');
 $routes->post('recuperarcontra/procesarRecuperacion', 'RecuperarContraController::procesarRecuperacion');

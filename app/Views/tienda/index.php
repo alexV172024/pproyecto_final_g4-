@@ -145,6 +145,7 @@
             <div class="col-md-6 d-flex justify-content-start">
                 <a href="<?= base_url('/novedades'); ?>" class="btn btn-primary me-2">Novedades</a>
                 <a href="<?= base_url('/ofertas'); ?>" class="btn btn-primary me-2">Ofertas</a>
+                <a href="<?= base_url('/creditos'); ?>" class="btn btn-primary me-2">Creditos</a>
             </div>
            <!-- Campo de búsqueda -->
 <div class="col-md-6 d-flex justify-content-end">
@@ -217,7 +218,7 @@
                                     <input type="hidden" name="plataforma" value="<?= esc($juego['plataforma']); ?>">
                                     <input type="hidden" name="precio" value="<?= esc($juego['precio']); ?>">
                                     <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
-</form>
+                                </form>
                         </div>
                     </div>
                 </div>
@@ -229,3 +230,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+ 
