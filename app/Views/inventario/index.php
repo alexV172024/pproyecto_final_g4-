@@ -99,12 +99,39 @@
                 padding: 15px; 
             }
         }
+        .pagination-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .pagination-links .pagination a {
+            margin: 0 5px; 
+        }
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.8rem;
+            }
+            td, th {
+                padding: 6px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container my-5">
         <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
-        <h1 class="mb-4">Listado de Inventario</h1>
+        <h1 class="mb-4">Inventario</h1>
+        <form method="get" action="<?= base_url('inventario'); ?>" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Buscar en inventario" value="<?= esc($search); ?>">
+                <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='<?= base_url('inventario'); ?>'">Borrar</button>
+            </div>
+        </form>
+
 
         <a href="<?= site_url('inventario/nuevo'); ?>" class="btn btn-primary mb-3">Agregar nuevo inventario</a>
 
@@ -121,7 +148,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($inventarios as $item): ?>
+                <?php foreach ($inventario as $item): ?>
                     <tr>
                         <td><?= $item['inventario_id']; ?></td>
                         <td><?= $item['accesorio_id']; ?></td>
@@ -130,13 +157,17 @@
                         <td><?= $item['ubicacion']; ?></td>
                         <td><?= $item['fecha_ingreso']; ?></td>
                         <td>
-                            <a href="<?= site_url('inventario/edit/' . $item['inventario_id']); ?>" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="<?= site_url('inventario/edit/' . $item['inventario_id']); ?>" class="btn btn-warning btn-sm">Editar</a>
                             <a href="<?= site_url('inventario/delete/' . $item['inventario_id']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este registro de inventario?');">Eliminar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
+          <!-- Enlaces de paginación -->
+          <div class="pagination-links">
+            <?= $pager->links(); ?>
+        </div>
     </div>
 </body>
 </html>

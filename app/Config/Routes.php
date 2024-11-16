@@ -139,7 +139,9 @@ $routes->get('carrito/eliminar/(:num)', 'CarritoController::eliminar/$1');
     $routes->get('inventario', 'InventarioController::index');  
     $routes->get('inventario/nuevo', 'InventarioController::nuevo');  
     $routes->post('inventario/guardar', 'InventarioController::guardar');  
-
+   
+    $routes->get('/inventario/edit/(:num)', 'InventarioController::edit/$1');
+$routes->post('/inventario/update/(:num)', 'InventarioController::update/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

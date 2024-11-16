@@ -10,11 +10,22 @@ class AccesoriosController extends BaseController
     public function index()
     {
         $model = new AccesorioModel();
-        $data['accesorios'] = $model->findAll();
-        
+        $searchQuery = $this->request->getGet('search');
+
+        if (!empty($searchQuery)) {
+            $data['accesorios'] = $model->like('nombre', $searchQuery)
+                                    ->orLike('marca', $searchQuery)
+                                      ->orLike('accesorio_id', $searchQuery)
+                                      ->paginate(5);
+        } else {
+            $data['accesorios'] = $model->paginate(5);
+        }
+
+        $data['pager'] = $model->pager;
+        $data['search'] = $searchQuery;
+
         return view('accesorios/index', $data);
     }
-
     public function create()
     {
         return view('accesorios/create');

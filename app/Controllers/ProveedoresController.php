@@ -7,10 +7,21 @@ class ProveedoresController extends BaseController
     public function index()
     {
         $model = new ProveedoresModel();
-        $data['proveedores'] = $model->findAll();
+        $searchQuery = $this->request->getGet('search');
+
+        if (!empty($searchQuery)) {
+            $data['proveedores'] = $model->like('nombre', $searchQuery)
+                                      ->orLike('proveedor_id', $searchQuery)
+                                      ->paginate(5);
+        } else {
+            $data['proveedores'] = $model->paginate(5);
+        }
+
+        $data['pager'] = $model->pager;
+        $data['search'] = $searchQuery;
+
         return view('proveedores/index', $data);
     }
-
     public function create()
     {
         return view('proveedores/create');

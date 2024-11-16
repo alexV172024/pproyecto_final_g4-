@@ -7,10 +7,21 @@ class ClientesController extends BaseController
     public function index()
     {
         $model = new ClientesModel();
-        $data['clientes'] = $model->findAll();
+        $searchQuery = $this->request->getGet('search');
+
+        if (!empty($searchQuery)) {
+            $data['clientes'] = $model->like('nombre', $searchQuery)
+                                      ->orLike('cliente_id', $searchQuery)
+                                      ->paginate(5);
+        } else {
+            $data['clientes'] = $model->paginate(5);
+        }
+
+        $data['pager'] = $model->pager;
+        $data['search'] = $searchQuery;
+
         return view('clientes/index', $data);
     }
-
 
     public function create()
     {

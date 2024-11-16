@@ -7,10 +7,21 @@ class VentasController extends BaseController
     public function index()
     {
         $model = new VentasModel();
-        $data['ventas'] = $model->findAll();
+        $searchQuery = $this->request->getGet('search');
+
+        if (!empty($searchQuery)) {
+            $data['ventas'] = $model->like('fecha_ventas', $searchQuery)
+                                      ->orLike('venta_id', $searchQuery)
+                                      ->paginate(5);
+        } else {
+            $data['ventas'] = $model->paginate(5);
+        }
+
+        $data['pager'] = $model->pager;
+        $data['search'] = $searchQuery;
+
         return view('ventas/index', $data);
     }
-
     public function create()
     {
         return view('ventas/create');

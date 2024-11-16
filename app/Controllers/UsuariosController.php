@@ -5,11 +5,23 @@ use CodeIgniter\Controller;
 
 class UsuariosController extends BaseController
 {
-    // Método para mostrar todos los usuarios
+    // Método para mostrar todos los usuarios con búsqueda y paginación
     public function index()
     {
         $model = new UsuariosModel();
-        $data['usuarios'] = $model->findAll();
+        $searchQuery = $this->request->getGet('search');
+
+        if (!empty($searchQuery)) {
+            $data['usuarios'] = $model->like('nombre_usuario', $searchQuery)
+                                      ->orLike('usuario_id', $searchQuery)
+                                      ->paginate(5);
+        } else {
+            $data['usuarios'] = $model->paginate(5);
+        }
+
+        $data['pager'] = $model->pager;
+        $data['search'] = $searchQuery;
+
         return view('usuarios/index', $data);
     }
 
@@ -22,24 +34,19 @@ class UsuariosController extends BaseController
     // Método para guardar el nuevo usuario
     public function store()
     {
-        // Recibir los datos del formulario
         $nombre_usuario = $this->request->getPost('nombre_usuario');
         $contraseña = $this->request->getPost('contraseña');
-        
-        // Hash de la contraseña
+
         $hashed_password = password_hash($contraseña, PASSWORD_DEFAULT);
-        
-        // Preparar los datos para insertar
+
         $data = [
             'nombre_usuario' => $nombre_usuario,
             'contraseña' => $hashed_password
         ];
 
-        // Instanciar el modelo de Usuario
         $usuarioModel = new UsuariosModel();
         $usuarioModel->insert($data);
 
-        // Redirigir a la lista de usuarios
         return redirect()->to('/usuarios');
     }
 
@@ -54,29 +61,23 @@ class UsuariosController extends BaseController
     // Método para actualizar un usuario
     public function update($id)
     {
-        // Recibir los datos del formulario
         $nombre_usuario = $this->request->getPost('nombre_usuario');
         $contraseña = $this->request->getPost('contraseña');
-        
-        // Si la contraseña se modificó, la hasheamos
+
         if (!empty($contraseña)) {
             $contraseña = password_hash($contraseña, PASSWORD_DEFAULT);
         } else {
-            // Si la contraseña no se modificó, no cambiamos el valor
-            $contraseña = $this->request->getPost('contraseña_actual');  // Asumiendo que el valor actual se envíe en el formulario
+            $contraseña = $this->request->getPost('contraseña_actual');
         }
-        
-        // Preparar los datos para actualizar
+
         $data = [
             'nombre_usuario' => $nombre_usuario,
             'contraseña' => $contraseña
         ];
 
-        // Instanciar el modelo de Usuario
         $model = new UsuariosModel();
         $model->update($id, $data);
 
-        // Redirigir a la lista de usuarios
         return redirect()->to('/usuarios');
     }
 
@@ -86,5 +87,23 @@ class UsuariosController extends BaseController
         $model = new UsuariosModel();
         $model->delete($id);
         return redirect()->to('/usuarios');
+    }
+
+    // Método para realizar búsqueda
+    public function search()
+    {
+        $model = new UsuariosModel();
+        $searchQuery = $this->request->getGet('search');
+
+        if ($searchQuery !== null && $searchQuery !== '') {
+            $data['usuarios'] = $model->like('nombre_usuario', $searchQuery)
+                                      ->orLike('usuario_id', $searchQuery)
+                                      ->paginate(5);
+            $data['pager'] = $model->pager;
+            $data['search'] = $searchQuery;
+            return view('usuarios/index', $data);
+        } else {
+            return redirect()->to('/usuarios');
+        }
     }
 }

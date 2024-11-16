@@ -101,12 +101,39 @@
                 padding: 15px;
             }
         }
+        .pagination-links {
+            margin-top: 40px; 
+            display: flex;
+            justify-content: center;
+        }
+        .pagination-links .pagination a {
+            margin: 0 5px; 
+        }
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.8rem;
+            }
+            td, th {
+                padding: 6px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container my-5">
     <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
-        <h2 class="mb-4">Listado de Detalles de Ventas</h2>
+        <h2 class="mb-4">Detalles de Ventas</h2>
+          <!-- Formulario de búsqueda -->
+          <form method="get" action="<?= base_url('detalle_ventas'); ?>" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Buscar venta_id" value="<?= esc($search); ?>">
+                <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='<?= base_url('detalle_ventas'); ?>'">Borrar</button>
+            </div>
+        </form>
 
         <a href="<?= site_url('detalle_ventas/create') ?>" class="btn btn-primary mb-3">Crear nuevo detalle de venta</a>
 
@@ -139,6 +166,10 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+          <!-- Enlaces de paginación -->
+          <div class="pagination-links">
+            <?= $pager->links(); ?>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>

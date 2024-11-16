@@ -101,12 +101,38 @@
                 padding: 15px;
             }
         }
+        .pagination-links {
+            margin-top: 40px; 
+            display: flex;
+            justify-content: center;
+        }
+        .pagination-links .pagination a {
+            margin: 0 5px; 
+        }
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.8rem;
+            }
+            td, th {
+                padding: 6px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container my-5">
         <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a>
-        <h2 class="mb-4">Listado de Videojuegos</h2>
+        <h2 class="mb-4">Videojuegos</h2>
+        <form method="get" action="<?= base_url('videojuegos'); ?>" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Buscar juego, género o plataforma" value="<?= esc($search); ?>">
+                <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='<?= base_url('videojuegos'); ?>'">Borrar</button>
+            </div>
+        </form>
 
         <a href="<?= site_url('videojuegos/create') ?>" class="btn btn-primary mb-3">Crear nuevo videojuego</a>
 
@@ -115,6 +141,10 @@
                 <tr>
                     <th>ID</th>
                     <th>Título</th>
+                    <th>Plataforma</th>
+                    <th>Genero</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -123,6 +153,10 @@
                     <tr>
                         <td><?= $videojuego['videojuego_id']; ?></td>
                         <td><?= $videojuego['titulo']; ?></td>
+                        <td><?= $videojuego['plataforma']; ?></td>
+                        <td><?= $videojuego['genero']; ?></td>
+                        <td><?= $videojuego['precio']; ?></td>
+                        <td><?= $videojuego['cantidad']; ?></td>
                         <td>
                             <a href="<?= site_url('videojuegos/edit/' . $videojuego['videojuego_id']); ?>" class="btn btn-warning btn-sm">Editar</a>
                             <a href="<?= site_url('videojuegos/delete/' . $videojuego['videojuego_id']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este videojuego?');">Eliminar</a>
@@ -131,6 +165,9 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <div class="pagination-links">
+            <?= $pager->links(); ?>
+        </div>
     </div>
 </body>
 </html>

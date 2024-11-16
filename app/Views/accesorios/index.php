@@ -100,12 +100,38 @@
                 padding: 15px;
             }
         }
+        .pagination-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .pagination-links .pagination a {
+            margin: 0 5px; 
+        }
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.8rem;
+            }
+            td, th {
+                padding: 6px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container my-5">
         <a href="<?= base_url('/admin'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
-        <h1 class="mb-4">Listado de Accesorios</h1>
+        <h1 class="mb-4">Accesorios</h1>
+        <form method="get" action="<?= base_url('accesorios'); ?>" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Buscar nombre de accesorio o marca" value="<?= esc($search); ?>">
+                <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='<?= base_url('accesorios'); ?>'">Borrar</button>
+            </div>
+        </form>
         <a href="<?= site_url('accesorios/create') ?>" class="btn btn-primary mb-3">Crear Nuevo Accesorio</a>
         <table class="table table-bordered table-striped">
             <thead>
@@ -138,6 +164,10 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+  
+         <div class="pagination-links">
+            <?= $pager->links(); ?>
+        </div>
     </div>
 </body>
 </html>

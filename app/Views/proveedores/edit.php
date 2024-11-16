@@ -1,82 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Proveedor</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-        crossorigin="anonymous"
-    />
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a tu archivo CSS separado -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Fuente retro */
-
         body {
-            font-family: 'Press Start 2P', sans-serif;
-            color: #f1f1f1; /* Color de texto claro */
-            background-color: #121212; /* Fondo oscuro */
-            margin: 0; /* Eliminar márgenes predeterminados */
-        }
-
-        .banner {
-            height: 200px; /* Altura del banner */
-            background-color: #45a29e; /* Color de fondo del banner */
-            display: flex; /* Para centrar el texto */
-            align-items: center; /* Centrando verticalmente */
-            justify-content: center; /* Centrando horizontalmente */
-        }
-
-        .offcanvas {
-            background-color: #000; /* Color de fondo negro para el menú offcanvas */
-        }
-
-        .offcanvas-header {
-            background-color: #0b0c10; /* Fondo oscuro para el encabezado del offcanvas */
-        }
-
-        .offcanvas-body {
-            background-color: #000; /* Color de fondo negro para el cuerpo del offcanvas */
-        }
-
-        .offcanvas-title {
-            font-size: 1rem; /* Tamaño de fuente más pequeño para el título del offcanvas */
-            color: #39FF14; /* Color verde neón para GAMESTATION en el offcanvas */
-        }
-
-        .navbar-brand {
-            font-size: 0.9rem; /* Reducir tamaño de fuente al 90% */
-            color: #39FF14; /* Color verde neón */
-        }
-
-        .nav-link {
-            color: #f1f1f1; /* Color de texto claro para los enlaces */
-        }
-
-        .nav-link:hover {
-            color: #007bff; /* Color azul al pasar el cursor */
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            padding: 30px 0;
         }
 
         .container {
-            padding-top: 20px; 
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
         }
     </style>
 </head>
 <body>
-<h2>Editar Proveedor</h2>
-<form action="<?= site_url('/proveedores/update/' . $proveedor['proveedor_id']); ?>" method="post">
-    Nombre: <input type="text" name="nombre" value="<?= $proveedor['nombre']; ?>"><br>
-    Contacto: <input type="text" name="contacto" value="<?= $proveedor['contacto']; ?>"><br>
-    Productos Suministrados: <input type="text" name="productos_suministrados" value="<?= $proveedor['productos_suministrados']; ?>"><br>
-    <button type="submit">Actualizar</button>
-</form>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<div class="container">
+    <h2>Editar Proveedor</h2>
+    <form action="<?= site_url('/proveedores/update/' . $proveedor['proveedor_id']); ?>" method="post">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="<?= esc($proveedor['nombre']); ?>" required>
+        </div>
+        <div class="mb-3">
+            <label for="contacto" class="form-label">Contacto</label>
+            <input type="text" class="form-control" id="contacto" name="contacto" value="<?= esc($proveedor['contacto']); ?>" required>
+        </div>
+        <div class="mb-3">
+            <label for="productos_suministrados" class="form-label">Productos Suministrados</label>
+            <input type="text" class="form-control" id="productos_suministrados" name="productos_suministrados" value="<?= esc($proveedor['productos_suministrados']); ?>" required>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <a href="<?= site_url('proveedores'); ?>" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

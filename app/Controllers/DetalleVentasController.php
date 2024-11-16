@@ -7,10 +7,22 @@ class DetalleVentasController extends BaseController
     public function index()
     {
         $model = new DetalleVentasModel();
-        $data['detalle_ventas'] = $model->findAll();
+        $searchQuery = $this->request->getGet('search');
+    
+        if (!empty($searchQuery)) {
+            $data['detalle_ventas'] = $model->like('venta_id', $searchQuery)
+                                            ->orLike('detalle_id', $searchQuery)
+                                            ->paginate(5);
+        } else {
+            $data['detalle_ventas'] = $model->paginate(5);
+        }
+    
+        $data['pager'] = $model->pager;
+        $data['search'] = $searchQuery;
+    
         return view('detalle_ventas/index', $data);
     }
-
+    
     public function create()
     {
         return view('detalle_ventas/create');

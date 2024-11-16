@@ -7,7 +7,21 @@ class VideojuegosController extends BaseController
     public function index()
     {
         $model = new VideojuegosModel();
-        $data['videojuegos'] = $model->findAll();
+        $searchQuery = $this->request->getGet('search');
+
+        if (!empty($searchQuery)) {
+            $data['videojuegos'] = $model->like('titulo', $searchQuery)
+                                     ->orLike('plataforma', $searchQuery)
+                                     ->orLike('genero', $searchQuery)
+                                      ->orLike('videojuego_id', $searchQuery)
+                                      ->paginate(5);
+        } else {
+            $data['videojuegos'] = $model->paginate(5);
+        }
+
+        $data['pager'] = $model->pager;
+        $data['search'] = $searchQuery;
+
         return view('videojuegos/index', $data);
     }
 
