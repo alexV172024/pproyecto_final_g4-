@@ -203,14 +203,14 @@
  
                              <!-- Formulario para agregar al carrito -->
                              <form action="<?= site_url('carrito/agregar'); ?>" method="POST">
-    <?= csrf_field(); ?>  <!-- Protección CSRF -->
-    <input type="hidden" name="tipo" value="videojuego">
-    <input type="hidden" name="id" value="<?= esc($juego['videojuego_id']); ?>">
-    <input type="hidden" name="titulo" value="<?= esc($juego['titulo']); ?>">
-    <input type="hidden" name="genero" value="<?= esc($juego['genero']); ?>">
-    <input type="hidden" name="plataforma" value="<?= esc($juego['plataforma']); ?>">
-    <input type="hidden" name="precio" value="<?= esc($juego['precio']); ?>">
-    <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+                                <?= csrf_field(); ?>  <!-- Protección CSRF -->
+                                    <input type="hidden" name="tipo" value="videojuego">
+                                    <input type="hidden" name="id" value="<?= esc($juego['videojuego_id']); ?>">
+                                    <input type="hidden" name="titulo" value="<?= esc($juego['titulo']); ?>">
+                                    <input type="hidden" name="genero" value="<?= esc($juego['genero']); ?>">
+                                    <input type="hidden" name="plataforma" value="<?= esc($juego['plataforma']); ?>">
+                                    <input type="hidden" name="precio" value="<?= esc($juego['precio']); ?>">
+                                    <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
 </form>
                         </div>
                     </div>

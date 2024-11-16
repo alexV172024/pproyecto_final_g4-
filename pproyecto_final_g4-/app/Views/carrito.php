@@ -69,8 +69,38 @@
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
+
                 </table>
             </div>
+
+            <div class="container mt-4">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Plataforma</th>
+                            <th>Genero</th>
+                            <th>Precio</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($carrito as $item): ?>
+                            <tr>
+                                <td><?= esc($item['titulo']); ?></td>
+                                <td><?= esc($item['plataforma']); ?></td>
+                                <td><?= esc($item['genero']); ?></td>
+                                <td><?= number_format(esc($item['precio']), 2); ?> Q</td>
+                                <td>
+                                    <a href="<?= site_url('carrito/eliminar/' . $item['videojuego_id']); ?>" class="btn btn-danger btn-sm">Eliminar</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+
+
         <?php else: ?>
             <div class="alert alert-warning text-center empty-cart-alert" role="alert">
                 No hay productos en el carrito.
