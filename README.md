@@ -22,4 +22,12 @@ El proyecto consiste en una aplicación web que permite gestionar y mostrar prod
   - `json` (habilitado por defecto)
   - `mysqlnd` (si se utiliza MySQL)
   - `libcurl` (si se utiliza la biblioteca HTTP\CURLRequest)
+    
+|             |                           |
+|:-----------:|:-------------------------:|
+|Nombre        |Carnet                  |
+  | Ana Leticia Yapan Flores |202212699|
+|Alexis Humberto Noj Vásquez       |202205588|
+|Allan Rodrigo Cruz Márquez  |202203845|
+ |Rodolfo Benjamin Estrada | 202208847|
 
