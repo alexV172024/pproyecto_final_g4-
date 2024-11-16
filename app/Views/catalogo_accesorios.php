@@ -60,11 +60,11 @@
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                     <ul class="navbar-nav fs-5 justify-content-evenly">
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/menu'); ?>" class="nav-link">Inicio</a></li>
-                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/catalogo_accesorios'); ?>" class="nav-link">Catálogo</a></li>
-                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/ubicacion'); ?>" class="nav-link">Ubicación</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/catalogo_accesorios'); ?>" class="nav-link">Catalogo</a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/ubicacion'); ?>" class="nav-link">Ubicacion</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/contacto'); ?>" class="nav-link">Contacto</a></li>
                         <a href="<?= site_url('/') ?>">Cerrar sesión</a>
-                        <li class="nav-item p-3 py-md-1"><a href="<?= site_url('/carrito'); ?>" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
+                        <li class="nav-item p-3 py-md-1"><a href="carrito.php" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                 </div>
             </section>
@@ -89,8 +89,7 @@
                             <p class="card-text">Marca: <?= esc($accesorio['marca']); ?></p>
                             <p class="card-text">Modelo: <?= esc($accesorio['modelo']); ?></p>
                             <p class="card-text">Precio: Q <?= esc($accesorio['precio']); ?></p>
-
-                            <!-- Formulario para agregar al carrito -->
+                           
                             <form action="<?= site_url('carrito/agregar'); ?>" method="POST">
                                 <?= csrf_field(); ?>  <!-- Protección CSRF -->
                                 <input type="hidden" name="id" value="<?= esc($accesorio['accesorio_id']); ?>">
@@ -100,6 +99,7 @@
                                 <input type="hidden" name="precio" value="<?= esc($accesorio['precio']); ?>">
                                 <button type="submit" class="btn btn-primary">Comprar</button>
                             </form>
+
                         </div>
                     </div>
                 </div>

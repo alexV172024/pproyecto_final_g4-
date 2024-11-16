@@ -23,7 +23,17 @@ class CarritoController extends Controller
             'modelo' => $this->request->getPost('modelo'),
             'precio' => $this->request->getPost('precio')
         ];
-    
+        
+        $videojuego =[
+            'videojuego_id' => $this->request->getPost('videojuego_id'),
+            'titulo' => $this->request->getPost('titulo'),
+            'plataforma' => $this->request->getPost('plataforma'),
+            'genero' => $this->request->getPost('genero'),
+            'precio' => $this->request->getPost('precio'),
+
+        ];
+
+
         // Recuperar el carrito actual de la sesión o inicializarlo
         $carrito = session()->get('carrito') ?? [];
     
