@@ -50,7 +50,8 @@
                     <thead>
                         <tr>
                             <th>Producto</th>
-                            <th>Detalles</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
                             <th>Precio</th>
                             <th>Acción</th>
                         </tr>
@@ -58,16 +59,9 @@
                     <tbody>
                         <?php foreach ($carrito as $item): ?>
                             <tr>
-                                <td><?= esc($item['nombre']) ?: esc($item['titulo']); ?></td>
-                                <td>
-                                    <?php if ($item['tipo'] == 'accesorio'): ?>
-                                        Marca: <?= esc($item['marca']); ?><br>
-                                        Modelo: <?= esc($item['modelo']); ?><br>
-                                    <?php elseif ($item['tipo'] == 'videojuego'): ?>
-                                        Género: <?= esc($item['genero']); ?><br>
-                                        Plataforma: <?= esc($item['plataforma']); ?><br>
-                                    <?php endif; ?>
-                                </td>
+                                <td><?= esc($item['nombre']); ?></td>
+                                <td><?= esc($item['marca']); ?></td>
+                                <td><?= esc($item['modelo']); ?></td>
                                 <td><?= number_format(esc($item['precio']), 2); ?> Q</td>
                                 <td>
                                     <a href="<?= site_url('carrito/eliminar/' . $item['id']); ?>" class="btn btn-danger btn-sm">Eliminar</a>
