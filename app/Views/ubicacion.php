@@ -61,16 +61,55 @@
         }
 
         .nav-link:hover {
-            color: #007bff;
+            color: #45a29e;
         }
 
         .container {
             padding-top: 20px;
         }
+        .banner {
+        height: 200px;
+        background: linear-gradient(135deg, #1d3557, #457b9d, #a8dadc);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner h2 {
+        font-size: 2rem;
+        color: #39FF14; /* Letras verdes */
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .kiosco-card {
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .kiosco-title {
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .kiosco-title:hover {
+        color: #39FF14; 
+    }
+
+    .kiosco-card p {
+        margin: 0;
+    }
     </style>
 </head>
 <body>
-    <!-- MENU START  -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
         <a href="<?= base_url('/menu'); ?>" class="navbar-brand fw-semibold">GAMESTATION</a> 
@@ -101,38 +140,72 @@
         </div>
     </nav>
 
-    <!-- Espacio para banner -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-12">
-                <div class="banner">
-                    <h2 class="text-center text-light">Ubicación de Nuestros Kioscos</h2>
-                </div>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="banner">
+                <h2 class="text-center">Ubicación de Nuestros Kioscos</h2>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Detalles de los kioscos -->
+
     <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-3">
-                <h5>Kiosco 1</h5>
-                <p>Detalles del kiosco 1...</p>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="kiosco-card">
+                <h5 class="kiosco-title">Kiosco 1</h5>
+                <p>Avenida Libertad #123, Esquina con Calle Victoria, Zona Centro.</p>
             </div>
-            <div class="col-md-3">
-                <h5>Kiosco 2</h5>
-                <p>Detalles del kiosco 2...</p>
+        </div>
+        <div class="col-md-3">
+            <div class="kiosco-card">
+                <h5 class="kiosco-title">Kiosco 2</h5>
+                <p>Boulevard Los Héroes #56, Frente al Parque Central.</p>
             </div>
-            <div class="col-md-3">
-                <h5>Kiosco 3</h5>
-                <p>Detalles del kiosco 3...</p>
+        </div>
+        <div class="col-md-3">
+            <div class="kiosco-card">
+                <h5 class="kiosco-title">Kiosco 3</h5>
+                <p>Calle del Sol #789, a un costado de la Plaza Comercial El Sol.</p>
             </div>
-            <div class="col-md-3">
-                <h5>Kiosco 4</h5>
-                <p>Detalles del kiosco 4...</p>
+        </div>
+        <div class="col-md-3">
+            <div class="kiosco-card">
+                <h5 class="kiosco-title">Kiosco 4</h5>
+                <p>Avenida Las Rosas #202, Entre Calle Roble y Calle Cedro.</p>
             </div>
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col-md-3">
+            <div class="kiosco-card">
+                <h5 class="kiosco-title">Kiosco 5</h5>
+                <p>Calle Luna #12, Frente al Mercado La Estrella.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="kiosco-card">
+                <h5 class="kiosco-title">Kiosco 6</h5>
+                <p>Avenida Progreso #400, Zona Industrial, cerca del cruce con Calle 25.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="kiosco-card">
+                <h5 class="kiosco-title">Kiosco 7</h5>
+                <p>Bulevar Verde #88, al lado del Centro Deportivo Olímpico.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="kiosco-card">
+                <h5 class="kiosco-title">Kiosco 8</h5>
+                <p>Calle Esperanza #9, Frente a la Iglesia San Juan.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
