@@ -86,9 +86,9 @@
                         <li class="nav-item p-3 py-md-1"><a href="carrito" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                     <div class="d-lg-none align-self-center py-3">
-                        <a href="login.php" class="text-info fs-2"><i class="bi bi-person-fill" style="color: #00ff00;"></i></a>
-                        <a href="carrito.php" class="text-info fs-2"><i class="bi bi-cart-fill" style="color: #00ff00;"></i></a>
-                        <a href="https://github.com" target="_blank" class="text-info fs-2"><i class="bi bi-github" style="color: #00ff00;"></i></a>
+                     
+                   
+                        <a href="https://github.com/alexV172024/pproyecto_final_g4-" target="_blank" class="text-info fs-2"><i class="bi bi-github" style="color: #00ff00;"></i></a>
                     </div>
                 </div>
             </section>

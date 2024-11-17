@@ -123,7 +123,7 @@
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/ubicacion'); ?>" class="nav-link">Ubicacion</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/contacto'); ?>" class="nav-link">Contacto</a></li>
 
-                        <!-- Reemplazar "Iniciar Sesión" por el nombre del usuario -->
+                       
                         <?php if(session()->get('nombre_usuario')): ?>
                             <li class="nav-item p-3 py-md-1"><span class="nav-link">Hola, <?= session()->get('nombre_usuario'); ?></span></li>
                         <?php endif; ?>
@@ -131,8 +131,8 @@
                         <li class="nav-item p-3 py-md-1"><a href="carrito.php" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                     <div class="d-lg-none align-self-center py-3">
-                        <a href="carrito.php" class="text-info fs-2"><i class="bi bi-cart-fill" style="color: #00ff00;"></i></a>
-                        <a href="https://github.com" target="_blank" class="text-info fs-2"><i class="bi bi-github" style="color: #00ff00;"></i></a>
+                     
+                        <a href="https://github.com/alexV172024/pproyecto_final_g4-" target="_blank" class="text-info fs-2"><i class="bi bi-github" style="color: #00ff00;"></i></a>
                     </div>
                 </div>
             </section>
@@ -159,7 +159,7 @@
                             <p class="card-title">Precio: Q <?= esc($accesorio['precio']); ?></p>
                            
                             <form action="<?= site_url('carrito/agregar'); ?>" method="POST">
-                                <?= csrf_field(); ?>  <!-- Protección CSRF -->
+                                <?= csrf_field(); ?> 
                                 <input type="hidden" name="id" value="<?= esc($accesorio['accesorio_id']); ?>">
                                 <input type="hidden" name="nombre" value="<?= esc($accesorio['nombre']); ?>">
                                 <input type="hidden" name="marca" value="<?= esc($accesorio['marca']); ?>">

@@ -16,12 +16,7 @@ El proyecto consiste en una aplicación web que permite gestionar y mostrar prod
 ## Requisitos del Servidor
 
 - PHP versión 8.1 o superior.
-- Las siguientes extensiones de PHP deben estar habilitadas:
-  - `intl`
-  - `mbstring`
-  - `json` (habilitado por defecto)
-  - `mysqlnd` (si se utiliza MySQL)
-  - `libcurl` (si se utiliza la biblioteca HTTP\CURLRequest)
+
     
 |             |                           |
 |:-----------:|:-------------------------:|

@@ -119,7 +119,7 @@
     <div class="container">
         <div class="credit-card">
             <h5>Ana Leticia Yapán Flores</h5>
-            <p>Carné: __________</p>
+            <p>Carné:202212699</p>
         </div>
         <div class="credit-card">
             <h5>Allan Rodrigo Cruz Márquez</h5>

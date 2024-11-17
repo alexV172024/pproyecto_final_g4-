@@ -86,7 +86,6 @@
                 
             </div>
 
-<<<<<<< HEAD
             <!-- Mostrar el total de la compra -->
             <div class="text-center mt-4">
                 <h3>Total de la compra: Q <?= number_format($total, 2); ?></h3>
@@ -102,8 +101,6 @@
 
             </div>
 
-=======
->>>>>>> 65a833175d4bea3018cc9442b50aaad8ab58b573
         <?php else: ?>
             <div class="alert alert-warning text-center empty-cart-alert" role="alert">
                 No hay productos en el carrito.

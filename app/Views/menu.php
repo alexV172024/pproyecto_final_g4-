@@ -15,53 +15,53 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a tu archivo CSS separado -->
+    <link rel="stylesheet" href="css/style.css"> 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Fuente retro */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
 
         body {
             font-family: 'Press Start 2P', sans-serif;
-            color: #f1f1f1; /* Color de texto claro */
-            background-color: #121212; /* Fondo oscuro */
-            margin: 0; /* Eliminar márgenes predeterminados */
+            color: #f1f1f1;
+            background-color: #121212; 
+            margin: 0; 
         }
 
         .banner {
-            height: 200px; /* Altura del banner */
-            background-color: #45a29e; /* Color de fondo del banner */
-            display: flex; /* Para centrar el texto */
-            align-items: center; /* Centrando verticalmente */
-            justify-content: center; /* Centrando horizontalmente */
+            height: 200px; 
+            background-color: #45a29e; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
         }
 
         .offcanvas {
-            background-color: #000; /* Color de fondo negro para el menú offcanvas */
+            background-color: #000; 
         }
 
         .offcanvas-header {
-            background-color: #0b0c10; /* Fondo oscuro para el encabezado del offcanvas */
+            background-color: #0b0c10; 
         }
 
         .offcanvas-body {
-            background-color: #000; /* Color de fondo negro para el cuerpo del offcanvas */
+            background-color: #000; 
         }
 
         .offcanvas-title {
-            font-size: 1rem; /* Tamaño de fuente más pequeño para el título del offcanvas */
-            color: #39FF14; /* Color verde neón para GAMESTATION en el offcanvas */
+            font-size: 1rem; 
+            color: #39FF14; 
         }
 
         .navbar-brand {
-            font-size: 0.9rem; /* Reducir tamaño de fuente al 90% */
-            color: #39FF14; /* Color verde neón */
+            font-size: 0.9rem; 
+            color: #39FF14;
         }
 
         .nav-link {
-            color: #f1f1f1; /* Color de texto claro para los enlaces */
+            color: #f1f1f1;
         }
 
         .nav-link:hover {
-            color: #007bff; /* Color azul al pasar el cursor */
+            color: #007bff; 
         }
 
         .container {
@@ -88,7 +88,7 @@
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/catalogo_accesorios'); ?>" class="nav-link">Catalogo</a></li>
                         <li class="nav-item p-3 py-md-1"><a href="<?= base_url('/contacto'); ?>" class="nav-link">Contacto</a></li>
                         
-                 <!-- Reemplazar "Iniciar Sesión" por el nombre del usuario -->
+            
                         <?php if(session()->get('nombre_usuario')): ?>
                             <li class="nav-item p-3 py-md-1"><span class="nav-link">Hola, <?= session()->get('nombre_usuario'); ?></span></li>
                         <?php endif; ?>
@@ -97,8 +97,8 @@
                         <li class="nav-item p-3 py-md-1"><a href="carrito" class="nav-link"><i class="bi bi-cart-fill"></i><span>Carrito</span></a></li>
                     </ul>
                     <div class="d-lg-none align-self-center py-3">
-                        <a href="carrito.php" class="text-info fs-2"><i class="bi bi-cart-fill" style="color: #00ff00;"></i></a>
-                        <a href="https://github.com" target="_blank" class="text-info fs-2"><i class="bi bi-github" style="color: #00ff00;"></i></a>
+                        <a href="carrito" class="text-info fs-2"><i class="bi bi-cart-fill" style="color: #00ff00;"></i></a>
+                        <a href="https://github.com/alexV172024/pproyecto_final_g4-" target="_blank" class="text-info fs-2"><i class="bi bi-github" style="color: #00ff00;"></i></a>
                     </div>
                 </div>
             </section>

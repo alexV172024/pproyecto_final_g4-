@@ -95,7 +95,7 @@
     <button type="submit" class="btn btn-primary">Buscar</button>
 </form>
 
-<!-- Cuadro de texto deshabilitado para mostrar la contraseña -->
+
 <label class="form-label mt-3">Su contraseña es:</label>
 <input type="text" class="form-control" value="<?= isset($contraseña) ? $contraseña : '' ?>" disabled>
 
